@@ -1,0 +1,20 @@
+# Prerequisites
+*.d
+
+# Object files and Executables (Ignore compiled binaries)
+*.o
+*.ko
+*.obj
+*.elf
+*.bin
+*.exe
+*.out
+
+# VS Code directory (Keeps your local machine paths off GitHub)
+.vscode/
+
+# ESP-IDF Build and temporary directories
+build/
+sdkconfig
+sdkconfig.old
+.espressif/
