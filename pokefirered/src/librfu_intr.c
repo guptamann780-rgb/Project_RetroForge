@@ -394,24 +394,23 @@ static void STWI_init_slave(void)
     REG_SIOCNT = SIO_INTR_ENABLE | SIO_32BIT_MODE | SIO_57600_BPS | SIO_ENABLE;
 }
 
-NAKED
-#if __STDC_VERSION__ < 202311L
+// #3 Change.
+//-----------------------------------------------------------------------
 static void Callback_Dummy_M(int reqCommandId, int error, void (*callbackM)())
-#else
-static void Callback_Dummy_M(int reqCommandId, int error, void (*callbackM)(...))
-#endif
 {
-    asm("bx r2");
+    if (callbackM)
+        callbackM(reqCommandId, error);
 }
 
-NAKED
 static void Callback_Dummy_S(u16 reqCommandId, void (*callbackS)(u16))
 {
-    asm("bx r1");
+    if (callbackS)
+        callbackS(reqCommandId);
 }
 
-NAKED
 static void Callback_Dummy_ID(void (*callbackId)(void))
 {
-    asm("bx r0");
+    if (callbackId)
+        callbackId();
 }
+//-----------------------------------------------------------------------

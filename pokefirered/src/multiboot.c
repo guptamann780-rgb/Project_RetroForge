@@ -390,22 +390,18 @@ static int MultiBootHandShake(struct MultiBootParam *mp)
 #undef must_data
 }
 
-static NOINLINE void MultiBootWaitCycles(u32 cycles)
+//---------------------------------------------------------------------------
+static NOINLINE void MultiBootWaitCycles(u32 cycles) //#4 Change.
 {
-    asm("mov r2, pc");
-    asm("lsr r2, #24");
-    asm("mov r1, #12");
-    asm("cmp r2, #0x02");
-    asm("beq MultiBootWaitCyclesLoop");
-    asm("mov r1, #13");
-    asm("cmp r2, #0x08");
-    asm("beq MultiBootWaitCyclesLoop");
-    asm("mov r1, #4");
-
-    asm("MultiBootWaitCyclesLoop:");
-    asm("sub r0, r1");
-    asm("bgt MultiBootWaitCyclesLoop");
+// Original hand-tuned ARM cycle-count delay for GBA link-cable timing.
+// Not exercised outside multiboot (no external callers) — ordinary
+// busy-wait is sufficient since exact timing no longer matters here.
+volatile u32 i;
+for (i = 0; i < cycles; i++)
+    ;
 }
+//---------------------------------------------------------------------------
+
 
 static void MultiBootWaitSendDone(void)
 {
