@@ -117,8 +117,9 @@ bool8 RunScriptCommand(struct ScriptContext *ctx)
 
             if (ctx->scriptPtr == gNullScriptPtr)
             {
-                while (1)
-                    asm("svc 2"); // HALT
+                while (1);
+                // HALT — original used a raw BIOS halt call; nothing to trap into here    
+                //asm("svc 2"); // HALT //#2 Change.
             }
 
             cmdCode = *(ctx->scriptPtr);

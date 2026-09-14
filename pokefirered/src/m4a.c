@@ -327,7 +327,9 @@ void MPlayExtender(struct CgbChannel *cgbChans)
 
 void MusicPlayerJumpTableCopy(void)
 {
-    asm("swi 0x2A");
+    // GBA BIOS call: relocates MP2K's function table from ROM to IWRAM
+    // for speed. No ROM/IWRAM distinction on host — nothing to do.
+    // asm("swi 0x2A");   //This is commented for no operation needed. //#1 Change.
 }
 
 void ClearChain(void *x)
