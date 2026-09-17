@@ -36,7 +36,7 @@ void VBlankIntrWait(void)
 // currently ignore resetFlags entirely and always do a full memory
 // re-init, which is safe (does at least as much as any real flag
 // combination would) but not flag-accurate.
-void SoftReset(u8 resetFlags)
+void SoftReset(u32 resetFlags)
 {
     (void)resetFlags;
     InitGbaMemoryHost();
