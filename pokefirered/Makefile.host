@@ -1,0 +1,96 @@
+# ===== RetroForge host build =====
+# Compiles pokefirered source for the Linux/SDL2 host target.
+# This is entirely separate from the real agbcc Makefile -- it never
+# touches build/firered/ and the real ARM `make`/`make compare` targets
+# are completely unaffected by anything in here.
+#
+# Pipeline stages match your verified working commands exactly:
+#   src/*.c   : cpp (DHOST_BUILD + DFIRERED/DENGLISH) -> preproc -> gcc -m32
+#   data/*.s  : preproc -> cpp (NO -D flags) -> preproc -ie -> as --32 --defsym
+#   host_src/*.c : plain gcc -m32 (no macro preprocessing needed, already
+#                  ordinary host C)
+
+CPP        := cpp
+PREPROC    := ./tools/preproc/preproc
+GCC        := gcc
+AS         := as
+CHARMAP    := charmap.txt
+
+BUILD_DIR  := build_host
+SRC_DIR    := src
+DATA_DIR   := data
+HOST_DIR   := host_src
+
+# -DHOST_BUILD is new (activates the io_reg.h / defines.h patches).
+# -DFIRERED -DENGLISH kept exactly as your verified src/*.c command used --
+# these are safe on .c files; the .ifdef-corruption bug you found only
+# affects .s/data files, which correctly get NO -D flags below.
+CPPFLAGS_C := -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH
+CPPFLAGS_S := -iquote include -iquote asm -iquote .
+ASFLAGS    := --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0
+GCCFLAGS   := -m32 -DHOST_BUILD -iquote include -iquote host_src -iquote .
+
+# Any src/*.c files that only make sense on real hardware / are your own
+# host test scratch files -- add more here as you find them.
+EXCLUDE_C  := src/host_test.c
+
+SRC_C      := $(filter-out $(EXCLUDE_C),$(wildcard $(SRC_DIR)/*.c))
+DATA_S     := $(wildcard $(DATA_DIR)/*.s)
+HOST_C     := $(wildcard $(HOST_DIR)/*.c)
+
+OBJ_SRC_C  := $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/src/%.o,$(SRC_C))
+OBJ_DATA_S := $(patsubst $(DATA_DIR)/%.s,$(BUILD_DIR)/data/%.o,$(DATA_S))
+OBJ_HOST_C := $(patsubst $(HOST_DIR)/%.c,$(BUILD_DIR)/host_src/%.o,$(HOST_C))
+
+ALL_OBJS   := $(OBJ_SRC_C) $(OBJ_DATA_S) $(OBJ_HOST_C)
+
+TARGET     := $(BUILD_DIR)/pokefirered_host
+
+SDL_LIBS   := $(shell sdl2-config --libs 2>/dev/null)
+
+.PHONY: all clean dirs linkcheck
+
+all: dirs $(TARGET)
+
+dirs:
+	@mkdir -p $(BUILD_DIR)/src $(BUILD_DIR)/data $(BUILD_DIR)/host_src
+
+# --- src/*.c : cpp -> preproc -> gcc  (skips your special-cased files below) ---
+$(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(CPP) $(CPPFLAGS_C) $< | $(PREPROC) -i $< $(CHARMAP) | $(GCC) -m32 -x cpp-output -c -o $@ -
+
+# --- data/*.s : preproc -> cpp (NO -D) -> preproc -ie -> as ---
+$(BUILD_DIR)/data/%.o: $(DATA_DIR)/%.s
+	@mkdir -p $(dir $@)
+	$(PREPROC) $< $(CHARMAP) | $(CPP) $(CPPFLAGS_S) - | $(PREPROC) -ie $< $(CHARMAP) | $(AS) $(ASFLAGS) -o $@ -
+
+# event_scripts.s: explicit rule overrides the pattern rule above.
+# Extra include paths match your verified command (history #365).
+$(BUILD_DIR)/data/event_scripts.o: $(DATA_DIR)/event_scripts.s
+	@mkdir -p $(dir $@)
+	$(PREPROC) $< $(CHARMAP) -I asm -I asm/macros \
+	  | $(CPP) -iquote host_src/data_patch -iquote include -iquote asm -iquote asm/macros -iquote . - \
+	  | $(PREPROC) -ie $< $(CHARMAP) -ie asm -ie asm/macros \
+	  | $(AS) $(ASFLAGS) -o $@ -
+
+# --- host_src/*.c : plain gcc, matches your verified libagbsyscall_host.c command ---
+$(BUILD_DIR)/host_src/%.o: $(HOST_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(GCC) $(GCCFLAGS) -c $< -o $@
+
+$(TARGET): $(ALL_OBJS)
+	$(GCC) -m32 -o $@ $(ALL_OBJS) -lm $(SDL_LIBS)
+
+# Doesn't try to produce a working binary -- just runs the link and prints
+# a de-duplicated, sorted list of undefined symbols, so you can diff
+# against undefined_symbols4.txt style snapshots each session without
+# scrolling past hundreds of repeated "more undefined references" lines.
+linkcheck: $(ALL_OBJS)
+	@$(GCC) -m32 -o $(BUILD_DIR)/linkcheck_tmp $(ALL_OBJS) -lm $(SDL_LIBS) 2>&1 \
+	  | grep "undefined reference" \
+	  | sed -E "s/.*undefined reference to \`([^']+)'.*/\1/" \
+	  | sort -u
+
+clean:
+	rm -rf $(BUILD_DIR)

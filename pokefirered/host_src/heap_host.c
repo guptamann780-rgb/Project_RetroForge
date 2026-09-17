@@ -6,4 +6,5 @@
 // linker just reserves space after it. Host build has no such linker-script trick available, so it needs a real, concretely-sized array 
 // instead.
 
-u8 gHeap[HEAP_SIZE];
+u8 gHeap[HEAP_SIZE] __attribute__((aligned(4)));
+

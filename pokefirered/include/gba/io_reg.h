@@ -1,7 +1,12 @@
 #ifndef GUARD_GBA_IO_REG_H
 #define GUARD_GBA_IO_REG_H
 
+#ifdef HOST_BUILD
+#include "gba_memory_host.h"
+#define REG_BASE ((u32)gGbaIoRegs)
+#else
 #define REG_BASE 0x4000000 // I/O register base address
+#endif
 
 // I/O register offsets
 

@@ -1,0 +1,2293 @@
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/AgbRfu_LinkManager.c | ./tools/preproc/preproc -i src/AgbRfu_LinkManager.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/AgbRfu_LinkManager.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/AgbRfu_LinkManager.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/agb_flash.c | ./tools/preproc/preproc -i src/agb_flash.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/agb_flash.o -
+In file included from include/gba/gba.h:5,
+                 from src/agb_flash.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/agb_flash_1m.c | ./tools/preproc/preproc -i src/agb_flash_1m.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/agb_flash_1m.o -
+In file included from include/gba/gba.h:5,
+                 from src/agb_flash_1m.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/agb_flash_le.c | ./tools/preproc/preproc -i src/agb_flash_le.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/agb_flash_le.o -
+In file included from include/gba/gba.h:5,
+                 from src/agb_flash_le.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/agb_flash_mx.c | ./tools/preproc/preproc -i src/agb_flash_mx.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/agb_flash_mx.o -
+In file included from include/gba/gba.h:5,
+                 from src/agb_flash_mx.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/bag.c | ./tools/preproc/preproc -i src/bag.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/bag.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/bag.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_ai_script_commands.c | ./tools/preproc/preproc -i src/battle_ai_script_commands.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_ai_script_commands.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_ai_script_commands.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_ai_switch_items.c | ./tools/preproc/preproc -i src/battle_ai_switch_items.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_ai_switch_items.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_ai_switch_items.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim.c | ./tools/preproc/preproc -i src/battle_anim.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_bug.c | ./tools/preproc/preproc -i src/battle_anim_bug.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_bug.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_bug.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_dark.c | ./tools/preproc/preproc -i src/battle_anim_dark.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_dark.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_dark.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_dragon.c | ./tools/preproc/preproc -i src/battle_anim_dragon.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_dragon.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_dragon.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_effects_1.c | ./tools/preproc/preproc -i src/battle_anim_effects_1.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_effects_1.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_effects_1.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_effects_2.c | ./tools/preproc/preproc -i src/battle_anim_effects_2.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_effects_2.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_effects_2.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_effects_3.c | ./tools/preproc/preproc -i src/battle_anim_effects_3.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_effects_3.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_effects_3.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_electric.c | ./tools/preproc/preproc -i src/battle_anim_electric.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_electric.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_electric.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_fight.c | ./tools/preproc/preproc -i src/battle_anim_fight.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_fight.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_fight.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_fire.c | ./tools/preproc/preproc -i src/battle_anim_fire.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_fire.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_fire.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_flying.c | ./tools/preproc/preproc -i src/battle_anim_flying.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_flying.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_flying.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_ghost.c | ./tools/preproc/preproc -i src/battle_anim_ghost.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_ghost.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_ghost.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_ground.c | ./tools/preproc/preproc -i src/battle_anim_ground.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_ground.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_ground.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_ice.c | ./tools/preproc/preproc -i src/battle_anim_ice.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_ice.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_ice.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_mon_movement.c | ./tools/preproc/preproc -i src/battle_anim_mon_movement.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_mon_movement.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_mon_movement.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_mons.c | ./tools/preproc/preproc -i src/battle_anim_mons.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_mons.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_mons.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_normal.c | ./tools/preproc/preproc -i src/battle_anim_normal.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_normal.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_normal.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_poison.c | ./tools/preproc/preproc -i src/battle_anim_poison.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_poison.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_poison.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_psychic.c | ./tools/preproc/preproc -i src/battle_anim_psychic.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_psychic.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_psychic.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_rock.c | ./tools/preproc/preproc -i src/battle_anim_rock.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_rock.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_rock.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_smokescreen.c | ./tools/preproc/preproc -i src/battle_anim_smokescreen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_smokescreen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_smokescreen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_sound_tasks.c | ./tools/preproc/preproc -i src/battle_anim_sound_tasks.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_sound_tasks.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_sound_tasks.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_special.c | ./tools/preproc/preproc -i src/battle_anim_special.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_special.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_special.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_status_effects.c | ./tools/preproc/preproc -i src/battle_anim_status_effects.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_status_effects.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_status_effects.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_utility_funcs.c | ./tools/preproc/preproc -i src/battle_anim_utility_funcs.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_utility_funcs.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_utility_funcs.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_anim_water.c | ./tools/preproc/preproc -i src/battle_anim_water.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_anim_water.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_anim_water.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_bg.c | ./tools/preproc/preproc -i src/battle_bg.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_bg.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_bg.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_controller_link_opponent.c | ./tools/preproc/preproc -i src/battle_controller_link_opponent.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_controller_link_opponent.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_controller_link_opponent.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_controller_link_partner.c | ./tools/preproc/preproc -i src/battle_controller_link_partner.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_controller_link_partner.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_controller_link_partner.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_controller_oak_old_man.c | ./tools/preproc/preproc -i src/battle_controller_oak_old_man.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_controller_oak_old_man.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_controller_oak_old_man.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_controller_opponent.c | ./tools/preproc/preproc -i src/battle_controller_opponent.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_controller_opponent.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_controller_opponent.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_controller_player.c | ./tools/preproc/preproc -i src/battle_controller_player.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_controller_player.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_controller_player.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_controller_pokedude.c | ./tools/preproc/preproc -i src/battle_controller_pokedude.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_controller_pokedude.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_controller_pokedude.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_controller_safari.c | ./tools/preproc/preproc -i src/battle_controller_safari.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_controller_safari.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_controller_safari.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_controllers.c | ./tools/preproc/preproc -i src/battle_controllers.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_controllers.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_controllers.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_gfx_sfx_util.c | ./tools/preproc/preproc -i src/battle_gfx_sfx_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_gfx_sfx_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_gfx_sfx_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_interface.c | ./tools/preproc/preproc -i src/battle_interface.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_interface.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_interface.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_intro.c | ./tools/preproc/preproc -i src/battle_intro.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_intro.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_intro.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_main.c | ./tools/preproc/preproc -i src/battle_main.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_main.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_main.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_message.c | ./tools/preproc/preproc -i src/battle_message.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_message.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_message.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_records.c | ./tools/preproc/preproc -i src/battle_records.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_records.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_records.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_script_commands.c | ./tools/preproc/preproc -i src/battle_script_commands.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_script_commands.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_script_commands.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_setup.c | ./tools/preproc/preproc -i src/battle_setup.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_setup.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_setup.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_tower.c | ./tools/preproc/preproc -i src/battle_tower.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_tower.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_tower.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_transition.c | ./tools/preproc/preproc -i src/battle_transition.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_transition.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_transition.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_util.c | ./tools/preproc/preproc -i src/battle_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/battle_util2.c | ./tools/preproc/preproc -i src/battle_util2.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/battle_util2.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/battle_util2.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/berry.c | ./tools/preproc/preproc -i src/berry.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/berry.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/berry.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/berry_crush.c | ./tools/preproc/preproc -i src/berry_crush.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/berry_crush.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/berry_crush.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/berry_fix_program.c | ./tools/preproc/preproc -i src/berry_fix_program.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/berry_fix_program.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/berry_fix_program.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/berry_pouch.c | ./tools/preproc/preproc -i src/berry_pouch.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/berry_pouch.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/berry_pouch.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/berry_powder.c | ./tools/preproc/preproc -i src/berry_powder.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/berry_powder.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/berry_powder.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/bg.c | ./tools/preproc/preproc -i src/bg.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/bg.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/bg.c:2:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/bg_regs.c | ./tools/preproc/preproc -i src/bg_regs.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/bg_regs.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/bg_regs.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/bike.c | ./tools/preproc/preproc -i src/bike.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/bike.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/bike.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/blend_palette.c | ./tools/preproc/preproc -i src/blend_palette.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/blend_palette.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/blend_palette.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/blit.c | ./tools/preproc/preproc -i src/blit.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/blit.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/blit.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/braille_text.c | ./tools/preproc/preproc -i src/braille_text.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/braille_text.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/braille_text.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/buy_menu_helpers.c | ./tools/preproc/preproc -i src/buy_menu_helpers.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/buy_menu_helpers.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/buy_menu_helpers.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/cable_car_util.c | ./tools/preproc/preproc -i src/cable_car_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/cable_car_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/cable_car_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/cable_club.c | ./tools/preproc/preproc -i src/cable_club.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/cable_club.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/cable_club.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/cereader_tool.c | ./tools/preproc/preproc -i src/cereader_tool.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/cereader_tool.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/cereader_tool.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/clear_save_data_screen.c | ./tools/preproc/preproc -i src/clear_save_data_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/clear_save_data_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/clear_save_data_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/coins.c | ./tools/preproc/preproc -i src/coins.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/coins.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/coins.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/coord_event_weather.c | ./tools/preproc/preproc -i src/coord_event_weather.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/coord_event_weather.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/coord_event_weather.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/credits.c | ./tools/preproc/preproc -i src/credits.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/credits.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/credits.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/data.c | ./tools/preproc/preproc -i src/data.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/data.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/data.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/daycare.c | ./tools/preproc/preproc -i src/daycare.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/daycare.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/daycare.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/decompress.c | ./tools/preproc/preproc -i src/decompress.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/decompress.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/decompress.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/decoration.c | ./tools/preproc/preproc -i src/decoration.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/decoration.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/decoration.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/digit_obj_util.c | ./tools/preproc/preproc -i src/digit_obj_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/digit_obj_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/digit_obj_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/diploma.c | ./tools/preproc/preproc -i src/diploma.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/diploma.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/diploma.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/dma3_manager.c | ./tools/preproc/preproc -i src/dma3_manager.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/dma3_manager.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/dma3_manager.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/dodrio_berry_picking.c | ./tools/preproc/preproc -i src/dodrio_berry_picking.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/dodrio_berry_picking.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/dodrio_berry_picking.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/dodrio_berry_picking_comm.c | ./tools/preproc/preproc -i src/dodrio_berry_picking_comm.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/dodrio_berry_picking_comm.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/dodrio_berry_picking_comm.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/dynamic_placeholder_text_util.c | ./tools/preproc/preproc -i src/dynamic_placeholder_text_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/dynamic_placeholder_text_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/dynamic_placeholder_text_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/easy_chat.c | ./tools/preproc/preproc -i src/easy_chat.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/easy_chat.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/easy_chat.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/easy_chat_2.c | ./tools/preproc/preproc -i src/easy_chat_2.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/easy_chat_2.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/easy_chat_2.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/easy_chat_3.c | ./tools/preproc/preproc -i src/easy_chat_3.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/easy_chat_3.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/easy_chat_3.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/ereader_helpers.c | ./tools/preproc/preproc -i src/ereader_helpers.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/ereader_helpers.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/ereader_helpers.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/ereader_screen.c | ./tools/preproc/preproc -i src/ereader_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/ereader_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/ereader_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/event_data.c | ./tools/preproc/preproc -i src/event_data.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/event_data.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/event_data.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/event_object_lock.c | ./tools/preproc/preproc -i src/event_object_lock.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/event_object_lock.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/event_object_lock.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/event_object_movement.c | ./tools/preproc/preproc -i src/event_object_movement.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/event_object_movement.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/event_object_movement.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/evolution_graphics.c | ./tools/preproc/preproc -i src/evolution_graphics.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/evolution_graphics.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/evolution_graphics.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/evolution_scene.c | ./tools/preproc/preproc -i src/evolution_scene.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/evolution_scene.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/evolution_scene.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fame_checker.c | ./tools/preproc/preproc -i src/fame_checker.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fame_checker.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fame_checker.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_camera.c | ./tools/preproc/preproc -i src/field_camera.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_camera.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_camera.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_control_avatar.c | ./tools/preproc/preproc -i src/field_control_avatar.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_control_avatar.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_control_avatar.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_door.c | ./tools/preproc/preproc -i src/field_door.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_door.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_door.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_effect.c | ./tools/preproc/preproc -i src/field_effect.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_effect.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_effect.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_effect_helpers.c | ./tools/preproc/preproc -i src/field_effect_helpers.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_effect_helpers.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_effect_helpers.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_fadetransition.c | ./tools/preproc/preproc -i src/field_fadetransition.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_fadetransition.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_fadetransition.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_message_box.c | ./tools/preproc/preproc -i src/field_message_box.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_message_box.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_message_box.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_player_avatar.c | ./tools/preproc/preproc -i src/field_player_avatar.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_player_avatar.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_player_avatar.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_poison.c | ./tools/preproc/preproc -i src/field_poison.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_poison.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_poison.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_screen_effect.c | ./tools/preproc/preproc -i src/field_screen_effect.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_screen_effect.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_screen_effect.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_special_scene.c | ./tools/preproc/preproc -i src/field_special_scene.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_special_scene.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_special_scene.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_specials.c | ./tools/preproc/preproc -i src/field_specials.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_specials.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_specials.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_tasks.c | ./tools/preproc/preproc -i src/field_tasks.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_tasks.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_tasks.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_weather.c | ./tools/preproc/preproc -i src/field_weather.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_weather.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_weather.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_weather_effects.c | ./tools/preproc/preproc -i src/field_weather_effects.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_weather_effects.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_weather_effects.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/field_weather_util.c | ./tools/preproc/preproc -i src/field_weather_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/field_weather_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/field_weather_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fieldmap.c | ./tools/preproc/preproc -i src/fieldmap.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fieldmap.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fieldmap.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_berrytree.c | ./tools/preproc/preproc -i src/fldeff_berrytree.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_berrytree.o -
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_cut.c | ./tools/preproc/preproc -i src/fldeff_cut.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_cut.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_cut.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_dig.c | ./tools/preproc/preproc -i src/fldeff_dig.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_dig.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_dig.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_flash.c | ./tools/preproc/preproc -i src/fldeff_flash.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_flash.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_flash.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_poison.c | ./tools/preproc/preproc -i src/fldeff_poison.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_poison.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_poison.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_rocksmash.c | ./tools/preproc/preproc -i src/fldeff_rocksmash.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_rocksmash.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_rocksmash.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_softboiled.c | ./tools/preproc/preproc -i src/fldeff_softboiled.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_softboiled.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_softboiled.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_strength.c | ./tools/preproc/preproc -i src/fldeff_strength.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_strength.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_strength.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_sweetscent.c | ./tools/preproc/preproc -i src/fldeff_sweetscent.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_sweetscent.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_sweetscent.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/fldeff_teleport.c | ./tools/preproc/preproc -i src/fldeff_teleport.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/fldeff_teleport.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/fldeff_teleport.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/gpu_regs.c | ./tools/preproc/preproc -i src/gpu_regs.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/gpu_regs.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/gpu_regs.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/graphics.c | ./tools/preproc/preproc -i src/graphics.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/graphics.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/graphics.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/hall_of_fame.c | ./tools/preproc/preproc -i src/hall_of_fame.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/hall_of_fame.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/hall_of_fame.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/heal_location.c | ./tools/preproc/preproc -i src/heal_location.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/heal_location.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/heal_location.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/help_message.c | ./tools/preproc/preproc -i src/help_message.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/help_message.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/help_message.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/help_system.c | ./tools/preproc/preproc -i src/help_system.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/help_system.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/help_system.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/help_system_util.c | ./tools/preproc/preproc -i src/help_system_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/help_system_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/help_system_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/hof_pc.c | ./tools/preproc/preproc -i src/hof_pc.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/hof_pc.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/hof_pc.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/image_processing_effects.c | ./tools/preproc/preproc -i src/image_processing_effects.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/image_processing_effects.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/image_processing_effects.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/intro.c | ./tools/preproc/preproc -i src/intro.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/intro.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/intro.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/isagbprn.c | ./tools/preproc/preproc -i src/isagbprn.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/isagbprn.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from include/config.h:4,
+                 from src/isagbprn.c:3:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/item.c | ./tools/preproc/preproc -i src/item.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/item.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/item.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/item_menu.c | ./tools/preproc/preproc -i src/item_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/item_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/item_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/item_menu_icons.c | ./tools/preproc/preproc -i src/item_menu_icons.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/item_menu_icons.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/item_menu_icons.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/item_pc.c | ./tools/preproc/preproc -i src/item_pc.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/item_pc.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/item_pc.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/item_use.c | ./tools/preproc/preproc -i src/item_use.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/item_use.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/item_use.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/itemfinder.c | ./tools/preproc/preproc -i src/itemfinder.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/itemfinder.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/itemfinder.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/keyboard_text.c | ./tools/preproc/preproc -i src/keyboard_text.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/keyboard_text.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/keyboard_text.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/learn_move.c | ./tools/preproc/preproc -i src/learn_move.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/learn_move.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/learn_move.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/librfu_intr.c | ./tools/preproc/preproc -i src/librfu_intr.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/librfu_intr.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from include/librfu.h:4,
+                 from src/librfu_intr.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/librfu_rfu.c | ./tools/preproc/preproc -i src/librfu_rfu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/librfu_rfu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from include/librfu.h:4,
+                 from src/librfu_rfu.c:2:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/librfu_sio32id.c | ./tools/preproc/preproc -i src/librfu_sio32id.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/librfu_sio32id.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from include/librfu.h:4,
+                 from src/librfu_sio32id.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/librfu_stwi.c | ./tools/preproc/preproc -i src/librfu_stwi.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/librfu_stwi.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from include/librfu.h:4,
+                 from src/librfu_stwi.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/link.c | ./tools/preproc/preproc -i src/link.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/link.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/link.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/link_rfu_2.c | ./tools/preproc/preproc -i src/link_rfu_2.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/link_rfu_2.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/link_rfu_2.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/link_rfu_3.c | ./tools/preproc/preproc -i src/link_rfu_3.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/link_rfu_3.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/link_rfu_3.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/list_menu.c | ./tools/preproc/preproc -i src/list_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/list_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/list_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/load_save.c | ./tools/preproc/preproc -i src/load_save.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/load_save.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/load_save.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/m4a.c | ./tools/preproc/preproc -i src/m4a.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/m4a.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/m4a.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/m4a_tables.c | ./tools/preproc/preproc -i src/m4a_tables.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/m4a_tables.o -
+In file included from include/gba/gba.h:5,
+                 from include/gba/m4a_internal.h:4,
+                 from src/m4a_tables.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mail.c | ./tools/preproc/preproc -i src/mail.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mail.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mail.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mail_data.c | ./tools/preproc/preproc -i src/mail_data.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mail_data.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mail_data.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mailbox_pc.c | ./tools/preproc/preproc -i src/mailbox_pc.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mailbox_pc.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mailbox_pc.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/main.c | ./tools/preproc/preproc -i src/main.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/main.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/main.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/main_menu.c | ./tools/preproc/preproc -i src/main_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/main_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/main_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/malloc.c | ./tools/preproc/preproc -i src/malloc.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/malloc.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/malloc.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/map_name_popup.c | ./tools/preproc/preproc -i src/map_name_popup.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/map_name_popup.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/map_name_popup.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/map_preview_screen.c | ./tools/preproc/preproc -i src/map_preview_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/map_preview_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/map_preview_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/math_util.c | ./tools/preproc/preproc -i src/math_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/math_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/math_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/menu.c | ./tools/preproc/preproc -i src/menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/menu2.c | ./tools/preproc/preproc -i src/menu2.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/menu2.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/menu2.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/menu_helpers.c | ./tools/preproc/preproc -i src/menu_helpers.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/menu_helpers.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/menu_helpers.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/menu_indicators.c | ./tools/preproc/preproc -i src/menu_indicators.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/menu_indicators.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/menu_indicators.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/metatile_behavior.c | ./tools/preproc/preproc -i src/metatile_behavior.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/metatile_behavior.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/metatile_behavior.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mini_printf.c | ./tools/preproc/preproc -i src/mini_printf.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mini_printf.o -
+In file included from src/mini_printf.c:37:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/minigame_countdown.c | ./tools/preproc/preproc -i src/minigame_countdown.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/minigame_countdown.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/minigame_countdown.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mon_markings.c | ./tools/preproc/preproc -i src/mon_markings.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mon_markings.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mon_markings.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/money.c | ./tools/preproc/preproc -i src/money.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/money.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/money.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/move_descriptions.c | ./tools/preproc/preproc -i src/move_descriptions.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/move_descriptions.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/move_descriptions.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/multiboot.c | ./tools/preproc/preproc -i src/multiboot.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/multiboot.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/multiboot.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_event_msg.c | ./tools/preproc/preproc -i src/mystery_event_msg.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_event_msg.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_event_msg.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_event_script.c | ./tools/preproc/preproc -i src/mystery_event_script.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_event_script.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_event_script.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_gift.c | ./tools/preproc/preproc -i src/mystery_gift.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_gift.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_gift.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_gift_client.c | ./tools/preproc/preproc -i src/mystery_gift_client.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_gift_client.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_gift_client.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_gift_link.c | ./tools/preproc/preproc -i src/mystery_gift_link.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_gift_link.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_gift_link.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_gift_menu.c | ./tools/preproc/preproc -i src/mystery_gift_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_gift_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_gift_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_gift_scripts.c | ./tools/preproc/preproc -i src/mystery_gift_scripts.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_gift_scripts.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_gift_scripts.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_gift_server.c | ./tools/preproc/preproc -i src/mystery_gift_server.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_gift_server.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_gift_server.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_gift_show_card.c | ./tools/preproc/preproc -i src/mystery_gift_show_card.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_gift_show_card.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_gift_show_card.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/mystery_gift_show_news.c | ./tools/preproc/preproc -i src/mystery_gift_show_news.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/mystery_gift_show_news.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/mystery_gift_show_news.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/naming_screen.c | ./tools/preproc/preproc -i src/naming_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/naming_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/naming_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/new_game.c | ./tools/preproc/preproc -i src/new_game.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/new_game.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/new_game.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/new_menu_helpers.c | ./tools/preproc/preproc -i src/new_menu_helpers.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/new_menu_helpers.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/new_menu_helpers.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/oak_speech.c | ./tools/preproc/preproc -i src/oak_speech.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/oak_speech.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/oak_speech.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/option_menu.c | ./tools/preproc/preproc -i src/option_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/option_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/option_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/overworld.c | ./tools/preproc/preproc -i src/overworld.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/overworld.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/overworld.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/palette.c | ./tools/preproc/preproc -i src/palette.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/palette.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/palette.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/palette_util.c | ./tools/preproc/preproc -i src/palette_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/palette_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/palette_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/party_menu.c | ./tools/preproc/preproc -i src/party_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/party_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/party_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/party_menu_specials.c | ./tools/preproc/preproc -i src/party_menu_specials.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/party_menu_specials.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/party_menu_specials.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pc_screen_effect.c | ./tools/preproc/preproc -i src/pc_screen_effect.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pc_screen_effect.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pc_screen_effect.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/play_time.c | ./tools/preproc/preproc -i src/play_time.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/play_time.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from include/play_time.h:4,
+                 from src/play_time.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/player_pc.c | ./tools/preproc/preproc -i src/player_pc.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/player_pc.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/player_pc.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokeball.c | ./tools/preproc/preproc -i src/pokeball.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokeball.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokeball.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokedex.c | ./tools/preproc/preproc -i src/pokedex.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokedex.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokedex.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokedex_area_markers.c | ./tools/preproc/preproc -i src/pokedex_area_markers.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokedex_area_markers.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokedex_area_markers.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokedex_screen.c | ./tools/preproc/preproc -i src/pokedex_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokedex_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokedex_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon.c | ./tools/preproc/preproc -i src/pokemon.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon.c:3:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_icon.c | ./tools/preproc/preproc -i src/pokemon_icon.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_icon.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_icon.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_jump.c | ./tools/preproc/preproc -i src/pokemon_jump.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_jump.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_jump.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_size_record.c | ./tools/preproc/preproc -i src/pokemon_size_record.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_size_record.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_size_record.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_special_anim.c | ./tools/preproc/preproc -i src/pokemon_special_anim.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_special_anim.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_special_anim.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_special_anim_scene.c | ./tools/preproc/preproc -i src/pokemon_special_anim_scene.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_special_anim_scene.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_special_anim_scene.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_storage_system.c | ./tools/preproc/preproc -i src/pokemon_storage_system.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_storage_system.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_storage_system.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_storage_system_data.c | ./tools/preproc/preproc -i src/pokemon_storage_system_data.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_storage_system_data.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_storage_system_data.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_storage_system_graphics.c | ./tools/preproc/preproc -i src/pokemon_storage_system_graphics.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_storage_system_graphics.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_storage_system_graphics.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_storage_system_menu.c | ./tools/preproc/preproc -i src/pokemon_storage_system_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_storage_system_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_storage_system_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_storage_system_misc.c | ./tools/preproc/preproc -i src/pokemon_storage_system_misc.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_storage_system_misc.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_storage_system_misc.c:2:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_storage_system_tasks.c | ./tools/preproc/preproc -i src/pokemon_storage_system_tasks.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_storage_system_tasks.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_storage_system_tasks.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/pokemon_summary_screen.c | ./tools/preproc/preproc -i src/pokemon_summary_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/pokemon_summary_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/pokemon_summary_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/post_battle_event_funcs.c | ./tools/preproc/preproc -i src/post_battle_event_funcs.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/post_battle_event_funcs.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/post_battle_event_funcs.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/prof_pc.c | ./tools/preproc/preproc -i src/prof_pc.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/prof_pc.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/prof_pc.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/quest_log.c | ./tools/preproc/preproc -i src/quest_log.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/quest_log.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/quest_log.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/quest_log_battle.c | ./tools/preproc/preproc -i src/quest_log_battle.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/quest_log_battle.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/quest_log_battle.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/quest_log_events.c | ./tools/preproc/preproc -i src/quest_log_events.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/quest_log_events.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/quest_log_events.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/quest_log_objects.c | ./tools/preproc/preproc -i src/quest_log_objects.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/quest_log_objects.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/quest_log_objects.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/quest_log_player.c | ./tools/preproc/preproc -i src/quest_log_player.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/quest_log_player.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/quest_log_player.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/random.c | ./tools/preproc/preproc -i src/random.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/random.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/random.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/region_map.c | ./tools/preproc/preproc -i src/region_map.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/region_map.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/region_map.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/renewable_hidden_items.c | ./tools/preproc/preproc -i src/renewable_hidden_items.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/renewable_hidden_items.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/renewable_hidden_items.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/reset_save_heap.c | ./tools/preproc/preproc -i src/reset_save_heap.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/reset_save_heap.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/reset_save_heap.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/reshow_battle_screen.c | ./tools/preproc/preproc -i src/reshow_battle_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/reshow_battle_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/reshow_battle_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/roamer.c | ./tools/preproc/preproc -i src/roamer.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/roamer.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/roamer.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/rom_header_gf.c | ./tools/preproc/preproc -i src/rom_header_gf.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/rom_header_gf.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/rom_header_gf.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/safari_zone.c | ./tools/preproc/preproc -i src/safari_zone.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/safari_zone.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/safari_zone.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/save.c | ./tools/preproc/preproc -i src/save.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/save.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/save.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/save_failed_screen.c | ./tools/preproc/preproc -i src/save_failed_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/save_failed_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/save_failed_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/save_location.c | ./tools/preproc/preproc -i src/save_location.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/save_location.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/save_location.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/save_menu_util.c | ./tools/preproc/preproc -i src/save_menu_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/save_menu_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/save_menu_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/scanline_effect.c | ./tools/preproc/preproc -i src/scanline_effect.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/scanline_effect.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/scanline_effect.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/scrcmd.c | ./tools/preproc/preproc -i src/scrcmd.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/scrcmd.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/scrcmd.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/script.c | ./tools/preproc/preproc -i src/script.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/script.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/script.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/script_menu.c | ./tools/preproc/preproc -i src/script_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/script_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/script_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/script_movement.c | ./tools/preproc/preproc -i src/script_movement.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/script_movement.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/script_movement.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/script_pokemon_util.c | ./tools/preproc/preproc -i src/script_pokemon_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/script_pokemon_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/script_pokemon_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/seagallop.c | ./tools/preproc/preproc -i src/seagallop.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/seagallop.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/seagallop.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/shop.c | ./tools/preproc/preproc -i src/shop.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/shop.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/shop.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/sloopsvc.c | ./tools/preproc/preproc -i src/sloopsvc.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/sloopsvc.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/sloopsvc.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/slot_machine.c | ./tools/preproc/preproc -i src/slot_machine.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/slot_machine.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/slot_machine.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/sound.c | ./tools/preproc/preproc -i src/sound.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/sound.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/sound.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/special_field_anim.c | ./tools/preproc/preproc -i src/special_field_anim.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/special_field_anim.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/special_field_anim.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/sprite.c | ./tools/preproc/preproc -i src/sprite.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/sprite.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/sprite.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/ss_anne.c | ./tools/preproc/preproc -i src/ss_anne.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/ss_anne.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/ss_anne.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/start_menu.c | ./tools/preproc/preproc -i src/start_menu.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/start_menu.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/start_menu.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/string_util.c | ./tools/preproc/preproc -i src/string_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/string_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/string_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/strings.c | ./tools/preproc/preproc -i src/strings.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/strings.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/strings.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/task.c | ./tools/preproc/preproc -i src/task.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/task.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/task.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/teachy_tv.c | ./tools/preproc/preproc -i src/teachy_tv.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/teachy_tv.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from include/task.h:4,
+                 from src/teachy_tv.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/text.c | ./tools/preproc/preproc -i src/text.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/text.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/text.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/text_printer.c | ./tools/preproc/preproc -i src/text_printer.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/text_printer.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/text_printer.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/text_window.c | ./tools/preproc/preproc -i src/text_window.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/text_window.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/text_window.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/text_window_graphics.c | ./tools/preproc/preproc -i src/text_window_graphics.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/text_window_graphics.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/text_window_graphics.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/tilemap_util.c | ./tools/preproc/preproc -i src/tilemap_util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/tilemap_util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/tilemap_util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/tileset_anims.c | ./tools/preproc/preproc -i src/tileset_anims.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/tileset_anims.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/tileset_anims.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/tilesets.c | ./tools/preproc/preproc -i src/tilesets.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/tilesets.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/tilesets.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/title_screen.c | ./tools/preproc/preproc -i src/title_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/title_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/title_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/tm_case.c | ./tools/preproc/preproc -i src/tm_case.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/tm_case.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/tm_case.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trade.c | ./tools/preproc/preproc -i src/trade.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trade.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trade.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trade_scene.c | ./tools/preproc/preproc -i src/trade_scene.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trade_scene.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trade_scene.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trainer_card.c | ./tools/preproc/preproc -i src/trainer_card.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trainer_card.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trainer_card.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trainer_fan_club.c | ./tools/preproc/preproc -i src/trainer_fan_club.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trainer_fan_club.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trainer_fan_club.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trainer_pokemon_sprites.c | ./tools/preproc/preproc -i src/trainer_pokemon_sprites.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trainer_pokemon_sprites.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trainer_pokemon_sprites.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trainer_see.c | ./tools/preproc/preproc -i src/trainer_see.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trainer_see.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trainer_see.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trainer_tower.c | ./tools/preproc/preproc -i src/trainer_tower.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trainer_tower.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trainer_tower.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trainer_tower_sets.c | ./tools/preproc/preproc -i src/trainer_tower_sets.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trainer_tower_sets.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trainer_tower_sets.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/trig.c | ./tools/preproc/preproc -i src/trig.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/trig.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/trig.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/union_room.c | ./tools/preproc/preproc -i src/union_room.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/union_room.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/union_room.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/union_room_battle.c | ./tools/preproc/preproc -i src/union_room_battle.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/union_room_battle.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/union_room_battle.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/union_room_chat.c | ./tools/preproc/preproc -i src/union_room_chat.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/union_room_chat.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/union_room_chat.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/union_room_chat_display.c | ./tools/preproc/preproc -i src/union_room_chat_display.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/union_room_chat_display.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/union_room_chat_display.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/union_room_chat_objects.c | ./tools/preproc/preproc -i src/union_room_chat_objects.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/union_room_chat_objects.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/union_room_chat_objects.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/union_room_message.c | ./tools/preproc/preproc -i src/union_room_message.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/union_room_message.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/union_room_message.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/union_room_player_avatar.c | ./tools/preproc/preproc -i src/union_room_player_avatar.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/union_room_player_avatar.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/union_room_player_avatar.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/util.c | ./tools/preproc/preproc -i src/util.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/util.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/util.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/vs_seeker.c | ./tools/preproc/preproc -i src/vs_seeker.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/vs_seeker.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/vs_seeker.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/wild_encounter.c | ./tools/preproc/preproc -i src/wild_encounter.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/wild_encounter.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/wild_encounter.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/wild_pokemon_area.c | ./tools/preproc/preproc -i src/wild_pokemon_area.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/wild_pokemon_area.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/wild_pokemon_area.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/window.c | ./tools/preproc/preproc -i src/window.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/window.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/window.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/window_8bpp.c | ./tools/preproc/preproc -i src/window_8bpp.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/window_8bpp.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/window_8bpp.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/wireless_communication_status_screen.c | ./tools/preproc/preproc -i src/wireless_communication_status_screen.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/wireless_communication_status_screen.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/wireless_communication_status_screen.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cpp -iquote include -iquote host_src -iquote . -DHOST_BUILD -DFIRERED -DENGLISH src/wonder_news.c | ./tools/preproc/preproc -i src/wonder_news.c charmap.txt | gcc -m32 -x cpp-output -c -o build_host/src/wonder_news.o -
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from src/wonder_news.c:1:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+./tools/preproc/preproc data/battle_ai_scripts.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/battle_ai_scripts.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/battle_ai_scripts.o -
+./tools/preproc/preproc data/battle_anim_scripts.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/battle_anim_scripts.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/battle_anim_scripts.o -
+./tools/preproc/preproc data/battle_scripts_1.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/battle_scripts_1.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/battle_scripts_1.o -
+./tools/preproc/preproc data/battle_scripts_2.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/battle_scripts_2.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/battle_scripts_2.o -
+./tools/preproc/preproc data/event_scripts.s charmap.txt -I asm -I asm/macros \
+  | cpp -iquote host_src/data_patch -iquote include -iquote asm -iquote asm/macros -iquote . - \
+  | ./tools/preproc/preproc -ie data/event_scripts.s charmap.txt -ie asm -ie asm/macros \
+  | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/event_scripts.o -
+Usage: ./tools/preproc/preproc [-i] [-e] SRC_FILE CHARMAP_FILE
+where -i denotes if input is from stdin
+      -e enables enum han./tools/preproc/preproc: invalid option -- 'I'
+Usage: ./tools/preproc/preproc [-i] [-e] SRC_FILE CHARMAP_FILE
+where -i denotes if input is from stdin
+      -e enables enum handling
+dling
+./tools/preproc/preproc data/field_effect_scripts.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/field_effect_scripts.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/field_effect_scripts.o -
+./tools/preproc/preproc data/map_events.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/map_events.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/map_events.o -
+./tools/preproc/preproc data/maps.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/maps.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/maps.o -
+./tools/preproc/preproc data/multiboot_berry_glitch_fix.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/multiboot_berry_glitch_fix.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/multiboot_berry_glitch_fix.o -
+./tools/preproc/preproc data/multiboot_ereader.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/multiboot_ereader.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/multiboot_ereader.o -
+./tools/preproc/preproc data/multiboot_pokemon_colosseum.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/multiboot_pokemon_colosseum.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/multiboot_pokemon_colosseum.o -
+./tools/preproc/preproc data/mystery_event_msg.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/mystery_event_msg.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/mystery_event_msg.o -
+./tools/preproc/preproc data/mystery_event_script_cmd_table.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/mystery_event_script_cmd_table.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/mystery_event_script_cmd_table.o -
+./tools/preproc/preproc data/sound_data.s charmap.txt | cpp -iquote include -iquote asm -iquote . - | ./tools/preproc/preproc -ie data/sound_data.s charmap.txt | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build_host/data/sound_data.o -
+gcc -m32 -DHOST_BUILD -iquote include -iquote host_src -iquote . -c host_src/gamecube_stub.c -o build_host/host_src/gamecube_stub.o
+gcc -m32 -DHOST_BUILD -iquote include -iquote host_src -iquote . -c host_src/heap_host.c -o build_host/host_src/heap_host.o
+In file included from include/gba/gba.h:5,
+                 from include/global.h:5,
+                 from include/malloc.h:4,
+                 from host_src/heap_host.c:2:
+include/gba/defines.h:27:10: fatal error: gba_memory_host.h: No such file or directory
+   27 | #include "gba_memory_host.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Makefile.host:80: build_host/host_src/heap_host.o] Error 1
