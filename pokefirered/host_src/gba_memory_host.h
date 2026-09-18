@@ -2,6 +2,16 @@
 #define GUARD_GBA_MEMORY_HOST_H
 
 #include <setjmp.h>
+#include "gba/types.h"
+
+// This header gets pulled in from inside gba/defines.h, which is included
+// BEFORE gba/types.h in gba.h's own include order. Most files happened to
+// already have u8/u16/u32 defined by the time they reached this point
+// (something earlier in their own chain pulled types.h in first by
+// coincidence) -- but not all of them, hence the scattered compile
+// failures on specific files rather than all 283. Pulling types.h in here
+// directly removes the dependency on include-order luck. Safe to include
+// twice thanks to its own guard.
 
 // Host-side stand-ins for GBA memory-mapped regions.
 // On real hardware these are physical addresses (0x04000000, 0x06000000,
