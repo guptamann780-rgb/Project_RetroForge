@@ -45,9 +45,29 @@ void TrackStop(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *track
 }
 void RealClearChain(void *x) { (void)x; }
 void m4aSoundVSync(void) {}
-void MPlayJumpTableCopy(MPlayFunc *mplayJumpTable) { (void)mplayJumpTable; }
 
 void ply_fine(struct MusicPlayerInfo *a, struct MusicPlayerTrack *b) { (void)a; (void)b; }
+
+// Host replacement for the asm Clear64byte: zero 64 bytes at x.
+// m4a.c calls this via gMPlayJumpTable[35] to clear tracks and MusicPlayerInfo.
+static void Clear64byte_host(void *x)
+{
+    unsigned char *p = (unsigned char *)x;
+    int i;
+    for (i = 0; i < 64; i++)
+        p[i] = 0;
+}
+
+// Host replacement for the asm MPlayJumpTableCopy: fill the RAM dispatch table.
+// Slots 34/35 are called directly by ClearChain/Clear64byte, so they must be real.
+void MPlayJumpTableCopy(MPlayFunc *mplayJumpTable)
+{
+    int i;
+    for (i = 0; i < 36; i++)
+        mplayJumpTable[i] = (MPlayFunc)ply_fine;
+    mplayJumpTable[34] = (MPlayFunc)RealClearChain;
+    mplayJumpTable[35] = (MPlayFunc)Clear64byte_host;
+}
 void ply_goto(struct MusicPlayerInfo *a, struct MusicPlayerTrack *b) { (void)a; (void)b; }
 void ply_patt(struct MusicPlayerInfo *a, struct MusicPlayerTrack *b) { (void)a; (void)b; }
 void ply_pend(struct MusicPlayerInfo *a, struct MusicPlayerTrack *b) { (void)a; (void)b; }

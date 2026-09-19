@@ -145,7 +145,9 @@ void AgbMain()
     InitIntrHandlers();
     m4aSoundInit();
     EnableVCountIntrAtLine150();
-    InitRFU();
+#ifndef HOST_BUILD
+    InitRFU();  // wireless adapter reset polls hardware that doesn't exist on host
+#endif
     CheckForFlashMemory();
     InitMainCallbacks();
     InitMapMusic();
@@ -463,8 +465,16 @@ static void WaitForVBlank(void)
 {
     gMain.intrCheck &= ~INTR_FLAG_VBLANK;
 
+#ifdef HOST_BUILD
+    // No VBlank interrupt on host: run one host frame (pumps SDL events,
+    // presents), then mark VBlank as having occurred.
+    extern void Host_RunFrame(void);
+    Host_RunFrame();
+    gMain.intrCheck |= INTR_FLAG_VBLANK;
+#else
     while (!(gMain.intrCheck & INTR_FLAG_VBLANK))
         ;
+#endif
 }
 
 void SetVBlankCounter1Ptr(u32 *ptr)

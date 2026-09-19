@@ -422,11 +422,15 @@ void SampleFreqSet(u32 freq)
 
     m4aSoundVSyncOn();
 
+#ifndef HOST_BUILD
+    // Real hardware: sync timer 0 to a frame boundary.
+    // On host, VCOUNT is a plain array that never advances, so skip.
     while (*(vu8 *)REG_ADDR_VCOUNT == 159)
         ;
 
     while (*(vu8 *)REG_ADDR_VCOUNT != 159)
         ;
+#endif
 
     REG_TM0CNT_H = TIMER_ENABLE | TIMER_1CLK;
 }

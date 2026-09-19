@@ -52,6 +52,7 @@ src_fail=0
 : > /tmp/src_fail_list.txt
 for f in src/*.c; do
     [ "$f" = "src/host_test.c" ] && continue
+    [ "$f" = "src/agb_flash.c" ] && continue
     src_total=$((src_total + 1))
     name=$(basename "$f" .c)
     logfile="build_host/logs/src_${name}.log"
@@ -86,9 +87,9 @@ for f in data/*.s; do
     logfile="build_host/logs/data_${name}.log"
 
     if [ "$name" = "event_scripts" ]; then
-        ./tools/preproc/preproc "$f" charmap.txt -I asm -I asm/macros 2> "$logfile" \
+        ./tools/preproc/preproc "$f" charmap.txt 2> "$logfile" \
           | cpp -iquote host_src/data_patch -iquote include -iquote asm -iquote asm/macros -iquote . - 2>> "$logfile" \
-          | ./tools/preproc/preproc -ie "$f" charmap.txt -ie asm -ie asm/macros 2>> "$logfile" \
+          | ./tools/preproc/preproc -ie "$f" charmap.txt 2>> "$logfile" \
           | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 \
             -o "build_host/data/${name}_x86.o" - 2>> "$logfile"
     else

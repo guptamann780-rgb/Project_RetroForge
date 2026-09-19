@@ -45,6 +45,11 @@ COMMON_DATA struct PokemonStorage *gPokemonStoragePtr = NULL;
 
 void CheckForFlashMemory(void)
 {
+#ifdef HOST_BUILD
+    // No flash chip on host: skip the hardware probe, report present.
+    gFlashMemoryPresent = TRUE;
+    return;
+#endif
     if (!IdentifyFlash())
     {
         gFlashMemoryPresent = TRUE;

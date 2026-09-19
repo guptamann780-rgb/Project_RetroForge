@@ -12,6 +12,9 @@
 #define HOST_SCALE 3
 #define GBA_REFRESH_HZ (59.7275)
 
+extern u8 gGbaVram[];
+extern u8 gGbaOam[];
+
 static SDL_Window *sWindow;
 static SDL_Renderer *sRenderer;
 static SDL_Texture *sTexture;
@@ -95,23 +98,136 @@ static void PumpEventsAndUpdateKeys(void)
 static void RenderPlaceholderFrame(void)
 {
     u16 *pltt = (u16 *)gGbaPltt;
-    u16 bgr555 = pltt[0];
-
-    u8 r = (bgr555 & 0x1F) << 3;
-    u8 g = ((bgr555 >> 5) & 0x1F) << 3;
-    u8 b = ((bgr555 >> 10) & 0x1F) << 3;
-
     void *pixels;
     int pitch;
+    
     SDL_LockTexture(sTexture, NULL, &pixels, &pitch);
+
+    // 1. Draw the backdrop (Solid background color from Palette 0)
+    u16 bgr_backdrop = pltt[0];
+    u32 rgba_backdrop = (((bgr_backdrop & 0x1F) << 3) << 24) | 
+                        ((((bgr_backdrop >> 5) & 0x1F) << 3) << 16) | 
+                        ((((bgr_backdrop >> 10) & 0x1F) << 3) << 8) | 0xFF;
+
     for (int y = 0; y < DISPLAY_HEIGHT; y++)
     {
         u32 *row = (u32 *)((u8 *)pixels + y * pitch);
         for (int x = 0; x < DISPLAY_WIDTH; x++)
-            row[x] = ((u32)r << 24) | ((u32)g << 16) | ((u32)b << 8) | 0xFF;
+            row[x] = rgba_backdrop;
     }
-    SDL_UnlockTexture(sTexture);
 
+    // 2. Draw Background 0 (Usually contains menus, text, and logos)
+    // Check if BG0 is turned on in the display control register
+    if (REG_DISPCNT & DISPCNT_BG0_ON)
+    {
+        u16 bg0cnt = REG_BG0CNT;
+        
+        // The GBA uses these bits to know where in VRAM the tile graphics and map layouts live
+        u32 charBase = ((bg0cnt >> 2) & 3) * 0x4000;
+        u32 mapBase  = ((bg0cnt >> 8) & 31) * 0x800;
+
+        // Loop through the 30x20 grid of tiles that makes up the 240x160 screen
+        for (int ty = 0; ty < 20; ty++)
+        {
+            for (int tx = 0; tx < 30; tx++)
+            {
+                // Read the tilemap entry (2 bytes per tile)
+                u16 mapEntry = *(u16*)&gGbaVram[mapBase + (ty * 32 + tx) * 2];
+                u16 tileId = mapEntry & 0x3FF;
+                u16 paletteBank = (mapEntry >> 12) & 0xF;
+
+                // Draw the 8x8 pixels for this specific tile
+                for (int py = 0; py < 8; py++)
+                {
+                    for (int px = 0; px < 8; px++)
+                    {
+                        // 4bpp tile data: 32 bytes per tile, 4 bytes per row.
+                        u8 pixelByte = gGbaVram[charBase + (tileId * 32) + (py * 4) + (px / 2)];
+                        
+                        // Extract the 4-bit color index for this specific pixel
+                        u8 colorIdx = (px % 2 == 0) ? (pixelByte & 0x0F) : (pixelByte >> 4);
+
+                        // Color index 0 is transparent, so we only draw if it's > 0
+                        if (colorIdx != 0)
+                        {
+                            u16 color = pltt[paletteBank * 16 + colorIdx];
+                            u8 r = (color & 0x1F) << 3;
+                            u8 g = ((color >> 5) & 0x1F) << 3;
+                            u8 b = ((color >> 10) & 0x1F) << 3;
+                            u32 rgba = ((u32)r << 24) | ((u32)g << 16) | ((u32)b << 8) | 0xFF;
+
+                            // Write to SDL texture
+                            int screenX = (tx * 8) + px;
+                            int screenY = (ty * 8) + py;
+                            u32 *row = (u32 *)((u8 *)pixels + screenY * pitch);
+                            row[screenX] = rgba;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 3. Draw Sprites (OAM)
+    // The GBA has a maximum of 128 hardware sprites
+    for (int i = 0; i < 128; i++)
+    {
+        // Each sprite is defined by three 16-bit attributes
+        u16 attr0 = *(u16*)&gGbaOam[i * 8 + 0];
+        u16 attr1 = *(u16*)&gGbaOam[i * 8 + 2];
+        u16 attr2 = *(u16*)&gGbaOam[i * 8 + 4];
+
+        // If the disable flag is set, skip drawing this sprite
+        if ((attr0 & 0x300) == 0x200) continue; 
+        
+        // Extract X and Y coordinates on the screen
+        int y = attr0 & 0xFF;
+        int x = attr1 & 0x1FF;
+        if (x >= 240) x -= 512; // Handle off-screen wrapping
+        if (y >= 160) y -= 256;
+
+        u16 tileId = attr2 & 0x3FF;
+        u16 paletteBank = (attr2 >> 12) & 0xF;
+        
+        // For right now, we will assume sprites are 16x16 pixels 
+        // (A fully complete renderer checks the size/shape bits in ATTR0 and ATTR1)
+        for (int py = 0; py < 16; py++)
+        {
+            for (int px = 0; px < 16; px++)
+            {
+                int screenX = x + px;
+                int screenY = y + py;
+                
+                // Don't draw pixels that are outside the SDL window
+                if (screenX < 0 || screenX >= DISPLAY_WIDTH || screenY < 0 || screenY >= DISPLAY_HEIGHT) continue;
+                
+                // Calculate which specific 8x8 tile inside the 16x16 sprite we are drawing
+                int tileX = px / 8;
+                int tileY = py / 8;
+                int localPx = px % 8;
+                int localPy = py % 8;
+                
+                // Sprite graphics are stored in the upper half of VRAM (offset 0x10000)
+                int currentTileId = tileId + (tileY * 2) + tileX; 
+                u32 objBase = 0x10000;
+                u8 pixelByte = gGbaVram[objBase + (currentTileId * 32) + (localPy * 4) + (localPx / 2)];
+                u8 colorIdx = (localPx % 2 == 0) ? (pixelByte & 0x0F) : (pixelByte >> 4);
+                
+                // Color index 0 is transparent. If it's not 0, draw it!
+                if (colorIdx != 0)
+                {
+                    // Sprite palettes start exactly halfway through the palette memory (index 256)
+                    u16 color = pltt[256 + paletteBank * 16 + colorIdx];
+                    u32 rgba = (((color & 0x1F) << 3) << 24) | ((((color >> 5) & 0x1F) << 3) << 16) | ((((color >> 10) & 0x1F) << 3) << 8) | 0xFF;
+                    
+                    u32 *row = (u32 *)((u8 *)pixels + screenY * pitch);
+                    row[screenX] = rgba;
+                }
+            }
+        }
+    }
+
+    SDL_UnlockTexture(sTexture);
     SDL_RenderClear(sRenderer);
     SDL_RenderCopy(sRenderer, sTexture, NULL, NULL);
     SDL_RenderPresent(sRenderer);
