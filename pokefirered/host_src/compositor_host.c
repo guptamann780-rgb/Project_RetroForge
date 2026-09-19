@@ -6,6 +6,7 @@
 // per-scanline register changes (HBlank effects).
 
 #include <string.h>
+#include <stdio.h>
 #include "gba/types.h"
 #include "gba/defines.h"
 #include "gba/io_reg.h"
@@ -76,6 +77,43 @@ static void BuildBgLine(int bg, int y, u16 cnt, u16 hofs, u16 vofs)
             int idx = gGbaVram[charBase + tileId * 64 + sy * 8 + sx];
             if (idx) sBg[bg][x] = pltt[idx] & 0x7FFF;
         }
+    }
+}
+
+static void BuildAffineBgLine(int bg, int y, u16 cnt)
+{
+    const u16 *pltt = (const u16 *)gGbaPltt;
+    u32 charBase = ((cnt >> 2) & 3) * 0x4000;
+    u32 mapBase  = ((cnt >> 8) & 31) * 0x800;
+    int sizePx = 128 << ((cnt >> 14) & 3);
+    int wrap = (cnt >> 13) & 1;
+    s32 pa, pb, pc, pd, rx, ry;
+
+    if (bg == 2)
+    {
+        pa = (s16)REG_BG2PA; pb = (s16)REG_BG2PB; pc = (s16)REG_BG2PC; pd = (s16)REG_BG2PD;
+        rx = (s32)REG_BG2X;  ry = (s32)REG_BG2Y;
+    }
+    else
+    {
+        pa = (s16)REG_BG3PA; pb = (s16)REG_BG3PB; pc = (s16)REG_BG3PC; pd = (s16)REG_BG3PD;
+        rx = (s32)REG_BG3X;  ry = (s32)REG_BG3Y;
+    }
+    rx = (s32)((u32)rx << 4) >> 4;   // sign-extend 28-bit reference point
+    ry = (s32)((u32)ry << 4) >> 4;
+    rx += pb * y;
+    ry += pd * y;
+
+    for (int x = 0; x < SCR_W; x++)
+    {
+        int tx = (rx + pa * x) >> 8;
+        int ty = (ry + pc * x) >> 8;
+        sBg[bg][x] = -1;
+        if (wrap) { tx &= sizePx - 1; ty &= sizePx - 1; }
+        else if (tx < 0 || ty < 0 || tx >= sizePx || ty >= sizePx) continue;
+        int tile = gGbaVram[mapBase + (ty >> 3) * (sizePx >> 3) + (tx >> 3)];
+        int idx = gGbaVram[charBase + tile * 64 + (ty & 7) * 8 + (tx & 7)];
+        if (idx) sBg[bg][x] = pltt[idx] & 0x7FFF;
     }
 }
 
@@ -254,6 +292,40 @@ void Host_ComposeFrame(void *pixels, int pitch)
     u16 dispcnt = REG_DISPCNT;
     int mode = dispcnt & 7;
 
+    {
+        static unsigned sDiag = 0;
+        if (++sDiag % 120 == 0)
+            fprintf(stderr, "[win] WININ=%04X WINOUT=%04X WIN0H=%04X WIN0V=%04X WIN1H=%04X WIN1V=%04X BLDCNT=%04X BLDALPHA=%04X BLDY=%04X\n",
+                    REG_WININ, REG_WINOUT, REG_WIN0H, REG_WIN0V, REG_WIN1H, REG_WIN1V, REG_BLDCNT, REG_BLDALPHA, REG_BLDY);
+    }
+    {
+        static unsigned sDiag2 = 0;
+        if (++sDiag2 % 120 == 0)
+        {
+            u16 dcnt[4] = { REG_BG0CNT, REG_BG1CNT, REG_BG2CNT, REG_BG3CNT };
+            for (int b = 0; b < 4; b++)
+            {
+                if (!((dispcnt >> (8 + b)) & 1)) continue;
+                u32 cb = ((dcnt[b] >> 2) & 3) * 0x4000;
+                u32 mb = ((dcnt[b] >> 8) & 31) * 0x800;
+                u32 tsz = (dcnt[b] & 0x80) ? 64 : 32;
+                int nz = 0, px = 0;
+                for (int i = 0; i < 1024; i++)
+                {
+                    u16 e = *(u16 *)&gGbaVram[mb + i * 2];
+                    u32 t = e & 0x3FF;
+                    int any = 0;
+                    if (e) nz++;
+                    for (u32 k = 0; k < tsz && !any; k++)
+                        if (gGbaVram[(cb + t * tsz + k) % 0x18000]) any = 1;
+                    px += any;
+                }
+                fprintf(stderr, "[bg%d] cnt=%04X map=0x%05X char=0x%05X mapEntriesNonZero=%d refsTileWithPixels=%d\n",
+                        b, dcnt[b], mb, cb, nz, px);
+            }
+        }
+    }
+
     if (dispcnt & DC_FORCED_BLANK)
     {
         for (int y = 0; y < SCR_H; y++)
@@ -269,11 +341,14 @@ void Host_ComposeFrame(void *pixels, int pitch)
     u16 bgVofs[4] = { REG_BG0VOFS, REG_BG1VOFS, REG_BG2VOFS, REG_BG3VOFS };
 
     int bgActive[4];
+    int bgAffine[4];
     for (int bg = 0; bg < 4; bg++)
     {
         int on = (dispcnt >> (8 + bg)) & 1;
         int text = (mode == 0) || (mode == 1 && bg < 2);
-        bgActive[bg] = on && text;
+        int aff = (mode == 1 && bg == 2) || (mode == 2 && bg >= 2);
+        bgActive[bg] = on && (text || aff);
+        bgAffine[bg] = aff;
     }
 
     int objOn = (dispcnt & DC_OBJ_ON) != 0;
@@ -291,8 +366,11 @@ void Host_ComposeFrame(void *pixels, int pitch)
     for (int y = 0; y < SCR_H; y++)
     {
         for (int bg = 0; bg < 4; bg++)
-            if (bgActive[bg])
-                BuildBgLine(bg, y, bgCnt[bg], bgHofs[bg] & 0x1FF, bgVofs[bg] & 0x1FF);
+        {
+            if (!bgActive[bg]) continue;
+            if (bgAffine[bg]) BuildAffineBgLine(bg, y, bgCnt[bg]);
+            else BuildBgLine(bg, y, bgCnt[bg], bgHofs[bg] & 0x1FF, bgVofs[bg] & 0x1FF);
+        }
 
         if (objOn) BuildObjLine(y, is1D);
         else
