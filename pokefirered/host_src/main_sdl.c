@@ -15,6 +15,7 @@
 
 extern u8 gGbaVram[];
 extern u8 gGbaOam[];
+extern void Host_ComposeFrame(void *pixels, int pitch);
 
 static SDL_Window *sWindow;
 static SDL_Renderer *sRenderer;
@@ -232,7 +233,7 @@ static void RenderPlaceholderFrame(void)
 
     for (int prio = 3; prio >= 0; prio--)
     {
-        for (int bg = 0; bg < 4; bg++)
+        for (int bg = 3; bg >= 0; bg--)
         {
             // BG2/BG3 in affine modes (1, 2) need matrix-based rendering
             // we don't do yet -- skip rather than misread them as text BGs.
@@ -353,6 +354,7 @@ static void RenderPlaceholderFrame(void)
         }
     }
 
+    Host_ComposeFrame(pixels, pitch);  // new compositor overwrites the placeholder draw above
     SDL_UnlockTexture(sTexture);
     SDL_RenderClear(sRenderer);
     SDL_RenderCopy(sRenderer, sTexture, NULL, NULL);

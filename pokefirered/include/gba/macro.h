@@ -31,6 +31,11 @@
 
 #define CpuFastCopy(src, dest, size) CpuFastSet(src, dest, ((size)/(32/8) & 0x1FFFFF))
 
+#ifdef HOST_BUILD
+extern void Host_DmaSet(int, unsigned int, unsigned int, unsigned int);
+#define DmaSet(dmaNum, src, dest, control) \
+    Host_DmaSet(dmaNum, (unsigned int)(src), (unsigned int)(dest), (unsigned int)(control))
+#else
 #define DmaSet(dmaNum, src, dest, control)        \
 {                                                 \
     vu32 *dmaRegs = (vu32 *)REG_ADDR_DMA##dmaNum; \
@@ -39,6 +44,7 @@
     dmaRegs[2] = (vu32)(control);                 \
     dmaRegs[2];                                   \
 }
+#endif
 
 #define DMA_FILL(dmaNum, value, dest, size, bit)                                              \
 {                                                                                             \
