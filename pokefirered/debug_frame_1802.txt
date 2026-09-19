@@ -1,0 +1,1 @@
+frame=1802 DISPCNT=0x9F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1F80/0x1E05/0x1D0A/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0

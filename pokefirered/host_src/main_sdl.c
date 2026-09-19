@@ -2,6 +2,7 @@
 
 #include <SDL2/SDL.h>
 #include <setjmp.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "gba/types.h"
 #include "gba/defines.h"
@@ -18,6 +19,7 @@ extern u8 gGbaOam[];
 static SDL_Window *sWindow;
 static SDL_Renderer *sRenderer;
 static SDL_Texture *sTexture;
+static volatile int sScreenshotRequested = 0;
 
 // Default host keyboard mapping. Nothing fancy yet -- config/remapping is
 // a later problem, same spirit as "sound is a fancy problem, tackle last".
@@ -76,6 +78,9 @@ static void PumpEventsAndUpdateKeys(void)
         }
         if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP)
         {
+            if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_p)
+                sScreenshotRequested = 1;
+
             u16 bit = KeycodeToGbaBit(e.key.keysym.sym);
             if (bit)
             {
@@ -88,13 +93,108 @@ static void PumpEventsAndUpdateKeys(void)
     }
 }
 
-// PLACEHOLDER. The real compositor (reads VRAM/OAM/PLTT, draws tiles +
-// sprites per BG/OBJ registers) is explicitly "not started yet" per your
-// own project notes -- that's real, substantial work, not something to
-// fake here. This just proves palette RAM is alive end-to-end: it reads
-// the actual backdrop color the game is really writing via
-// SetBackdropFromColor()/palette fades, converts real GBA BGR555 to
-// RGBA8888, and fills the screen with it. One correct pixel, not zero.
+// OBJ shape/size -> pixel dimensions. Indexed [shape][size], both taken
+// straight from ATTR0 bits 14-15 (shape) and ATTR1 bits 14-15 (size).
+// This is the real GBA table -- shape 3 is undefined hardware behavior,
+// left as 8x8 here just so nothing reads out of bounds.
+static const struct { u8 w, h; } sObjSizeTable[4][4] =
+{
+    /* shape 0: square     */ {{8,8},   {16,16}, {32,32}, {64,64}},
+    /* shape 1: horizontal */ {{16,8},  {32,8},  {32,16}, {64,32}},
+    /* shape 2: vertical   */ {{8,16},  {8,32},  {16,32}, {32,64}},
+    /* shape 3: invalid    */ {{8,8},   {8,8},   {8,8},   {8,8}}
+};
+
+// Draws one regular (text-mode, non-affine) background layer into the
+// framebuffer, honoring its own screen-size (32x32 / 64x32 / 32x64 /
+// 64x64 tile map), 4bpp vs 8bpp tile depth, and hardware scroll
+// (HOFS/VOFS) registers. This does NOT handle affine BGs (rotation/
+// scaling) -- if the star-field intro turns out to use an affine BG2/3,
+// this still won't draw it; that needs BGxPA/PB/PC/PD matrix math on
+// top of this, which is a separate, larger piece of work.
+static void DrawBgLayer(void *pixels, int pitch, u16 bgcnt, u16 hofs, u16 vofs)
+{
+    u16 *pltt = (u16 *)gGbaPltt;
+    u32 charBase = ((bgcnt >> 2) & 3) * 0x4000;
+    u32 mapBase  = ((bgcnt >> 8) & 31) * 0x800;
+    u8  screenSizeBits = (bgcnt >> 14) & 3;
+    int is8bpp = (bgcnt & (1 << 7)) != 0;
+
+    // Tile-map width/height in tiles for each of the 4 possible layouts.
+    // Layout of 64-wide/64-tall maps is 2 (or 4) 32x32 "screen blocks"
+    // laid out left-to-right then top-to-bottom in VRAM, 0x800 apart.
+    int mapTilesW = (screenSizeBits == 1 || screenSizeBits == 3) ? 64 : 32;
+    int mapTilesH = (screenSizeBits == 2 || screenSizeBits == 3) ? 64 : 32;
+
+    for (int screenY = 0; screenY < DISPLAY_HEIGHT; screenY++)
+    {
+        int bgY = (screenY + vofs) % (mapTilesH * 8);
+        int ty  = bgY / 8;
+        int py  = bgY % 8;
+
+        for (int screenX = 0; screenX < DISPLAY_WIDTH; screenX++)
+        {
+            int bgX = (screenX + hofs) % (mapTilesW * 8);
+            int tx  = bgX / 8;
+            int px  = bgX % 8;
+
+            // Which 32x32 screen-block this tile falls in, and the
+            // block's base offset in VRAM.
+            int blockX = tx / 32;
+            int blockY = ty / 32;
+            int blocksPerRow = mapTilesW / 32;
+            int blockIndex = blockY * blocksPerRow + blockX;
+            u32 blockBase = mapBase + (u32)blockIndex * 0x800;
+
+            int localTx = tx % 32;
+            int localTy = ty % 32;
+            u16 mapEntry = *(u16 *)&gGbaVram[blockBase + (localTy * 32 + localTx) * 2];
+            u16 tileId = mapEntry & 0x3FF;
+            int flipX = (mapEntry & 0x400) != 0;
+            int flipY = (mapEntry & 0x800) != 0;
+            u16 paletteBank = (mapEntry >> 12) & 0xF;
+
+            int sampleX = flipX ? (7 - px) : px;
+            int sampleY = flipY ? (7 - py) : py;
+
+            u16 color;
+            if (!is8bpp)
+            {
+                u8 byte = gGbaVram[charBase + tileId * 32 + sampleY * 4 + sampleX / 2];
+                u8 colorIdx = (sampleX % 2 == 0) ? (byte & 0x0F) : (byte >> 4);
+                if (colorIdx == 0)
+                    continue; // transparent, let a lower-priority layer show through
+                color = pltt[paletteBank * 16 + colorIdx];
+            }
+            else
+            {
+                u8 colorIdx = gGbaVram[charBase + tileId * 64 + sampleY * 8 + sampleX];
+                if (colorIdx == 0)
+                    continue;
+                color = pltt[colorIdx]; // 8bpp tiles always use the full 256-color palette
+            }
+
+            u8 r = (color & 0x1F) << 3;
+            u8 g = ((color >> 5) & 0x1F) << 3;
+            u8 b = ((color >> 10) & 0x1F) << 3;
+            u32 rgba = ((u32)r << 24) | ((u32)g << 16) | ((u32)b << 8) | 0xFF;
+
+            u32 *row = (u32 *)((u8 *)pixels + screenY * pitch);
+            row[screenX] = rgba;
+        }
+    }
+}
+
+// PLACEHOLDER, upgraded from "BG0 + fixed 16x16 sprites only" to a
+// multi-layer compositor: draws BG0-BG3 in real hardware priority order
+// (bits 0-1 of each BGxCNT; lower value = drawn on top) with scroll
+// support, then sprites on top sized from their real OBJ shape/size
+// bits instead of being hardcoded to 16x16. Still NOT implemented:
+// affine backgrounds/sprites (rotation & scaling -- BGxPA/PB/PC/PD,
+// OBJ attr0 bit 8), mosaic, and the BLDCNT/BLDY alpha/brightness blend
+// used for fades. If a screen still shows wrong/black after this, the
+// next suspect is one of those, most likely a brightness fade (BLDY)
+// leaving the framebuffer at "faded" values we never blend back in.
 static void RenderPlaceholderFrame(void)
 {
     u16 *pltt = (u16 *)gGbaPltt;
@@ -116,110 +216,136 @@ static void RenderPlaceholderFrame(void)
             row[x] = rgba_backdrop;
     }
 
-    // 2. Draw Background 0 (Usually contains menus, text, and logos)
-    // Check if BG0 is turned on in the display control register
-    if (REG_DISPCNT & DISPCNT_BG0_ON)
+    // 2. Draw all four regular BG layers, lowest hardware priority first
+    //    (priority 3) up to highest (priority 0), so priority-0 content
+    //    ends up on top -- matches real GBA layering rules. BG2/BG3 are
+    //    only correct here if the game is actually running them in text
+    //    mode; if DISPCNT's mode bits say mode 1 or 2, BG2/3 are affine
+    //    on real hardware and this text-mode path will misread them.
+    u8 dispcntMode = REG_DISPCNT & 0x7;
+    struct { u16 cnt; u16 hofs, vofs; u32 onFlag; } bgs[4] = {
+        { REG_BG0CNT, REG_BG0HOFS, REG_BG0VOFS, DISPCNT_BG0_ON },
+        { REG_BG1CNT, REG_BG1HOFS, REG_BG1VOFS, DISPCNT_BG1_ON },
+        { REG_BG2CNT, REG_BG2HOFS, REG_BG2VOFS, DISPCNT_BG2_ON },
+        { REG_BG3CNT, REG_BG3HOFS, REG_BG3VOFS, DISPCNT_BG3_ON },
+    };
+
+    for (int prio = 3; prio >= 0; prio--)
     {
-        u16 bg0cnt = REG_BG0CNT;
-        
-        // The GBA uses these bits to know where in VRAM the tile graphics and map layouts live
-        u32 charBase = ((bg0cnt >> 2) & 3) * 0x4000;
-        u32 mapBase  = ((bg0cnt >> 8) & 31) * 0x800;
-
-        // Loop through the 30x20 grid of tiles that makes up the 240x160 screen
-        for (int ty = 0; ty < 20; ty++)
+        for (int bg = 0; bg < 4; bg++)
         {
-            for (int tx = 0; tx < 30; tx++)
-            {
-                // Read the tilemap entry (2 bytes per tile)
-                u16 mapEntry = *(u16*)&gGbaVram[mapBase + (ty * 32 + tx) * 2];
-                u16 tileId = mapEntry & 0x3FF;
-                u16 paletteBank = (mapEntry >> 12) & 0xF;
+            // BG2/BG3 in affine modes (1, 2) need matrix-based rendering
+            // we don't do yet -- skip rather than misread them as text BGs.
+            int isAffineOnly = (bg == 3 && dispcntMode == 1) ||
+                                 ((bg == 2 || bg == 3) && dispcntMode == 2);
+            if (isAffineOnly)
+                continue;
 
-                // Draw the 8x8 pixels for this specific tile
-                for (int py = 0; py < 8; py++)
-                {
-                    for (int px = 0; px < 8; px++)
-                    {
-                        // 4bpp tile data: 32 bytes per tile, 4 bytes per row.
-                        u8 pixelByte = gGbaVram[charBase + (tileId * 32) + (py * 4) + (px / 2)];
-                        
-                        // Extract the 4-bit color index for this specific pixel
-                        u8 colorIdx = (px % 2 == 0) ? (pixelByte & 0x0F) : (pixelByte >> 4);
+            if (!(REG_DISPCNT & bgs[bg].onFlag))
+                continue;
+            if ((bgs[bg].cnt & 3) != prio)
+                continue;
 
-                        // Color index 0 is transparent, so we only draw if it's > 0
-                        if (colorIdx != 0)
-                        {
-                            u16 color = pltt[paletteBank * 16 + colorIdx];
-                            u8 r = (color & 0x1F) << 3;
-                            u8 g = ((color >> 5) & 0x1F) << 3;
-                            u8 b = ((color >> 10) & 0x1F) << 3;
-                            u32 rgba = ((u32)r << 24) | ((u32)g << 16) | ((u32)b << 8) | 0xFF;
-
-                            // Write to SDL texture
-                            int screenX = (tx * 8) + px;
-                            int screenY = (ty * 8) + py;
-                            u32 *row = (u32 *)((u8 *)pixels + screenY * pitch);
-                            row[screenX] = rgba;
-                        }
-                    }
-                }
-            }
+            DrawBgLayer(pixels, pitch, bgs[bg].cnt, bgs[bg].hofs, bgs[bg].vofs);
         }
     }
 
-    // 3. Draw Sprites (OAM)
-    // The GBA has a maximum of 128 hardware sprites
-    for (int i = 0; i < 128; i++)
+    // 3. Draw Sprites (OAM), sized from their real shape/size bits instead
+    // of a hardcoded 16x16. Sprite-vs-BG priority interleaving (a sprite
+    // with priority 2 should sit behind a priority-1 BG) is NOT modeled --
+    // all sprites are drawn on top of every BG layer here, which is a
+    // simplification, not real hardware behavior.
+    //
+    // Gated on DISPCNT bit 12 (global OBJ enable) -- without this, once a
+    // screen turns sprites off, whatever was last sitting in OAM (e.g. a
+    // previous screen's sprites, never cleared) gets drawn anyway. That's
+    // exactly what the "floating blobs on a flat backdrop" screenshot was:
+    // real leftover star-sprite data from the previous screen, rendered
+    // during a screen where the game never intended sprites to show at all.
+    int spritesDrawnCount = 0;
+    int affineSpriteCount = 0;
+    if (REG_DISPCNT & (1 << 12))
     {
-        // Each sprite is defined by three 16-bit attributes
-        u16 attr0 = *(u16*)&gGbaOam[i * 8 + 0];
-        u16 attr1 = *(u16*)&gGbaOam[i * 8 + 2];
-        u16 attr2 = *(u16*)&gGbaOam[i * 8 + 4];
-
-        // If the disable flag is set, skip drawing this sprite
-        if ((attr0 & 0x300) == 0x200) continue; 
-        
-        // Extract X and Y coordinates on the screen
-        int y = attr0 & 0xFF;
-        int x = attr1 & 0x1FF;
-        if (x >= 240) x -= 512; // Handle off-screen wrapping
-        if (y >= 160) y -= 256;
-
-        u16 tileId = attr2 & 0x3FF;
-        u16 paletteBank = (attr2 >> 12) & 0xF;
-        
-        // For right now, we will assume sprites are 16x16 pixels 
-        // (A fully complete renderer checks the size/shape bits in ATTR0 and ATTR1)
-        for (int py = 0; py < 16; py++)
+        for (int i = 0; i < 128; i++)
         {
-            for (int px = 0; px < 16; px++)
+            u16 attr0 = *(u16*)&gGbaOam[i * 8 + 0];
+            u16 attr1 = *(u16*)&gGbaOam[i * 8 + 2];
+            u16 attr2 = *(u16*)&gGbaOam[i * 8 + 4];
+
+            int isAffine = (attr0 & (1 << 8)) != 0;
+
+            // Non-affine sprites: bit 9 is the "disabled" flag.
+            // Affine sprites: bit 9 is "double-size" instead, and there is
+            // no disable flag -- an affine OBJ is only hidden by having its
+            // affine index or size make it draw nothing.
+            if (!isAffine && (attr0 & 0x200)) continue;
+
+            if (isAffine) affineSpriteCount++;
+
+            // NOT YET HANDLED: affine sprites need their pixel positions
+            // run through a rotation/scaling matrix (stored elsewhere in
+            // OAM, indexed by attr1 bits 9-13) instead of being sampled
+            // straight through. Drawing them here without that transform
+            // means an affine sprite's shape/position on screen will be
+            // wrong -- possibly wrong enough to look absent. If the trace
+            // below shows affine sprites present exactly when stars should
+            // be visible, that's the next thing to actually implement.
+            if (isAffine) continue;
+
+            spritesDrawnCount++;
+
+            int y = attr0 & 0xFF;
+            int x = attr1 & 0x1FF;
+            if (x >= 240) x -= 512;
+            if (y >= 160) y -= 256;
+
+            u8 shape = (attr0 >> 14) & 3;
+            u8 size  = (attr1 >> 14) & 3;
+            int objW = sObjSizeTable[shape][size].w;
+            int objH = sObjSizeTable[shape][size].h;
+            int tilesPerRow = objW / 8;
+
+            u16 tileId = attr2 & 0x3FF;
+            u16 paletteBank = (attr2 >> 12) & 0xF;
+            int is8bpp = (attr0 & (1 << 13)) != 0;
+            int flipX = (attr1 & (1 << 12)) != 0;
+            int flipY = (attr1 & (1 << 13)) != 0;
+
+            for (int py = 0; py < objH; py++)
             {
-                int screenX = x + px;
-                int screenY = y + py;
-                
-                // Don't draw pixels that are outside the SDL window
-                if (screenX < 0 || screenX >= DISPLAY_WIDTH || screenY < 0 || screenY >= DISPLAY_HEIGHT) continue;
-                
-                // Calculate which specific 8x8 tile inside the 16x16 sprite we are drawing
-                int tileX = px / 8;
-                int tileY = py / 8;
-                int localPx = px % 8;
-                int localPy = py % 8;
-                
-                // Sprite graphics are stored in the upper half of VRAM (offset 0x10000)
-                int currentTileId = tileId + (tileY * 2) + tileX; 
-                u32 objBase = 0x10000;
-                u8 pixelByte = gGbaVram[objBase + (currentTileId * 32) + (localPy * 4) + (localPx / 2)];
-                u8 colorIdx = (localPx % 2 == 0) ? (pixelByte & 0x0F) : (pixelByte >> 4);
-                
-                // Color index 0 is transparent. If it's not 0, draw it!
-                if (colorIdx != 0)
+                for (int px = 0; px < objW; px++)
                 {
-                    // Sprite palettes start exactly halfway through the palette memory (index 256)
-                    u16 color = pltt[256 + paletteBank * 16 + colorIdx];
+                    int screenX = x + px;
+                    int screenY = y + py;
+                    if (screenX < 0 || screenX >= DISPLAY_WIDTH || screenY < 0 || screenY >= DISPLAY_HEIGHT) continue;
+
+                    int sx = flipX ? (objW - 1 - px) : px;
+                    int sy = flipY ? (objH - 1 - py) : py;
+                    int tileX = sx / 8, tileY = sy / 8;
+                    int localPx = sx % 8, localPy = sy % 8;
+
+                    // In 1D OBJ mapping (the common case for these decomps),
+                    // tiles run left-to-right then wrap to the next row.
+                    int currentTileId = tileId + (is8bpp ? (tileY * tilesPerRow + tileX) * 2
+                                                          : tileY * tilesPerRow + tileX);
+                    u32 objBase = 0x10000;
+
+                    u16 color;
+                    if (!is8bpp)
+                    {
+                        u8 pixelByte = gGbaVram[objBase + (currentTileId * 32) + (localPy * 4) + (localPx / 2)];
+                        u8 colorIdx = (localPx % 2 == 0) ? (pixelByte & 0x0F) : (pixelByte >> 4);
+                        if (colorIdx == 0) continue;
+                        color = pltt[256 + paletteBank * 16 + colorIdx];
+                    }
+                    else
+                    {
+                        u8 colorIdx = gGbaVram[objBase + (currentTileId * 32) + localPy * 8 + localPx];
+                        if (colorIdx == 0) continue;
+                        color = pltt[256 + colorIdx];
+                    }
+
                     u32 rgba = (((color & 0x1F) << 3) << 24) | ((((color >> 5) & 0x1F) << 3) << 16) | ((((color >> 10) & 0x1F) << 3) << 8) | 0xFF;
-                    
                     u32 *row = (u32 *)((u8 *)pixels + screenY * pitch);
                     row[screenX] = rgba;
                 }
@@ -231,6 +357,70 @@ static void RenderPlaceholderFrame(void)
     SDL_RenderClear(sRenderer);
     SDL_RenderCopy(sRenderer, sTexture, NULL, NULL);
     SDL_RenderPresent(sRenderer);
+
+    static u32 sFrameCount = 0;
+    sFrameCount++;
+
+    // Press P at any point to dump the exact current frame (upscaled, as
+    // actually drawn) plus a text file with every register value used to
+    // draw it -- both timestamped together so they're guaranteed to match.
+    // This replaces guessing from periodic register dumps: when a screen
+    // looks wrong, capture it, and the .txt tells us exactly what BG/OBJ
+    // state produced that specific picture.
+    if (sScreenshotRequested)
+    {
+        sScreenshotRequested = 0;
+
+        int winW, winH;
+        SDL_GetWindowSize(sWindow, &winW, &winH);
+        SDL_Surface *shot = SDL_CreateRGBSurfaceWithFormat(0, winW, winH, 32, SDL_PIXELFORMAT_RGBA32);
+        if (shot)
+        {
+            if (SDL_RenderReadPixels(sRenderer, NULL, SDL_PIXELFORMAT_RGBA32, shot->pixels, shot->pitch) == 0)
+            {
+                char bmpPath[64], txtPath[64];
+                snprintf(bmpPath, sizeof(bmpPath), "debug_frame_%u.bmp", sFrameCount);
+                snprintf(txtPath, sizeof(txtPath), "debug_frame_%u.txt", sFrameCount);
+                SDL_SaveBMP(shot, bmpPath);
+
+                FILE *f = fopen(txtPath, "w");
+                if (f)
+                {
+                    fprintf(f,
+                        "frame=%u DISPCNT=0x%04X mode=%d BG0/1/2/3 on=%d/%d/%d/%d "
+                        "cnt=0x%04X/0x%04X/0x%04X/0x%04X OBJ_on=%d drawn=%d affine_skipped=%d\n",
+                        sFrameCount, REG_DISPCNT, dispcntMode,
+                        (REG_DISPCNT & DISPCNT_BG0_ON) != 0, (REG_DISPCNT & DISPCNT_BG1_ON) != 0,
+                        (REG_DISPCNT & DISPCNT_BG2_ON) != 0, (REG_DISPCNT & DISPCNT_BG3_ON) != 0,
+                        bgs[0].cnt, bgs[1].cnt, bgs[2].cnt, bgs[3].cnt,
+                        (REG_DISPCNT & (1 << 12)) != 0, spritesDrawnCount, affineSpriteCount);
+                    fclose(f);
+                }
+                fprintf(stderr, "[screenshot] saved %s + %s\n", bmpPath, txtPath);
+            }
+            SDL_FreeSurface(shot);
+        }
+    }
+
+    // Lightweight diagnostic trace -- cheap enough to leave on while you're
+    // chasing the "goes black" transitions. If the frame counter keeps
+    // climbing while the screen looks stuck black, it's a missing-layer/
+    // blend problem (see the caveats above this function), NOT a hang.
+    // If the counter stops incrementing and the window ignores clicks,
+    // that's a real hang, same class as the earlier CheckForFlashMemory/
+    // InitRFU spin -- go back to the fprintf/gdb approach from step 5 of
+    // the handoff doc, but starting from wherever this trace last fired.
+    if (sFrameCount % 120 == 0)
+    {
+        fprintf(stderr,
+            "[frame %u] DISPCNT=0x%04X mode=%d BG0/1/2/3 on=%d/%d/%d/%d cnt=0x%04X/0x%04X/0x%04X/0x%04X "
+            "OBJ_on=%d drawn=%d affine_skipped=%d\n",
+            sFrameCount, REG_DISPCNT, dispcntMode,
+            (REG_DISPCNT & DISPCNT_BG0_ON) != 0, (REG_DISPCNT & DISPCNT_BG1_ON) != 0,
+            (REG_DISPCNT & DISPCNT_BG2_ON) != 0, (REG_DISPCNT & DISPCNT_BG3_ON) != 0,
+            bgs[0].cnt, bgs[1].cnt, bgs[2].cnt, bgs[3].cnt,
+            (REG_DISPCNT & (1 << 12)) != 0, spritesDrawnCount, affineSpriteCount);
+    }
 }
 
 // Called from main.c's WaitForVBlank() once per real GBA frame, and also
