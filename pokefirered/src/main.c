@@ -162,7 +162,7 @@ void AgbMain()
     SetNotInSaveFailedScreen();
 
     // Revision 10 has no calls into libisagbprn except this one.
-#if !defined(NDEBUG) || REVISION >= 0xA
+#if (!defined(NDEBUG) || REVISION >= 0xA) && !defined(HOST_BUILD)
 #if (LOG_HANDLER == LOG_HANDLER_MGBA_PRINT)
     (void) MgbaOpen();
 #elif (LOG_HANDLER == LOG_HANDLER_AGB_PRINT)
