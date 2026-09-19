@@ -15,6 +15,8 @@
 #include <stdio.h>
 #include "gba/multiboot.h"
 #include "gba/syscall.h"
+#include "gba/io_reg.h"
+
 
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
@@ -333,6 +335,9 @@ void ObjAffineSet(struct ObjAffineSrcData *src, void *dest, s32 count, s32 offse
 void RegisterRamReset(u32 resetFlags)
 {
     (void)resetFlags;
+
+// (b) your host RegisterRamReset, when (flags & 0x80) or RESET_ALL
+REG_BG2PA = 0x100; REG_BG2PD = 0x100; REG_BG3PA = 0x100; REG_BG3PD = 0x100;
     // TODO: memset the real host-side memory arrays once they exist.
 }
 

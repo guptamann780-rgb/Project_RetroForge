@@ -723,7 +723,11 @@ static bool8 MainState_Exit(void)
         SetMainCallback2(sNamingScreen->returnCallback);
         DestroyTask(FindTaskIdByFunc(Task_NamingScreen));
         FreeAllWindowBuffers();
+#ifdef HOST_BUILD
+        Free(sNamingScreen);   // keep pointer valid for the rest of this frame
+#else
         FREE_AND_SET_NULL(sNamingScreen);
+#endif
         RestoreHelpContext();
     }
     return FALSE;

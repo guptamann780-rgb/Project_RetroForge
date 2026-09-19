@@ -9,6 +9,7 @@
 #include "gba/io_reg.h"
 #include "main.h"
 #include "gba_memory_host.h"
+#include <sys/mman.h>
 
 #define HOST_SCALE 3
 #define GBA_REFRESH_HZ (59.7275)
@@ -21,6 +22,17 @@ static SDL_Window *sWindow;
 static SDL_Renderer *sRenderer;
 static SDL_Texture *sTexture;
 static volatile int sScreenshotRequested = 0;
+
+
+// GBA tolerates reads through small NULL offsets (they hit the BIOS area).
+// On x86 they would SIGSEGV, so map page 0 as readable/writable zeros.
+static void Host_MapZeroPage(void)
+{
+    void *p = mmap((void *)0, 0x10000, PROT_READ | PROT_WRITE,
+                   MAP_FIXED | MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+    if (p == MAP_FAILED)
+        perror("[host] mmap page 0 failed (need: sudo sysctl -w vm.mmap_min_addr=0)");
+}
 
 // Default host keyboard mapping. Nothing fancy yet -- config/remapping is
 // a later problem, same spirit as "sound is a fancy problem, tackle last".
@@ -460,7 +472,11 @@ int main(int argc, char **argv)
     (void)argc;
     (void)argv;
 
+        Host_MapZeroPage();
     InitGbaMemoryHost();
+    // (a) main() in main_sdl.c, right after InitGbaMemoryHost()
+REG_BG2PA = 0x100; REG_BG2PD = 0x100; REG_BG3PA = 0x100; REG_BG3PD = 0x100;
+
     Host_InitFrontend();
 
     // SoftReset() longjmps back here (see agbmain_syscalls_host.c) --
@@ -472,5 +488,7 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
+
 
 #endif // HOST_BUILD

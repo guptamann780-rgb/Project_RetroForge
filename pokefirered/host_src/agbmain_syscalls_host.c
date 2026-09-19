@@ -40,5 +40,8 @@ void SoftReset(u32 resetFlags)
 {
     (void)resetFlags;
     InitGbaMemoryHost();
+
+// (b) your host RegisterRamReset, when (flags & 0x80) or RESET_ALL
+REG_BG2PA = 0x100; REG_BG2PD = 0x100; REG_BG3PA = 0x100; REG_BG3PD = 0x100;
     longjmp(gAgbMainResetPoint, 1);
 }

@@ -53,11 +53,14 @@
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
+#include "dma3.h"
 
 #define PLAYER_LINK_STATE_IDLE 0x80
 #define PLAYER_LINK_STATE_BUSY 0x81
 #define PLAYER_LINK_STATE_READY 0x82
 #define PLAYER_LINK_STATE_EXITING_ROOM 0x83
+
+
 
 enum LinkFacing
 {
@@ -221,6 +224,8 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite);
 
 extern const struct MapLayout * gMapLayouts[];
 extern const struct MapHeader *const *gMapGroups[];
+
+
 
 // Routines related to game state on warping in
 
@@ -1933,6 +1938,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 inLink)
     return FALSE;
 }
 
+
 static bool32 ReturnToFieldLocal(u8 *state)
 {
     switch (*state)
@@ -2040,9 +2046,18 @@ static bool32 ReturnToFieldLink(u8 *state)
     return FALSE;
 }
 
+#ifdef HOST_BUILD
+void ProcessDma3Requests(void);   // overworld.c doesn't include dma3.h
+#endif
+
 static void DoMapLoadLoop(u8 *state)
 {
+#ifdef HOST_BUILD
+    while (!LoadMapInStepsLocal(state, FALSE))
+        ProcessDma3Requests();
+#else
     while (!LoadMapInStepsLocal(state, FALSE)) ;
+#endif
 }
 
 static void MoveSaveBlocks_ResetHeap_(void)
