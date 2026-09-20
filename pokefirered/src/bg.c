@@ -494,6 +494,10 @@ bool8 IsDma3ManagerBusyWithBgCopy(void)
 {
     int i;
 
+    #ifdef HOST_BUILD
+    ProcessDma3Requests();   // host has no async VBlank; drain the queue here
+    #endif
+
     for (i = 0; i < 0x80; i++)
     {
         u8 div = i / 0x20;
