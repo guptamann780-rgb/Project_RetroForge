@@ -242,6 +242,13 @@ static const u8 sLinkErrorTextColor[] = { 0x00, 0x01, 0x02 };
 
 bool8 IsWirelessAdapterConnected(void)
 {
+    #ifdef HOST_BUILD
+    // No adapter on the host. The real RFU probe spins on hardware timers
+    // (AgbRFU_SoftReset: while (*timerL <= 0x11)) that never tick here.
+    gWirelessCommType = 0;
+    return FALSE;
+    #else
+
     if (QL_IS_PLAYBACK_STATE)
         return FALSE;
 
@@ -258,6 +265,7 @@ bool8 IsWirelessAdapterConnected(void)
     CloseLink();
     RestoreSerialTimer3IntrHandlers();
     return FALSE;
+    #endif
 }
 
 void Task_DestroySelf(u8 taskId)
@@ -1689,8 +1697,10 @@ bool8 HandleLinkConnection(void)
 
 void SetWirelessCommType1(void)
 {
+    #ifndef HOST_BUILD
     if (!gReceivedRemoteLinkPlayers)
         gWirelessCommType = 1;
+        #endif
 }
 
 static void SetWirelessCommType0_Internal(void)

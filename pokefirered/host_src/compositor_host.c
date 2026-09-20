@@ -286,6 +286,19 @@ static u32 ToRgba(u16 c)
     return (r << 24) | (g << 16) | (b << 8) | 0xFF;
 }
 
+extern void Host_HBlankDmaStep(void);
+
+// HBlank after visible scanline y: run HBlank-timed DMA (scanline effects)
+// and the game's HBlank callback (battle transitions etc.), exactly like the
+// hardware would between line y and y+1.
+static void Host_HBlank(int y)
+{
+    REG_VCOUNT = (u16)y;
+    Host_HBlankDmaStep();
+    if (gMain.hblankCallback)
+        gMain.hblankCallback();
+}
+
 void Host_ComposeFrame(void *pixels, int pitch)
 {
     const u16 *pltt = (const u16 *)gGbaPltt;
@@ -336,35 +349,39 @@ void Host_ComposeFrame(void *pixels, int pitch)
         return;
     }
 
-    u16 bgCnt[4]  = { REG_BG0CNT, REG_BG1CNT, REG_BG2CNT, REG_BG3CNT };
-    u16 bgHofs[4] = { REG_BG0HOFS, REG_BG1HOFS, REG_BG2HOFS, REG_BG3HOFS };
-    u16 bgVofs[4] = { REG_BG0VOFS, REG_BG1VOFS, REG_BG2VOFS, REG_BG3VOFS };
-
-    int bgActive[4];
-    int bgAffine[4];
-    for (int bg = 0; bg < 4; bg++)
-    {
-        int on = (dispcnt >> (8 + bg)) & 1;
-        int text = (mode == 0) || (mode == 1 && bg < 2);
-        int aff = (mode == 1 && bg == 2) || (mode == 2 && bg >= 2);
-        bgActive[bg] = on && (text || aff);
-        bgAffine[bg] = aff;
-    }
-
-    int objOn = (dispcnt & DC_OBJ_ON) != 0;
-    int is1D = (dispcnt & DC_OBJ_1D) != 0;
-
-    u16 bldcnt = REG_BLDCNT;
-    u16 bldalpha = REG_BLDALPHA;
-    u16 bldy = REG_BLDY;
-    int bmode = (bldcnt >> 6) & 3;
-    int eva = bldalpha & 0x1F;        if (eva > 16) eva = 16;
-    int evb = (bldalpha >> 8) & 0x1F; if (evb > 16) evb = 16;
-    int evy = bldy & 0x1F;            if (evy > 16) evy = 16;
-    u16 backdrop = pltt[0] & 0x7FFF;
-
     for (int y = 0; y < SCR_H; y++)
     {
+        // Registers are re-read on EVERY scanline so HBlank DMA / callbacks work.
+        u16 dispcnt = REG_DISPCNT;
+        int mode = dispcnt & 7;
+        u16 bgCnt[4]  = { REG_BG0CNT, REG_BG1CNT, REG_BG2CNT, REG_BG3CNT };
+        u16 bgHofs[4] = { REG_BG0HOFS, REG_BG1HOFS, REG_BG2HOFS, REG_BG3HOFS };
+        u16 bgVofs[4] = { REG_BG0VOFS, REG_BG1VOFS, REG_BG2VOFS, REG_BG3VOFS };
+
+        int bgActive[4];
+        int bgAffine[4];
+        for (int bg = 0; bg < 4; bg++)
+        {
+            int on = (dispcnt >> (8 + bg)) & 1;
+            int text = (mode == 0) || (mode == 1 && bg < 2);
+            int aff = (mode == 1 && bg == 2) || (mode == 2 && bg >= 2);
+            bgActive[bg] = on && (text || aff);
+            bgAffine[bg] = aff;
+        }
+
+        int objOn = (dispcnt & DC_OBJ_ON) != 0;
+        int is1D = (dispcnt & DC_OBJ_1D) != 0;
+
+        u16 bldcnt = REG_BLDCNT;
+        u16 bldalpha = REG_BLDALPHA;
+        u16 bldy = REG_BLDY;
+        int bmode = (bldcnt >> 6) & 3;
+        int eva = bldalpha & 0x1F;        if (eva > 16) eva = 16;
+        int evb = (bldalpha >> 8) & 0x1F; if (evb > 16) evb = 16;
+        int evy = bldy & 0x1F;            if (evy > 16) evy = 16;
+        u16 backdrop = pltt[0] & 0x7FFF;
+
+
         for (int bg = 0; bg < 4; bg++)
         {
             if (!bgActive[bg]) continue;
@@ -417,7 +434,10 @@ void Host_ComposeFrame(void *pixels, int pitch)
             }
             row[x] = ToRgba(out);
         }
+
+        Host_HBlank(y);
     }
+    REG_VCOUNT = 0;
 }
 
 #endif // HOST_BUILD
