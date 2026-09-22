@@ -1,0 +1,149 @@
+(gdb) run
+Starting program: /home/ubuntu_mann/Project_RetroForge/pokefirered/build_host/pokefirered_host
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0xe7d72b40 (LWP 27524)]
+[New Thread 0xe73ffb40 (LWP 27525)]
+[New Thread 0xe6bfeb40 (LWP 27526)]
+[New Thread 0xe61ffb40 (LWP 27527)]
+[New Thread 0xe55ffb40 (LWP 27528)]
+[New Thread 0xe4dfeb40 (LWP 27529)]
+[New Thread 0xe43ffb40 (LWP 27530)]
+[New Thread 0xe39feb40 (LWP 27531)]
+[New Thread 0xe2ffdb40 (LWP 27532)]
+[New Thread 0xe27fcb40 (LWP 27533)]
+[New Thread 0xe1dffb40 (LWP 27534)]
+[New Thread 0xe13ffb40 (LWP 27535)]
+[New Thread 0xe07ffb40 (LWP 27536)]
+[New Thread 0xdfffeb40 (LWP 27537)]
+[New Thread 0xdf5fdb40 (LWP 27538)]
+[New Thread 0xdedfcb40 (LWP 27539)]
+[New Thread 0xde2beb40 (LWP 27540)]
+[Thread 0xdedfcb40 (LWP 27539) exited]
+[Thread 0xdf5fdb40 (LWP 27538) exited]
+[Thread 0xdfffeb40 (LWP 27537) exited]
+[Thread 0xe07ffb40 (LWP 27536) exited]
+[Thread 0xe13ffb40 (LWP 27535) exited]
+[Thread 0xe1dffb40 (LWP 27534) exited]
+[Thread 0xe27fcb40 (LWP 27533) exited]
+[Thread 0xe2ffdb40 (LWP 27532) exited]
+[Thread 0xe6bfeb40 (LWP 27526) exited]
+[Thread 0xe61ffb40 (LWP 27527) exited]
+[Thread 0xe55ffb40 (LWP 27528) exited]
+[Thread 0xe73ffb40 (LWP 27525) exited]
+[Thread 0xe7d72b40 (LWP 27524) exited]
+[Thread 0xe4dfeb40 (LWP 27529) exited]
+[Thread 0xe43ffb40 (LWP 27530) exited]
+[Thread 0xe39feb40 (LWP 27531) exited]
+[Thread 0xde2beb40 (LWP 27540) exited]
+[Inferior 1 (process 27521) exited normally]
+(gdb) run
+Starting program: /home/ubuntu_mann/Project_RetroForge/pokefirered/build_host/pokefirered_host
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0xe7d72b40 (LWP 27586)]
+[New Thread 0xe7371b40 (LWP 27587)]
+[New Thread 0xe6b70b40 (LWP 27588)]
+[New Thread 0xe61ffb40 (LWP 27589)]
+[New Thread 0xe55ffb40 (LWP 27590)]
+[New Thread 0xe4dfeb40 (LWP 27591)]
+[New Thread 0xe43fdb40 (LWP 27592)]
+[New Thread 0xe3bfcb40 (LWP 27593)]
+[New Thread 0xe2fffb40 (LWP 27594)]
+[New Thread 0xe27feb40 (LWP 27595)]
+[New Thread 0xe1dffb40 (LWP 27596)]
+[New Thread 0xe13ffb40 (LWP 27597)]
+[New Thread 0xe09ffb40 (LWP 27598)]
+[New Thread 0xdffffb40 (LWP 27599)]
+[New Thread 0xdf5ffb40 (LWP 27600)]
+[New Thread 0xdebffb40 (LWP 27601)]
+[New Thread 0xde2bdb40 (LWP 27602)]
+^C
+Thread 1 "pokefirered_hos" received signal SIGINT, Interrupt.
+0xf7e680eb in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+(gdb) bt
+#0  0xf7e680eb in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#1  0xf7e4f192 in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#2  0xf7e91548 in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#3  0xf7e115ed in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#4  0x08226088 in RenderPlaceholderFrame ()
+#5  0x08226110 in Host_RunFrame ()
+#6  0x081a375d in WaitForVBlank ()
+#7  0x081a301e in AgbMain ()
+#8  0x082261d8 in main ()
+(gdb) continue
+Continuing.
+[Thread 0xdebffb40 (LWP 27601) exited]
+[Thread 0xdf5ffb40 (LWP 27600) exited]
+[Thread 0xdffffb40 (LWP 27599) exited]
+[Thread 0xe09ffb40 (LWP 27598) exited]
+[Thread 0xe13ffb40 (LWP 27597) exited]
+[Thread 0xe1dffb40 (LWP 27596) exited]
+[Thread 0xe27feb40 (LWP 27595) exited]
+[Thread 0xe2fffb40 (LWP 27594) exited]
+[Thread 0xe3bfcb40 (LWP 27593) exited]
+[Thread 0xe43fdb40 (LWP 27592) exited]
+[Thread 0xe4dfeb40 (LWP 27591) exited]
+[Thread 0xe55ffb40 (LWP 27590) exited]
+[Thread 0xe61ffb40 (LWP 27589) exited]
+[Thread 0xe6b70b40 (LWP 27588) exited]
+[Thread 0xe7371b40 (LWP 27587) exited]
+[Thread 0xe7d72b40 (LWP 27586) exited]
+[Thread 0xde2bdb40 (LWP 27602) exited]
+[Inferior 1 (process 27585) exited normally]
+(gdb) run
+Starting program: /home/ubuntu_mann/Project_RetroForge/pokefirered/build_host/pokefirered_host
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0xe7d72b40 (LWP 27772)]
+[New Thread 0xe73ffb40 (LWP 27773)]
+[New Thread 0xe69feb40 (LWP 27774)]
+[New Thread 0xe5fffb40 (LWP 27775)]
+[New Thread 0xe55ffb40 (LWP 27776)]
+[New Thread 0xe4bffb40 (LWP 27777)]
+[New Thread 0xe41ffb40 (LWP 27778)]
+[New Thread 0xe37ffb40 (LWP 27779)]
+[New Thread 0xe2dffb40 (LWP 27780)]
+[New Thread 0xe23ffb40 (LWP 27781)]
+[New Thread 0xe19ffb40 (LWP 27782)]
+[New Thread 0xe0fffb40 (LWP 27783)]
+[New Thread 0xe05ffb40 (LWP 27784)]
+[New Thread 0xdfbffb40 (LWP 27785)]
+[New Thread 0xdf1ffb40 (LWP 27786)]
+[New Thread 0xde7ffb40 (LWP 27787)]
+[New Thread 0xddebdb40 (LWP 27788)]
+^C
+Thread 1 "pokefirered_hos" received signal SIGINT, Interrupt.
+0xf7fc7569 in __kernel_vsyscall ()
+(gdb) bt
+#0  0xf7fc7569 in __kernel_vsyscall ()
+#1  0xf7b506fc in getpid () from /lib/i386-linux-gnu/libc.so.6
+#2  0xf6b2cc14 in ?? () from /lib/i386-linux-gnu/libGLX.so.0
+#3  0xf6b2eef3 in glXSwapBuffers () from /lib/i386-linux-gnu/libGLX.so.0
+#4  0xf7ebf6b9 in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#5  0xf7e9a914 in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#6  0xf7e1a10f in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#7  0xf7e175ae in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#8  0x082260c6 in RenderPlaceholderFrame ()
+#9  0x08226110 in Host_RunFrame ()
+#10 0x081a375d in WaitForVBlank ()
+#11 0x081a301e in AgbMain ()
+#12 0x082261d8 in main ()
+(gdb) continue
+Continuing.
+^C
+Thread 1 "pokefirered_hos" received signal SIGINT, Interrupt.
+0xf7fc7569 in __kernel_vsyscall ()
+(gdb) bt
+#0  0xf7fc7569 in __kernel_vsyscall ()
+#1  0xf7b47cca in __clock_nanosleep_time64 () from /lib/i386-linux-gnu/libc.so.6
+#2  0xf7b5a0ad in nanosleep () from /lib/i386-linux-gnu/libc.so.6
+#3  0xf7efefe0 in ?? () from /lib/i386-linux-gnu/libSDL2-2.0.so.0
+#4  0x08226179 in Host_RunFrame ()
+#5  0x081a375d in WaitForVBlank ()
+#6  0x081a301e in AgbMain ()
+#7  0x082261d8 in main ()
+
+# The cross on window close worked properly and also a gree screen flashs on first enter pressing and then stalls even though the the cross on window works
+#[New Thread 0xddebdb40 (LWP 27788)] this line adds when enter pressed and green screen flashes.
+#and no .sav file is crated in the ./build_host/ directory

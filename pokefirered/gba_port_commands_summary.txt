@@ -1,0 +1,84 @@
+// Commands for full working pokefirered repo
+
+//for building src/*.c to .o
+for f in src/*.c; do
+    name=$(basename "$f" .c)
+    cpp -iquote include -iquote . -DFIRERED -DENGLISH "$f" \
+      | ./tools/preproc/preproc -i "$f" charmap.txt \
+      | gcc -m32 -x cpp-output -c -o "build_host/$name.o" -
+done
+ls build_host/*.o | wc -l
+
+//283 is the expected output on the office laptop
+//287 at last added commit
+
+
+//for building data/*.c to .output
+mkdir -p build_host/data  //for onetime build only
+for f in data/*.s; do
+    name=$(basename "$f" .s)
+    ./tools/preproc/preproc "$f" charmap.txt \
+      | cpp -iquote include -iquote asm -iquote . - \
+      | ./tools/preproc/preproc -ie "$f" charmap.txt \
+      | as --32 --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 \
+        -o "build_host/data/${name}_x86.o" - 2>/tmp/data_err_final_$name.txt
+    if [ $? -ne 0 ]; then
+        echo "FAIL: $f"
+    fi
+done
+echo "SCAN COMPLETE"
+ls build_host/data/*.o | wc -l
+
+//14 is the expected output on the office laptop
+
+//for building host_src/*.c to .o for the src .s patches for linking.
+//files i compiled one by one as four are there
+//here is the ls of the folder below
+ubuntu_mann@ARAD-MANN:~/Project_RetroForge/pokefirered$ ls host_src
+gamecube_stub.c  heap_host.c  libagbsyscall_host.c  sound_stub.c
+
+gcc -m32 -iquote include -iquote . -c host_src/libagbsyscall_host.c -o build_host/libagbsyscall_host.o -lm
+
+// and then linking test falls to 34 till now
+gcc -m32 build_host/*.o build_host/data/*.o -o build_host/test_link4 -lm 2>&1 \
+  | grep "undefined reference" \
+  | sed -E "s/.*undefined reference to \`([^']*)'.*/\1/" \
+  | sort -u > /tmp/undefined_symbols4.txt
+
+wc -l /tmp/undefined_symbols4.txt
+
+//added more claude patches and fpour resolved too but do not know does they are good or bad lets see
+
+#!/bin/bash
+
+mkdir -p build_host
+
+failed=0
+total=0
+
+for f in host_src/*.c; do
+    [ -f "$f" ] || continue
+    
+    name=$(basename "$f" .c)
+    total=$((total + 1))
+
+    gcc -m32 -iquote include -iquote . -c "$f" -o "build_host/${name}.o" -lm
+
+    if [ $? -ne 0 ]; then
+        echo "FAIL: $f"
+        failed=$((failed + 1))
+    fi
+done
+
+echo "SCAN COMPLETE"
+echo "Total .o files generated: $(ls -1 build_host/*.o 2>/dev/null | wc -l) / $total"
+
+if [ $failed -eq 0 ] && [ $total -gt 0 ]; then
+    echo "Exit Status: 0 (SUCCESS)"
+    exit 0
+else
+    echo "Exit Status: 1 (FAILURE)"
+    exit 1
+fi
+
+//the host_src/*building logic while at the end it auto logout maybe due to the exit command

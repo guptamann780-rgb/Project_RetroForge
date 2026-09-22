@@ -1,0 +1,193 @@
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=0700 map=0x03800 char=0x00000 mapEntriesNonZero=600 refsTileWithPixels=600
+[frame 120] DISPCNT=0x0140 mode=0 BG0/1/2/3 on=1/0/0/0 cnt=0x0700/0x0000/0x0000/0x0000 OBJ_on=0 drawn=0 affine_skipped=0
+[win] WININ=3F00 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=640
+[frame 240] DISPCNT=0x5840 mode=0 BG0/1/2/3 on=0/0/0/1 cnt=0x0700/0x0000/0x0000/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=3F00 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=00F0 WIN1V=2080 BLDCNT=3F44 BLDALPHA=0D03 BLDY=0000
+[bg2] cnt=1E0E map=0x0F000 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=640
+[frame 360] DISPCNT=0x5C40 mode=0 BG0/1/2/3 on=0/0/1/1 cnt=0x0700/0x0000/0x1E0E/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=3F00 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=0010 BLDY=0000
+[bg2] cnt=1E0E map=0x0F000 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=640
+[frame 480] DISPCNT=0x5C40 mode=0 BG0/1/2/3 on=0/0/1/1 cnt=0x0700/0x0000/0x1E0E/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=3F00 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=00F0 WIN1V=2080 BLDCNT=3F50 BLDALPHA=0010 BLDY=0000
+[bg2] cnt=1E0E map=0x0F000 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=640
+[frame 600] DISPCNT=0x5C40 mode=0 BG0/1/2/3 on=0/0/1/1 cnt=0x0700/0x0000/0x1E0E/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=3F00 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=1000 BLDY=0000
+[bg0] cnt=9C00 map=0x0E000 char=0x00000 mapEntriesNonZero=960 refsTileWithPixels=856
+[bg1] cnt=9E04 map=0x0F000 char=0x04000 mapEntriesNonZero=1024 refsTileWithPixels=1024
+[frame 720] DISPCNT=0x5340 mode=0 BG0/1/2/3 on=1/1/0/0 cnt=0x9C00/0x9E04/0x1E0E/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=3F00 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=1000 BLDY=0000
+[bg1] cnt=1C09 map=0x0E000 char=0x08000 mapEntriesNonZero=1024 refsTileWithPixels=260
+[bg2] cnt=1B0E map=0x0D800 char=0x0C000 mapEntriesNonZero=1024 refsTileWithPixels=119
+[bg3] cnt=9E07 map=0x0F000 char=0x04000 mapEntriesNonZero=384 refsTileWithPixels=384
+[frame 840] DISPCNT=0x5E40 mode=0 BG0/1/2/3 on=0/1/1/1 cnt=0x1D00/0x1C09/0x1B0E/0x9E07 OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=3F12 WINOUT=0000 WIN0H=0078 WIN0V=2080 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=1000 BLDY=0000
+[bg0] cnt=9E04 map=0x0F000 char=0x04000 mapEntriesNonZero=1024 refsTileWithPixels=198
+[bg1] cnt=1D01 map=0x0E800 char=0x00000 mapEntriesNonZero=384 refsTileWithPixels=384
+[frame 960] DISPCNT=0x5340 mode=0 BG0/1/2/3 on=1/1/0/0 cnt=0x9E04/0x1D01/0x1B0E/0x9E07 OBJ_on=1 drawn=127 affine_skipped=1
+[win] WININ=3F12 WINOUT=0000 WIN0H=0078 WIN0V=2080 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=1000 BLDY=0000
+[bg0] cnt=9E04 map=0x0F000 char=0x04000 mapEntriesNonZero=1024 refsTileWithPixels=198
+[bg1] cnt=1D01 map=0x0E800 char=0x00000 mapEntriesNonZero=384 refsTileWithPixels=384
+[frame 1080] DISPCNT=0x5340 mode=0 BG0/1/2/3 on=1/1/0/0 cnt=0x9E04/0x1D01/0x1B0E/0x9E07 OBJ_on=1 drawn=127 affine_skipped=1
+[win] WININ=3F12 WINOUT=0000 WIN0H=0078 WIN0V=2080 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=1000 BLDY=0000
+[bg0] cnt=9E04 map=0x0F000 char=0x04000 mapEntriesNonZero=1024 refsTileWithPixels=198
+[bg1] cnt=1D01 map=0x0E800 char=0x00000 mapEntriesNonZero=384 refsTileWithPixels=384
+[frame 1200] DISPCNT=0x5340 mode=0 BG0/1/2/3 on=1/1/0/0 cnt=0x9E04/0x1D01/0x1B0E/0x9E07 OBJ_on=1 drawn=127 affine_skipped=1
+[win] WININ=3F12 WINOUT=0000 WIN0H=0078 WIN0V=2080 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=1000 BLDY=0000
+[bg1] cnt=1D01 map=0x0E800 char=0x00000 mapEntriesNonZero=384 refsTileWithPixels=384
+[frame 1320] DISPCNT=0x5240 mode=0 BG0/1/2/3 on=0/1/0/0 cnt=0x9E04/0x1D01/0x1B0E/0x9E07 OBJ_on=1 drawn=123 affine_skipped=5
+[win] WININ=3F12 WINOUT=0000 WIN0H=0078 WIN0V=2080 WIN1H=00F0 WIN1V=2080 BLDCNT=0082 BLDALPHA=0000 BLDY=0000
+[bg1] cnt=1E05 map=0x0F000 char=0x04000 mapEntriesNonZero=640 refsTileWithPixels=135
+[bg2] cnt=1D0A map=0x0E800 char=0x08000 mapEntriesNonZero=640 refsTileWithPixels=704
+[bg3] cnt=1C0F map=0x0E000 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=1024
+[frame 1440] DISPCNT=0x1E40 mode=0 BG0/1/2/3 on=0/1/1/1 cnt=0x9E04/0x1E05/0x1D0A/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=3F12 WINOUT=0000 WIN0H=0078 WIN0V=2080 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg1] cnt=1E05 map=0x0F000 char=0x04000 mapEntriesNonZero=640 refsTileWithPixels=135
+[bg2] cnt=1D0A map=0x0E800 char=0x08000 mapEntriesNonZero=640 refsTileWithPixels=704
+[bg3] cnt=1C0F map=0x0E000 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=1024
+[frame 1560] DISPCNT=0x1E40 mode=0 BG0/1/2/3 on=0/1/1/1 cnt=0x9E04/0x1E05/0x1D0A/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=003F WINOUT=003B WIN0H=00F0 WIN0V=00A0 WIN1H=00F0 WIN1V=2080 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F80 map=0x0F800 char=0x00000 mapEntriesNonZero=215 refsTileWithPixels=168
+[bg1] cnt=1E05 map=0x0F000 char=0x04000 mapEntriesNonZero=640 refsTileWithPixels=135
+[bg2] cnt=1D0A map=0x0E800 char=0x08000 mapEntriesNonZero=640 refsTileWithPixels=704
+[bg3] cnt=1C0F map=0x0E000 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=1024
+[frame 1680] DISPCNT=0x1F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1F80/0x1E05/0x1D0A/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=003F WINOUT=3F1F WIN0H=00F0 WIN0V=00A0 WIN1H=00F0 WIN1V=2080 BLDCNT=0081 BLDALPHA=0000 BLDY=000D
+[bg0] cnt=1F80 map=0x0F800 char=0x00000 mapEntriesNonZero=215 refsTileWithPixels=168
+[bg1] cnt=1E05 map=0x0F000 char=0x04000 mapEntriesNonZero=640 refsTileWithPixels=135
+[bg2] cnt=1D0A map=0x0E800 char=0x08000 mapEntriesNonZero=640 refsTileWithPixels=704
+[bg3] cnt=1C0F map=0x0E000 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=1024
+[frame 1800] DISPCNT=0x9F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1F80/0x1E05/0x1D0A/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=003F WINOUT=3F1F WIN0H=00F0 WIN0V=00A0 WIN1H=00F0 WIN1V=2080 BLDCNT=0081 BLDALPHA=0000 BLDY=000D
+[bg0] cnt=1F80 map=0x0F800 char=0x00000 mapEntriesNonZero=215 refsTileWithPixels=168
+[bg1] cnt=1E05 map=0x0F000 char=0x04000 mapEntriesNonZero=640 refsTileWithPixels=135
+[bg2] cnt=1D0A map=0x0E800 char=0x08000 mapEntriesNonZero=640 refsTileWithPixels=704
+[bg3] cnt=1C0F map=0x0E000 char=0x0C000 mapEntriesNonZero=640 refsTileWithPixels=1024
+[frame 1920] DISPCNT=0x9F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1F80/0x1E05/0x1D0A/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 2040] DISPCNT=0x1341 mode=1 BG0/1/2/3 on=1/1/0/0 cnt=0x1F08/0x1E02/0x0000/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 2160] DISPCNT=0x1341 mode=1 BG0/1/2/3 on=1/1/0/0 cnt=0x1F08/0x1E02/0x0000/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 2280] DISPCNT=0x1341 mode=1 BG0/1/2/3 on=1/1/0/0 cnt=0x1F08/0x1E02/0x0000/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 2400] DISPCNT=0x1341 mode=1 BG0/1/2/3 on=1/1/0/0 cnt=0x1F08/0x1E02/0x0000/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 2520] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 2640] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 2760] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 2880] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3000] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3120] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=127 affine_skipped=1
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3240] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=127 affine_skipped=1
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3360] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=127 affine_skipped=1
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3480] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=126 affine_skipped=2
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0000 BLDALPHA=0000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3600] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=1244 BLDALPHA=1000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3720] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=1244 BLDALPHA=1000 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3840] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=1244 BLDALPHA=0010 BLDY=0000
+[bg0] cnt=1F08 map=0x0F800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1E02 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=5C81 map=0x0E000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 3960] DISPCNT=0x1741 mode=1 BG0/1/2/3 on=1/1/1/0 cnt=0x1F08/0x1E02/0x5C81/0x1C0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0640 BLDALPHA=080C BLDY=0000
+[bg0] cnt=1E00 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1D09 map=0x0E800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=1C0A map=0x0E000 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 4080] DISPCNT=0x1F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1E00/0x1D09/0x1C0A/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0640 BLDALPHA=080C BLDY=0000
+[bg0] cnt=1E00 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1D09 map=0x0E800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=1C0A map=0x0E000 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 4200] DISPCNT=0x1F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1E00/0x1D09/0x1C0A/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0640 BLDALPHA=080C BLDY=0000
+[bg0] cnt=1E00 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1D09 map=0x0E800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=1C0A map=0x0E000 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 4320] DISPCNT=0x1F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1E00/0x1D09/0x1C0A/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0640 BLDALPHA=080C BLDY=0000
+[bg0] cnt=1E00 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1D09 map=0x0E800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=1C0A map=0x0E000 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 4440] DISPCNT=0x1F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1E00/0x1D09/0x1C0A/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0640 BLDALPHA=080C BLDY=0000
+[bg0] cnt=1E00 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1D09 map=0x0E800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=1C0A map=0x0E000 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 4560] DISPCNT=0x1F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1E00/0x1D09/0x1C0A/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0640 BLDALPHA=080C BLDY=0000
+[bg0] cnt=1E00 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1D09 map=0x0E800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=1C0A map=0x0E000 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 4680] DISPCNT=0x1F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1E00/0x1D09/0x1C0A/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
+[win] WININ=0000 WINOUT=0000 WIN0H=0000 WIN0V=0000 WIN1H=0000 WIN1V=0000 BLDCNT=0640 BLDALPHA=080C BLDY=0000
+[bg0] cnt=1E00 map=0x0F000 char=0x00000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg1] cnt=1D09 map=0x0E800 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg2] cnt=1C0A map=0x0E000 char=0x08000 mapEntriesNonZero=0 refsTileWithPixels=0
+[bg3] cnt=1F0F map=0x0F800 char=0x0C000 mapEntriesNonZero=0 refsTileWithPixels=0
+[frame 4800] DISPCNT=0x1F40 mode=0 BG0/1/2/3 on=1/1/1/1 cnt=0x1E00/0x1D09/0x1C0A/0x1F0F OBJ_on=1 drawn=128 affine_skipped=0
