@@ -1,4 +1,10 @@
 .
+├── INSTALL.md
+├── Makefile
+├── Makefile.host
+├── Makefile.host:Zone.Identifier
+├── PORTING_NOTES.md
+├── README.md
 ├── asm
 │   ├── macros
 │   │   ├── asm.inc
@@ -20,1840 +26,7 @@
 ├── asmdiff.sh
 ├── audio_rules.mk
 ├── build
-│   ├── firered
-│   │   ├── data
-│   │   │   ├── battle_ai_scripts.d
-│   │   │   ├── battle_ai_scripts.o
-│   │   │   ├── battle_anim_scripts.d
-│   │   │   ├── battle_anim_scripts.o
-│   │   │   ├── battle_scripts_1.d
-│   │   │   ├── battle_scripts_1.o
-│   │   │   ├── battle_scripts_2.d
-│   │   │   ├── battle_scripts_2.o
-│   │   │   ├── event_scripts.d
-│   │   │   ├── event_scripts.o
-│   │   │   ├── field_effect_scripts.d
-│   │   │   ├── field_effect_scripts.o
-│   │   │   ├── map_events.o
-│   │   │   ├── maps.o
-│   │   │   ├── multiboot_berry_glitch_fix.d
-│   │   │   ├── multiboot_berry_glitch_fix.o
-│   │   │   ├── multiboot_ereader.d
-│   │   │   ├── multiboot_ereader.o
-│   │   │   ├── multiboot_pokemon_colosseum.d
-│   │   │   ├── multiboot_pokemon_colosseum.o
-│   │   │   ├── mystery_event_msg.d
-│   │   │   ├── mystery_event_msg.o
-│   │   │   ├── mystery_event_script_cmd_table.d
-│   │   │   ├── mystery_event_script_cmd_table.o
-│   │   │   ├── sound_data.d
-│   │   │   └── sound_data.o
-│   │   ├── sound
-│   │   │   └── songs
-│   │   │       └── midi
-│   │   ├── src
-│   │   │   ├── agb_flash_1m.d
-│   │   │   ├── agb_flash_1m.o
-│   │   │   ├── agb_flash.d
-│   │   │   ├── agb_flash_le.d
-│   │   │   ├── agb_flash_le.o
-│   │   │   ├── agb_flash_mx.d
-│   │   │   ├── agb_flash_mx.o
-│   │   │   ├── agb_flash.o
-│   │   │   ├── AgbRfu_LinkManager.d
-│   │   │   ├── AgbRfu_LinkManager.o
-│   │   │   ├── bag.d
-│   │   │   ├── bag.o
-│   │   │   ├── battle_ai_script_commands.d
-│   │   │   ├── battle_ai_script_commands.o
-│   │   │   ├── battle_ai_switch_items.d
-│   │   │   ├── battle_ai_switch_items.o
-│   │   │   ├── battle_anim_bug.d
-│   │   │   ├── battle_anim_bug.o
-│   │   │   ├── battle_anim.d
-│   │   │   ├── battle_anim_dark.d
-│   │   │   ├── battle_anim_dark.o
-│   │   │   ├── battle_anim_dragon.d
-│   │   │   ├── battle_anim_dragon.o
-│   │   │   ├── battle_anim_effects_1.d
-│   │   │   ├── battle_anim_effects_1.o
-│   │   │   ├── battle_anim_effects_2.d
-│   │   │   ├── battle_anim_effects_2.o
-│   │   │   ├── battle_anim_effects_3.d
-│   │   │   ├── battle_anim_effects_3.o
-│   │   │   ├── battle_anim_electric.d
-│   │   │   ├── battle_anim_electric.o
-│   │   │   ├── battle_anim_fight.d
-│   │   │   ├── battle_anim_fight.o
-│   │   │   ├── battle_anim_fire.d
-│   │   │   ├── battle_anim_fire.o
-│   │   │   ├── battle_anim_flying.d
-│   │   │   ├── battle_anim_flying.o
-│   │   │   ├── battle_anim_ghost.d
-│   │   │   ├── battle_anim_ghost.o
-│   │   │   ├── battle_anim_ground.d
-│   │   │   ├── battle_anim_ground.o
-│   │   │   ├── battle_anim_ice.d
-│   │   │   ├── battle_anim_ice.o
-│   │   │   ├── battle_anim_mon_movement.d
-│   │   │   ├── battle_anim_mon_movement.o
-│   │   │   ├── battle_anim_mons.d
-│   │   │   ├── battle_anim_mons.o
-│   │   │   ├── battle_anim_normal.d
-│   │   │   ├── battle_anim_normal.o
-│   │   │   ├── battle_anim.o
-│   │   │   ├── battle_anim_poison.d
-│   │   │   ├── battle_anim_poison.o
-│   │   │   ├── battle_anim_psychic.d
-│   │   │   ├── battle_anim_psychic.o
-│   │   │   ├── battle_anim_rock.d
-│   │   │   ├── battle_anim_rock.o
-│   │   │   ├── battle_anim_smokescreen.d
-│   │   │   ├── battle_anim_smokescreen.o
-│   │   │   ├── battle_anim_sound_tasks.d
-│   │   │   ├── battle_anim_sound_tasks.o
-│   │   │   ├── battle_anim_special.d
-│   │   │   ├── battle_anim_special.o
-│   │   │   ├── battle_anim_status_effects.d
-│   │   │   ├── battle_anim_status_effects.o
-│   │   │   ├── battle_anim_utility_funcs.d
-│   │   │   ├── battle_anim_utility_funcs.o
-│   │   │   ├── battle_anim_water.d
-│   │   │   ├── battle_anim_water.o
-│   │   │   ├── battle_bg.d
-│   │   │   ├── battle_bg.o
-│   │   │   ├── battle_controller_link_opponent.d
-│   │   │   ├── battle_controller_link_opponent.o
-│   │   │   ├── battle_controller_link_partner.d
-│   │   │   ├── battle_controller_link_partner.o
-│   │   │   ├── battle_controller_oak_old_man.d
-│   │   │   ├── battle_controller_oak_old_man.o
-│   │   │   ├── battle_controller_opponent.d
-│   │   │   ├── battle_controller_opponent.o
-│   │   │   ├── battle_controller_player.d
-│   │   │   ├── battle_controller_player.o
-│   │   │   ├── battle_controller_pokedude.d
-│   │   │   ├── battle_controller_pokedude.o
-│   │   │   ├── battle_controller_safari.d
-│   │   │   ├── battle_controller_safari.o
-│   │   │   ├── battle_controllers.d
-│   │   │   ├── battle_controllers.o
-│   │   │   ├── battle_gfx_sfx_util.d
-│   │   │   ├── battle_gfx_sfx_util.o
-│   │   │   ├── battle_interface.d
-│   │   │   ├── battle_interface.o
-│   │   │   ├── battle_intro.d
-│   │   │   ├── battle_intro.o
-│   │   │   ├── battle_main.d
-│   │   │   ├── battle_main.o
-│   │   │   ├── battle_message.d
-│   │   │   ├── battle_message.o
-│   │   │   ├── battle_records.d
-│   │   │   ├── battle_records.o
-│   │   │   ├── battle_script_commands.d
-│   │   │   ├── battle_script_commands.o
-│   │   │   ├── battle_setup.d
-│   │   │   ├── battle_setup.o
-│   │   │   ├── battle_tower.d
-│   │   │   ├── battle_tower.o
-│   │   │   ├── battle_transition.d
-│   │   │   ├── battle_transition.o
-│   │   │   ├── battle_util2.d
-│   │   │   ├── battle_util2.o
-│   │   │   ├── battle_util.d
-│   │   │   ├── battle_util.o
-│   │   │   ├── berry_crush.d
-│   │   │   ├── berry_crush.o
-│   │   │   ├── berry.d
-│   │   │   ├── berry_fix_program.d
-│   │   │   ├── berry_fix_program.o
-│   │   │   ├── berry.o
-│   │   │   ├── berry_pouch.d
-│   │   │   ├── berry_pouch.o
-│   │   │   ├── berry_powder.d
-│   │   │   ├── berry_powder.o
-│   │   │   ├── bg.d
-│   │   │   ├── bg.o
-│   │   │   ├── bg_regs.d
-│   │   │   ├── bg_regs.o
-│   │   │   ├── bike.d
-│   │   │   ├── bike.o
-│   │   │   ├── blend_palette.d
-│   │   │   ├── blend_palette.o
-│   │   │   ├── blit.d
-│   │   │   ├── blit.o
-│   │   │   ├── braille_text.d
-│   │   │   ├── braille_text.o
-│   │   │   ├── buy_menu_helpers.d
-│   │   │   ├── buy_menu_helpers.o
-│   │   │   ├── cable_car_util.d
-│   │   │   ├── cable_car_util.o
-│   │   │   ├── cable_club.d
-│   │   │   ├── cable_club.o
-│   │   │   ├── cereader_tool.d
-│   │   │   ├── cereader_tool.o
-│   │   │   ├── clear_save_data_screen.d
-│   │   │   ├── clear_save_data_screen.o
-│   │   │   ├── coins.d
-│   │   │   ├── coins.o
-│   │   │   ├── coord_event_weather.d
-│   │   │   ├── coord_event_weather.o
-│   │   │   ├── credits.d
-│   │   │   ├── credits.o
-│   │   │   ├── crt0.d
-│   │   │   ├── crt0.o
-│   │   │   ├── data.d
-│   │   │   ├── data.o
-│   │   │   ├── daycare.d
-│   │   │   ├── daycare.o
-│   │   │   ├── decompress.d
-│   │   │   ├── decompress.o
-│   │   │   ├── decoration.d
-│   │   │   ├── decoration.o
-│   │   │   ├── digit_obj_util.d
-│   │   │   ├── digit_obj_util.o
-│   │   │   ├── diploma.d
-│   │   │   ├── diploma.o
-│   │   │   ├── dma3_manager.d
-│   │   │   ├── dma3_manager.o
-│   │   │   ├── dodrio_berry_picking_comm.d
-│   │   │   ├── dodrio_berry_picking_comm.o
-│   │   │   ├── dodrio_berry_picking.d
-│   │   │   ├── dodrio_berry_picking.o
-│   │   │   ├── dynamic_placeholder_text_util.d
-│   │   │   ├── dynamic_placeholder_text_util.o
-│   │   │   ├── easy_chat_2.d
-│   │   │   ├── easy_chat_2.o
-│   │   │   ├── easy_chat_3.d
-│   │   │   ├── easy_chat_3.o
-│   │   │   ├── easy_chat.d
-│   │   │   ├── easy_chat.o
-│   │   │   ├── ereader_helpers.d
-│   │   │   ├── ereader_helpers.o
-│   │   │   ├── ereader_screen.d
-│   │   │   ├── ereader_screen.o
-│   │   │   ├── event_data.d
-│   │   │   ├── event_data.o
-│   │   │   ├── event_object_lock.d
-│   │   │   ├── event_object_lock.o
-│   │   │   ├── event_object_movement.d
-│   │   │   ├── event_object_movement.o
-│   │   │   ├── evolution_graphics.d
-│   │   │   ├── evolution_graphics.o
-│   │   │   ├── evolution_scene.d
-│   │   │   ├── evolution_scene.o
-│   │   │   ├── fame_checker.d
-│   │   │   ├── fame_checker.o
-│   │   │   ├── field_camera.d
-│   │   │   ├── field_camera.o
-│   │   │   ├── field_control_avatar.d
-│   │   │   ├── field_control_avatar.o
-│   │   │   ├── field_door.d
-│   │   │   ├── field_door.o
-│   │   │   ├── field_effect.d
-│   │   │   ├── field_effect_helpers.d
-│   │   │   ├── field_effect_helpers.o
-│   │   │   ├── field_effect.o
-│   │   │   ├── field_fadetransition.d
-│   │   │   ├── field_fadetransition.o
-│   │   │   ├── fieldmap.d
-│   │   │   ├── fieldmap.o
-│   │   │   ├── field_message_box.d
-│   │   │   ├── field_message_box.o
-│   │   │   ├── field_player_avatar.d
-│   │   │   ├── field_player_avatar.o
-│   │   │   ├── field_poison.d
-│   │   │   ├── field_poison.o
-│   │   │   ├── field_screen_effect.d
-│   │   │   ├── field_screen_effect.o
-│   │   │   ├── field_special_scene.d
-│   │   │   ├── field_special_scene.o
-│   │   │   ├── field_specials.d
-│   │   │   ├── field_specials.o
-│   │   │   ├── field_tasks.d
-│   │   │   ├── field_tasks.o
-│   │   │   ├── field_weather.d
-│   │   │   ├── field_weather_effects.d
-│   │   │   ├── field_weather_effects.o
-│   │   │   ├── field_weather.o
-│   │   │   ├── field_weather_util.d
-│   │   │   ├── field_weather_util.o
-│   │   │   ├── fldeff_berrytree.d
-│   │   │   ├── fldeff_berrytree.o
-│   │   │   ├── fldeff_cut.d
-│   │   │   ├── fldeff_cut.o
-│   │   │   ├── fldeff_dig.d
-│   │   │   ├── fldeff_dig.o
-│   │   │   ├── fldeff_flash.d
-│   │   │   ├── fldeff_flash.o
-│   │   │   ├── fldeff_poison.d
-│   │   │   ├── fldeff_poison.o
-│   │   │   ├── fldeff_rocksmash.d
-│   │   │   ├── fldeff_rocksmash.o
-│   │   │   ├── fldeff_softboiled.d
-│   │   │   ├── fldeff_softboiled.o
-│   │   │   ├── fldeff_strength.d
-│   │   │   ├── fldeff_strength.o
-│   │   │   ├── fldeff_sweetscent.d
-│   │   │   ├── fldeff_sweetscent.o
-│   │   │   ├── fldeff_teleport.d
-│   │   │   ├── fldeff_teleport.o
-│   │   │   ├── gpu_regs.d
-│   │   │   ├── gpu_regs.o
-│   │   │   ├── graphics.d
-│   │   │   ├── graphics.o
-│   │   │   ├── hall_of_fame.d
-│   │   │   ├── hall_of_fame.o
-│   │   │   ├── heal_location.d
-│   │   │   ├── heal_location.o
-│   │   │   ├── help_message.d
-│   │   │   ├── help_message.o
-│   │   │   ├── help_system.d
-│   │   │   ├── help_system.o
-│   │   │   ├── help_system_util.d
-│   │   │   ├── help_system_util.o
-│   │   │   ├── hof_pc.d
-│   │   │   ├── hof_pc.o
-│   │   │   ├── image_processing_effects.d
-│   │   │   ├── image_processing_effects.o
-│   │   │   ├── intro.d
-│   │   │   ├── intro.o
-│   │   │   ├── isagbprn.d
-│   │   │   ├── isagbprn.o
-│   │   │   ├── item.d
-│   │   │   ├── itemfinder.d
-│   │   │   ├── itemfinder.o
-│   │   │   ├── item_menu.d
-│   │   │   ├── item_menu_icons.d
-│   │   │   ├── item_menu_icons.o
-│   │   │   ├── item_menu.o
-│   │   │   ├── item.o
-│   │   │   ├── item_pc.d
-│   │   │   ├── item_pc.o
-│   │   │   ├── item_use.d
-│   │   │   ├── item_use.o
-│   │   │   ├── keyboard_text.d
-│   │   │   ├── keyboard_text.o
-│   │   │   ├── learn_move.d
-│   │   │   ├── learn_move.o
-│   │   │   ├── libagbsyscall.d
-│   │   │   ├── libagbsyscall.o
-│   │   │   ├── libgcnmultiboot.d
-│   │   │   ├── libgcnmultiboot.o
-│   │   │   ├── librfu_intr.d
-│   │   │   ├── librfu_intr.o
-│   │   │   ├── librfu_rfu.d
-│   │   │   ├── librfu_rfu.o
-│   │   │   ├── librfu_sio32id.d
-│   │   │   ├── librfu_sio32id.o
-│   │   │   ├── librfu_stwi.d
-│   │   │   ├── librfu_stwi.o
-│   │   │   ├── link.d
-│   │   │   ├── link.o
-│   │   │   ├── link_rfu_2.d
-│   │   │   ├── link_rfu_2.o
-│   │   │   ├── link_rfu_3.d
-│   │   │   ├── link_rfu_3.o
-│   │   │   ├── list_menu.d
-│   │   │   ├── list_menu.o
-│   │   │   ├── load_save.d
-│   │   │   ├── load_save.o
-│   │   │   ├── m4a_1.d
-│   │   │   ├── m4a_1.o
-│   │   │   ├── m4a.d
-│   │   │   ├── m4a.o
-│   │   │   ├── m4a_tables.d
-│   │   │   ├── m4a_tables.o
-│   │   │   ├── mailbox_pc.d
-│   │   │   ├── mailbox_pc.o
-│   │   │   ├── mail.d
-│   │   │   ├── mail_data.d
-│   │   │   ├── mail_data.o
-│   │   │   ├── mail.o
-│   │   │   ├── main.d
-│   │   │   ├── main_menu.d
-│   │   │   ├── main_menu.o
-│   │   │   ├── main.o
-│   │   │   ├── malloc.d
-│   │   │   ├── malloc.o
-│   │   │   ├── map_name_popup.d
-│   │   │   ├── map_name_popup.o
-│   │   │   ├── map_preview_screen.d
-│   │   │   ├── map_preview_screen.o
-│   │   │   ├── math_util.d
-│   │   │   ├── math_util.o
-│   │   │   ├── menu2.d
-│   │   │   ├── menu2.o
-│   │   │   ├── menu.d
-│   │   │   ├── menu_helpers.d
-│   │   │   ├── menu_helpers.o
-│   │   │   ├── menu_indicators.d
-│   │   │   ├── menu_indicators.o
-│   │   │   ├── menu.o
-│   │   │   ├── metatile_behavior.d
-│   │   │   ├── metatile_behavior.o
-│   │   │   ├── minigame_countdown.d
-│   │   │   ├── minigame_countdown.o
-│   │   │   ├── mini_printf.d
-│   │   │   ├── mini_printf.o
-│   │   │   ├── money.d
-│   │   │   ├── money.o
-│   │   │   ├── mon_markings.d
-│   │   │   ├── mon_markings.o
-│   │   │   ├── move_descriptions.d
-│   │   │   ├── move_descriptions.o
-│   │   │   ├── multiboot.d
-│   │   │   ├── multiboot.o
-│   │   │   ├── mystery_event_msg.d
-│   │   │   ├── mystery_event_msg.o
-│   │   │   ├── mystery_event_script.d
-│   │   │   ├── mystery_event_script.o
-│   │   │   ├── mystery_gift_client.d
-│   │   │   ├── mystery_gift_client.o
-│   │   │   ├── mystery_gift.d
-│   │   │   ├── mystery_gift_link.d
-│   │   │   ├── mystery_gift_link.o
-│   │   │   ├── mystery_gift_menu.d
-│   │   │   ├── mystery_gift_menu.o
-│   │   │   ├── mystery_gift.o
-│   │   │   ├── mystery_gift_scripts.d
-│   │   │   ├── mystery_gift_scripts.o
-│   │   │   ├── mystery_gift_server.d
-│   │   │   ├── mystery_gift_server.o
-│   │   │   ├── mystery_gift_show_card.d
-│   │   │   ├── mystery_gift_show_card.o
-│   │   │   ├── mystery_gift_show_news.d
-│   │   │   ├── mystery_gift_show_news.o
-│   │   │   ├── naming_screen.d
-│   │   │   ├── naming_screen.o
-│   │   │   ├── new_game.d
-│   │   │   ├── new_game.o
-│   │   │   ├── new_menu_helpers.d
-│   │   │   ├── new_menu_helpers.o
-│   │   │   ├── oak_speech.d
-│   │   │   ├── oak_speech.o
-│   │   │   ├── option_menu.d
-│   │   │   ├── option_menu.o
-│   │   │   ├── overworld.d
-│   │   │   ├── overworld.o
-│   │   │   ├── palette.d
-│   │   │   ├── palette.o
-│   │   │   ├── palette_util.d
-│   │   │   ├── palette_util.o
-│   │   │   ├── party_menu.d
-│   │   │   ├── party_menu.o
-│   │   │   ├── party_menu_specials.d
-│   │   │   ├── party_menu_specials.o
-│   │   │   ├── pc_screen_effect.d
-│   │   │   ├── pc_screen_effect.o
-│   │   │   ├── player_pc.d
-│   │   │   ├── player_pc.o
-│   │   │   ├── play_time.d
-│   │   │   ├── play_time.o
-│   │   │   ├── pokeball.d
-│   │   │   ├── pokeball.o
-│   │   │   ├── pokedex_area_markers.d
-│   │   │   ├── pokedex_area_markers.o
-│   │   │   ├── pokedex.d
-│   │   │   ├── pokedex.o
-│   │   │   ├── pokedex_screen.d
-│   │   │   ├── pokedex_screen.o
-│   │   │   ├── pokemon.d
-│   │   │   ├── pokemon_icon.d
-│   │   │   ├── pokemon_icon.o
-│   │   │   ├── pokemon_jump.d
-│   │   │   ├── pokemon_jump.o
-│   │   │   ├── pokemon.o
-│   │   │   ├── pokemon_size_record.d
-│   │   │   ├── pokemon_size_record.o
-│   │   │   ├── pokemon_special_anim.d
-│   │   │   ├── pokemon_special_anim.o
-│   │   │   ├── pokemon_special_anim_scene.d
-│   │   │   ├── pokemon_special_anim_scene.o
-│   │   │   ├── pokemon_storage_system.d
-│   │   │   ├── pokemon_storage_system_data.d
-│   │   │   ├── pokemon_storage_system_data.o
-│   │   │   ├── pokemon_storage_system_graphics.d
-│   │   │   ├── pokemon_storage_system_graphics.o
-│   │   │   ├── pokemon_storage_system_menu.d
-│   │   │   ├── pokemon_storage_system_menu.o
-│   │   │   ├── pokemon_storage_system_misc.d
-│   │   │   ├── pokemon_storage_system_misc.o
-│   │   │   ├── pokemon_storage_system.o
-│   │   │   ├── pokemon_storage_system_tasks.d
-│   │   │   ├── pokemon_storage_system_tasks.o
-│   │   │   ├── pokemon_summary_screen.d
-│   │   │   ├── pokemon_summary_screen.o
-│   │   │   ├── post_battle_event_funcs.d
-│   │   │   ├── post_battle_event_funcs.o
-│   │   │   ├── prof_pc.d
-│   │   │   ├── prof_pc.o
-│   │   │   ├── quest_log_battle.d
-│   │   │   ├── quest_log_battle.o
-│   │   │   ├── quest_log.d
-│   │   │   ├── quest_log_events.d
-│   │   │   ├── quest_log_events.o
-│   │   │   ├── quest_log.o
-│   │   │   ├── quest_log_objects.d
-│   │   │   ├── quest_log_objects.o
-│   │   │   ├── quest_log_player.d
-│   │   │   ├── quest_log_player.o
-│   │   │   ├── random.d
-│   │   │   ├── random.o
-│   │   │   ├── region_map.d
-│   │   │   ├── region_map.o
-│   │   │   ├── renewable_hidden_items.d
-│   │   │   ├── renewable_hidden_items.o
-│   │   │   ├── reset_save_heap.d
-│   │   │   ├── reset_save_heap.o
-│   │   │   ├── reshow_battle_screen.d
-│   │   │   ├── reshow_battle_screen.o
-│   │   │   ├── roamer.d
-│   │   │   ├── roamer.o
-│   │   │   ├── rom_header.d
-│   │   │   ├── rom_header_gf.d
-│   │   │   ├── rom_header_gf.o
-│   │   │   ├── rom_header.o
-│   │   │   ├── safari_zone.d
-│   │   │   ├── safari_zone.o
-│   │   │   ├── save.d
-│   │   │   ├── save_failed_screen.d
-│   │   │   ├── save_failed_screen.o
-│   │   │   ├── save_location.d
-│   │   │   ├── save_location.o
-│   │   │   ├── save_menu_util.d
-│   │   │   ├── save_menu_util.o
-│   │   │   ├── save.o
-│   │   │   ├── scanline_effect.d
-│   │   │   ├── scanline_effect.o
-│   │   │   ├── scrcmd.d
-│   │   │   ├── scrcmd.o
-│   │   │   ├── script.d
-│   │   │   ├── script_menu.d
-│   │   │   ├── script_menu.o
-│   │   │   ├── script_movement.d
-│   │   │   ├── script_movement.o
-│   │   │   ├── script.o
-│   │   │   ├── script_pokemon_util.d
-│   │   │   ├── script_pokemon_util.o
-│   │   │   ├── seagallop.d
-│   │   │   ├── seagallop.o
-│   │   │   ├── shop.d
-│   │   │   ├── shop.o
-│   │   │   ├── sloopsvc.d
-│   │   │   ├── sloopsvc.o
-│   │   │   ├── slot_machine.d
-│   │   │   ├── slot_machine.o
-│   │   │   ├── sound.d
-│   │   │   ├── sound.o
-│   │   │   ├── special_field_anim.d
-│   │   │   ├── special_field_anim.o
-│   │   │   ├── sprite.d
-│   │   │   ├── sprite.o
-│   │   │   ├── ss_anne.d
-│   │   │   ├── ss_anne.o
-│   │   │   ├── start_menu.d
-│   │   │   ├── start_menu.o
-│   │   │   ├── strings.d
-│   │   │   ├── strings.o
-│   │   │   ├── string_util.d
-│   │   │   ├── string_util.o
-│   │   │   ├── task.d
-│   │   │   ├── task.o
-│   │   │   ├── teachy_tv.d
-│   │   │   ├── teachy_tv.o
-│   │   │   ├── text.d
-│   │   │   ├── text.o
-│   │   │   ├── text_printer.d
-│   │   │   ├── text_printer.o
-│   │   │   ├── text_window.d
-│   │   │   ├── text_window_graphics.d
-│   │   │   ├── text_window_graphics.o
-│   │   │   ├── text_window.o
-│   │   │   ├── tilemap_util.d
-│   │   │   ├── tilemap_util.o
-│   │   │   ├── tileset_anims.d
-│   │   │   ├── tileset_anims.o
-│   │   │   ├── tilesets.d
-│   │   │   ├── tilesets.o
-│   │   │   ├── title_screen.d
-│   │   │   ├── title_screen.o
-│   │   │   ├── tm_case.d
-│   │   │   ├── tm_case.o
-│   │   │   ├── trade.d
-│   │   │   ├── trade.o
-│   │   │   ├── trade_scene.d
-│   │   │   ├── trade_scene.o
-│   │   │   ├── trainer_card.d
-│   │   │   ├── trainer_card.o
-│   │   │   ├── trainer_fan_club.d
-│   │   │   ├── trainer_fan_club.o
-│   │   │   ├── trainer_pokemon_sprites.d
-│   │   │   ├── trainer_pokemon_sprites.o
-│   │   │   ├── trainer_see.d
-│   │   │   ├── trainer_see.o
-│   │   │   ├── trainer_tower.d
-│   │   │   ├── trainer_tower.o
-│   │   │   ├── trainer_tower_sets.d
-│   │   │   ├── trainer_tower_sets.o
-│   │   │   ├── trig.d
-│   │   │   ├── trig.o
-│   │   │   ├── union_room_battle.d
-│   │   │   ├── union_room_battle.o
-│   │   │   ├── union_room_chat.d
-│   │   │   ├── union_room_chat_display.d
-│   │   │   ├── union_room_chat_display.o
-│   │   │   ├── union_room_chat.o
-│   │   │   ├── union_room_chat_objects.d
-│   │   │   ├── union_room_chat_objects.o
-│   │   │   ├── union_room.d
-│   │   │   ├── union_room_message.d
-│   │   │   ├── union_room_message.o
-│   │   │   ├── union_room.o
-│   │   │   ├── union_room_player_avatar.d
-│   │   │   ├── union_room_player_avatar.o
-│   │   │   ├── util.d
-│   │   │   ├── util.o
-│   │   │   ├── vs_seeker.d
-│   │   │   ├── vs_seeker.o
-│   │   │   ├── wild_encounter.d
-│   │   │   ├── wild_encounter.o
-│   │   │   ├── wild_pokemon_area.d
-│   │   │   ├── wild_pokemon_area.o
-│   │   │   ├── window_8bpp.d
-│   │   │   ├── window_8bpp.o
-│   │   │   ├── window.d
-│   │   │   ├── window.o
-│   │   │   ├── wireless_communication_status_screen.d
-│   │   │   ├── wireless_communication_status_screen.o
-│   │   │   ├── wonder_news.d
-│   │   │   └── wonder_news.o
-│   │   ├── sym_bss.ld
-│   │   ├── sym_common.ld
-│   │   └── sym_ewram.ld
-│   ├── firered_rev1
-│   │   ├── data
-│   │   │   ├── battle_ai_scripts.d
-│   │   │   ├── battle_ai_scripts.o
-│   │   │   ├── battle_anim_scripts.d
-│   │   │   ├── battle_anim_scripts.o
-│   │   │   ├── battle_scripts_1.d
-│   │   │   ├── battle_scripts_1.o
-│   │   │   ├── battle_scripts_2.d
-│   │   │   ├── battle_scripts_2.o
-│   │   │   ├── event_scripts.d
-│   │   │   ├── event_scripts.o
-│   │   │   ├── field_effect_scripts.d
-│   │   │   ├── field_effect_scripts.o
-│   │   │   ├── map_events.o
-│   │   │   ├── maps.o
-│   │   │   ├── multiboot_berry_glitch_fix.d
-│   │   │   ├── multiboot_berry_glitch_fix.o
-│   │   │   ├── multiboot_ereader.d
-│   │   │   ├── multiboot_ereader.o
-│   │   │   ├── multiboot_pokemon_colosseum.d
-│   │   │   ├── multiboot_pokemon_colosseum.o
-│   │   │   ├── mystery_event_msg.d
-│   │   │   ├── mystery_event_msg.o
-│   │   │   ├── mystery_event_script_cmd_table.d
-│   │   │   ├── mystery_event_script_cmd_table.o
-│   │   │   ├── sound_data.d
-│   │   │   └── sound_data.o
-│   │   ├── sound
-│   │   │   └── songs
-│   │   │       └── midi
-│   │   ├── src
-│   │   │   ├── agb_flash_1m.d
-│   │   │   ├── agb_flash_1m.o
-│   │   │   ├── agb_flash.d
-│   │   │   ├── agb_flash_le.d
-│   │   │   ├── agb_flash_le.o
-│   │   │   ├── agb_flash_mx.d
-│   │   │   ├── agb_flash_mx.o
-│   │   │   ├── agb_flash.o
-│   │   │   ├── AgbRfu_LinkManager.d
-│   │   │   ├── AgbRfu_LinkManager.o
-│   │   │   ├── bag.d
-│   │   │   ├── bag.o
-│   │   │   ├── battle_ai_script_commands.d
-│   │   │   ├── battle_ai_script_commands.o
-│   │   │   ├── battle_ai_switch_items.d
-│   │   │   ├── battle_ai_switch_items.o
-│   │   │   ├── battle_anim_bug.d
-│   │   │   ├── battle_anim_bug.o
-│   │   │   ├── battle_anim.d
-│   │   │   ├── battle_anim_dark.d
-│   │   │   ├── battle_anim_dark.o
-│   │   │   ├── battle_anim_dragon.d
-│   │   │   ├── battle_anim_dragon.o
-│   │   │   ├── battle_anim_effects_1.d
-│   │   │   ├── battle_anim_effects_1.o
-│   │   │   ├── battle_anim_effects_2.d
-│   │   │   ├── battle_anim_effects_2.o
-│   │   │   ├── battle_anim_effects_3.d
-│   │   │   ├── battle_anim_effects_3.o
-│   │   │   ├── battle_anim_electric.d
-│   │   │   ├── battle_anim_electric.o
-│   │   │   ├── battle_anim_fight.d
-│   │   │   ├── battle_anim_fight.o
-│   │   │   ├── battle_anim_fire.d
-│   │   │   ├── battle_anim_fire.o
-│   │   │   ├── battle_anim_flying.d
-│   │   │   ├── battle_anim_flying.o
-│   │   │   ├── battle_anim_ghost.d
-│   │   │   ├── battle_anim_ghost.o
-│   │   │   ├── battle_anim_ground.d
-│   │   │   ├── battle_anim_ground.o
-│   │   │   ├── battle_anim_ice.d
-│   │   │   ├── battle_anim_ice.o
-│   │   │   ├── battle_anim_mon_movement.d
-│   │   │   ├── battle_anim_mon_movement.o
-│   │   │   ├── battle_anim_mons.d
-│   │   │   ├── battle_anim_mons.o
-│   │   │   ├── battle_anim_normal.d
-│   │   │   ├── battle_anim_normal.o
-│   │   │   ├── battle_anim.o
-│   │   │   ├── battle_anim_poison.d
-│   │   │   ├── battle_anim_poison.o
-│   │   │   ├── battle_anim_psychic.d
-│   │   │   ├── battle_anim_psychic.o
-│   │   │   ├── battle_anim_rock.d
-│   │   │   ├── battle_anim_rock.o
-│   │   │   ├── battle_anim_smokescreen.d
-│   │   │   ├── battle_anim_smokescreen.o
-│   │   │   ├── battle_anim_sound_tasks.d
-│   │   │   ├── battle_anim_sound_tasks.o
-│   │   │   ├── battle_anim_special.d
-│   │   │   ├── battle_anim_special.o
-│   │   │   ├── battle_anim_status_effects.d
-│   │   │   ├── battle_anim_status_effects.o
-│   │   │   ├── battle_anim_utility_funcs.d
-│   │   │   ├── battle_anim_utility_funcs.o
-│   │   │   ├── battle_anim_water.d
-│   │   │   ├── battle_anim_water.o
-│   │   │   ├── battle_bg.d
-│   │   │   ├── battle_bg.o
-│   │   │   ├── battle_controller_link_opponent.d
-│   │   │   ├── battle_controller_link_opponent.o
-│   │   │   ├── battle_controller_link_partner.d
-│   │   │   ├── battle_controller_link_partner.o
-│   │   │   ├── battle_controller_oak_old_man.d
-│   │   │   ├── battle_controller_oak_old_man.o
-│   │   │   ├── battle_controller_opponent.d
-│   │   │   ├── battle_controller_opponent.o
-│   │   │   ├── battle_controller_player.d
-│   │   │   ├── battle_controller_player.o
-│   │   │   ├── battle_controller_pokedude.d
-│   │   │   ├── battle_controller_pokedude.o
-│   │   │   ├── battle_controller_safari.d
-│   │   │   ├── battle_controller_safari.o
-│   │   │   ├── battle_controllers.d
-│   │   │   ├── battle_controllers.o
-│   │   │   ├── battle_gfx_sfx_util.d
-│   │   │   ├── battle_gfx_sfx_util.o
-│   │   │   ├── battle_interface.d
-│   │   │   ├── battle_interface.o
-│   │   │   ├── battle_intro.d
-│   │   │   ├── battle_intro.o
-│   │   │   ├── battle_main.d
-│   │   │   ├── battle_main.o
-│   │   │   ├── battle_message.d
-│   │   │   ├── battle_message.o
-│   │   │   ├── battle_records.d
-│   │   │   ├── battle_records.o
-│   │   │   ├── battle_script_commands.d
-│   │   │   ├── battle_script_commands.o
-│   │   │   ├── battle_setup.d
-│   │   │   ├── battle_setup.o
-│   │   │   ├── battle_tower.d
-│   │   │   ├── battle_tower.o
-│   │   │   ├── battle_transition.d
-│   │   │   ├── battle_transition.o
-│   │   │   ├── battle_util2.d
-│   │   │   ├── battle_util2.o
-│   │   │   ├── battle_util.d
-│   │   │   ├── battle_util.o
-│   │   │   ├── berry_crush.d
-│   │   │   ├── berry_crush.o
-│   │   │   ├── berry.d
-│   │   │   ├── berry_fix_program.d
-│   │   │   ├── berry_fix_program.o
-│   │   │   ├── berry.o
-│   │   │   ├── berry_pouch.d
-│   │   │   ├── berry_pouch.o
-│   │   │   ├── berry_powder.d
-│   │   │   ├── berry_powder.o
-│   │   │   ├── bg.d
-│   │   │   ├── bg.o
-│   │   │   ├── bg_regs.d
-│   │   │   ├── bg_regs.o
-│   │   │   ├── bike.d
-│   │   │   ├── bike.o
-│   │   │   ├── blend_palette.d
-│   │   │   ├── blend_palette.o
-│   │   │   ├── blit.d
-│   │   │   ├── blit.o
-│   │   │   ├── braille_text.d
-│   │   │   ├── braille_text.o
-│   │   │   ├── buy_menu_helpers.d
-│   │   │   ├── buy_menu_helpers.o
-│   │   │   ├── cable_car_util.d
-│   │   │   ├── cable_car_util.o
-│   │   │   ├── cable_club.d
-│   │   │   ├── cable_club.o
-│   │   │   ├── cereader_tool.d
-│   │   │   ├── cereader_tool.o
-│   │   │   ├── clear_save_data_screen.d
-│   │   │   ├── clear_save_data_screen.o
-│   │   │   ├── coins.d
-│   │   │   ├── coins.o
-│   │   │   ├── coord_event_weather.d
-│   │   │   ├── coord_event_weather.o
-│   │   │   ├── credits.d
-│   │   │   ├── credits.o
-│   │   │   ├── crt0.d
-│   │   │   ├── crt0.o
-│   │   │   ├── data.d
-│   │   │   ├── data.o
-│   │   │   ├── daycare.d
-│   │   │   ├── daycare.o
-│   │   │   ├── decompress.d
-│   │   │   ├── decompress.o
-│   │   │   ├── decoration.d
-│   │   │   ├── decoration.o
-│   │   │   ├── digit_obj_util.d
-│   │   │   ├── digit_obj_util.o
-│   │   │   ├── diploma.d
-│   │   │   ├── diploma.o
-│   │   │   ├── dma3_manager.d
-│   │   │   ├── dma3_manager.o
-│   │   │   ├── dodrio_berry_picking_comm.d
-│   │   │   ├── dodrio_berry_picking_comm.o
-│   │   │   ├── dodrio_berry_picking.d
-│   │   │   ├── dodrio_berry_picking.o
-│   │   │   ├── dynamic_placeholder_text_util.d
-│   │   │   ├── dynamic_placeholder_text_util.o
-│   │   │   ├── easy_chat_2.d
-│   │   │   ├── easy_chat_2.o
-│   │   │   ├── easy_chat_3.d
-│   │   │   ├── easy_chat_3.o
-│   │   │   ├── easy_chat.d
-│   │   │   ├── easy_chat.o
-│   │   │   ├── ereader_helpers.d
-│   │   │   ├── ereader_helpers.o
-│   │   │   ├── ereader_screen.d
-│   │   │   ├── ereader_screen.o
-│   │   │   ├── event_data.d
-│   │   │   ├── event_data.o
-│   │   │   ├── event_object_lock.d
-│   │   │   ├── event_object_lock.o
-│   │   │   ├── event_object_movement.d
-│   │   │   ├── event_object_movement.o
-│   │   │   ├── evolution_graphics.d
-│   │   │   ├── evolution_graphics.o
-│   │   │   ├── evolution_scene.d
-│   │   │   ├── evolution_scene.o
-│   │   │   ├── fame_checker.d
-│   │   │   ├── fame_checker.o
-│   │   │   ├── field_camera.d
-│   │   │   ├── field_camera.o
-│   │   │   ├── field_control_avatar.d
-│   │   │   ├── field_control_avatar.o
-│   │   │   ├── field_door.d
-│   │   │   ├── field_door.o
-│   │   │   ├── field_effect.d
-│   │   │   ├── field_effect_helpers.d
-│   │   │   ├── field_effect_helpers.o
-│   │   │   ├── field_effect.o
-│   │   │   ├── field_fadetransition.d
-│   │   │   ├── field_fadetransition.o
-│   │   │   ├── fieldmap.d
-│   │   │   ├── fieldmap.o
-│   │   │   ├── field_message_box.d
-│   │   │   ├── field_message_box.o
-│   │   │   ├── field_player_avatar.d
-│   │   │   ├── field_player_avatar.o
-│   │   │   ├── field_poison.d
-│   │   │   ├── field_poison.o
-│   │   │   ├── field_screen_effect.d
-│   │   │   ├── field_screen_effect.o
-│   │   │   ├── field_special_scene.d
-│   │   │   ├── field_special_scene.o
-│   │   │   ├── field_specials.d
-│   │   │   ├── field_specials.o
-│   │   │   ├── field_tasks.d
-│   │   │   ├── field_tasks.o
-│   │   │   ├── field_weather.d
-│   │   │   ├── field_weather_effects.d
-│   │   │   ├── field_weather_effects.o
-│   │   │   ├── field_weather.o
-│   │   │   ├── field_weather_util.d
-│   │   │   ├── field_weather_util.o
-│   │   │   ├── fldeff_berrytree.d
-│   │   │   ├── fldeff_berrytree.o
-│   │   │   ├── fldeff_cut.d
-│   │   │   ├── fldeff_cut.o
-│   │   │   ├── fldeff_dig.d
-│   │   │   ├── fldeff_dig.o
-│   │   │   ├── fldeff_flash.d
-│   │   │   ├── fldeff_flash.o
-│   │   │   ├── fldeff_poison.d
-│   │   │   ├── fldeff_poison.o
-│   │   │   ├── fldeff_rocksmash.d
-│   │   │   ├── fldeff_rocksmash.o
-│   │   │   ├── fldeff_softboiled.d
-│   │   │   ├── fldeff_softboiled.o
-│   │   │   ├── fldeff_strength.d
-│   │   │   ├── fldeff_strength.o
-│   │   │   ├── fldeff_sweetscent.d
-│   │   │   ├── fldeff_sweetscent.o
-│   │   │   ├── fldeff_teleport.d
-│   │   │   ├── fldeff_teleport.o
-│   │   │   ├── gpu_regs.d
-│   │   │   ├── gpu_regs.o
-│   │   │   ├── graphics.d
-│   │   │   ├── graphics.o
-│   │   │   ├── hall_of_fame.d
-│   │   │   ├── hall_of_fame.o
-│   │   │   ├── heal_location.d
-│   │   │   ├── heal_location.o
-│   │   │   ├── help_message.d
-│   │   │   ├── help_message.o
-│   │   │   ├── help_system.d
-│   │   │   ├── help_system.o
-│   │   │   ├── help_system_util.d
-│   │   │   ├── help_system_util.o
-│   │   │   ├── hof_pc.d
-│   │   │   ├── hof_pc.o
-│   │   │   ├── image_processing_effects.d
-│   │   │   ├── image_processing_effects.o
-│   │   │   ├── intro.d
-│   │   │   ├── intro.o
-│   │   │   ├── isagbprn.d
-│   │   │   ├── isagbprn.o
-│   │   │   ├── item.d
-│   │   │   ├── itemfinder.d
-│   │   │   ├── itemfinder.o
-│   │   │   ├── item_menu.d
-│   │   │   ├── item_menu_icons.d
-│   │   │   ├── item_menu_icons.o
-│   │   │   ├── item_menu.o
-│   │   │   ├── item.o
-│   │   │   ├── item_pc.d
-│   │   │   ├── item_pc.o
-│   │   │   ├── item_use.d
-│   │   │   ├── item_use.o
-│   │   │   ├── keyboard_text.d
-│   │   │   ├── keyboard_text.o
-│   │   │   ├── learn_move.d
-│   │   │   ├── learn_move.o
-│   │   │   ├── libagbsyscall.d
-│   │   │   ├── libagbsyscall.o
-│   │   │   ├── libgcnmultiboot.d
-│   │   │   ├── libgcnmultiboot.o
-│   │   │   ├── librfu_intr.d
-│   │   │   ├── librfu_intr.o
-│   │   │   ├── librfu_rfu.d
-│   │   │   ├── librfu_rfu.o
-│   │   │   ├── librfu_sio32id.d
-│   │   │   ├── librfu_sio32id.o
-│   │   │   ├── librfu_stwi.d
-│   │   │   ├── librfu_stwi.o
-│   │   │   ├── link.d
-│   │   │   ├── link.o
-│   │   │   ├── link_rfu_2.d
-│   │   │   ├── link_rfu_2.o
-│   │   │   ├── link_rfu_3.d
-│   │   │   ├── link_rfu_3.o
-│   │   │   ├── list_menu.d
-│   │   │   ├── list_menu.o
-│   │   │   ├── load_save.d
-│   │   │   ├── load_save.o
-│   │   │   ├── m4a_1.d
-│   │   │   ├── m4a_1.o
-│   │   │   ├── m4a.d
-│   │   │   ├── m4a.o
-│   │   │   ├── m4a_tables.d
-│   │   │   ├── m4a_tables.o
-│   │   │   ├── mailbox_pc.d
-│   │   │   ├── mailbox_pc.o
-│   │   │   ├── mail.d
-│   │   │   ├── mail_data.d
-│   │   │   ├── mail_data.o
-│   │   │   ├── mail.o
-│   │   │   ├── main.d
-│   │   │   ├── main_menu.d
-│   │   │   ├── main_menu.o
-│   │   │   ├── main.o
-│   │   │   ├── malloc.d
-│   │   │   ├── malloc.o
-│   │   │   ├── map_name_popup.d
-│   │   │   ├── map_name_popup.o
-│   │   │   ├── map_preview_screen.d
-│   │   │   ├── map_preview_screen.o
-│   │   │   ├── math_util.d
-│   │   │   ├── math_util.o
-│   │   │   ├── menu2.d
-│   │   │   ├── menu2.o
-│   │   │   ├── menu.d
-│   │   │   ├── menu_helpers.d
-│   │   │   ├── menu_helpers.o
-│   │   │   ├── menu_indicators.d
-│   │   │   ├── menu_indicators.o
-│   │   │   ├── menu.o
-│   │   │   ├── metatile_behavior.d
-│   │   │   ├── metatile_behavior.o
-│   │   │   ├── minigame_countdown.d
-│   │   │   ├── minigame_countdown.o
-│   │   │   ├── mini_printf.d
-│   │   │   ├── mini_printf.o
-│   │   │   ├── money.d
-│   │   │   ├── money.o
-│   │   │   ├── mon_markings.d
-│   │   │   ├── mon_markings.o
-│   │   │   ├── move_descriptions.d
-│   │   │   ├── move_descriptions.o
-│   │   │   ├── multiboot.d
-│   │   │   ├── multiboot.o
-│   │   │   ├── mystery_event_msg.d
-│   │   │   ├── mystery_event_msg.o
-│   │   │   ├── mystery_event_script.d
-│   │   │   ├── mystery_event_script.o
-│   │   │   ├── mystery_gift_client.d
-│   │   │   ├── mystery_gift_client.o
-│   │   │   ├── mystery_gift.d
-│   │   │   ├── mystery_gift_link.d
-│   │   │   ├── mystery_gift_link.o
-│   │   │   ├── mystery_gift_menu.d
-│   │   │   ├── mystery_gift_menu.o
-│   │   │   ├── mystery_gift.o
-│   │   │   ├── mystery_gift_scripts.d
-│   │   │   ├── mystery_gift_scripts.o
-│   │   │   ├── mystery_gift_server.d
-│   │   │   ├── mystery_gift_server.o
-│   │   │   ├── mystery_gift_show_card.d
-│   │   │   ├── mystery_gift_show_card.o
-│   │   │   ├── mystery_gift_show_news.d
-│   │   │   ├── mystery_gift_show_news.o
-│   │   │   ├── naming_screen.d
-│   │   │   ├── naming_screen.o
-│   │   │   ├── new_game.d
-│   │   │   ├── new_game.o
-│   │   │   ├── new_menu_helpers.d
-│   │   │   ├── new_menu_helpers.o
-│   │   │   ├── oak_speech.d
-│   │   │   ├── oak_speech.o
-│   │   │   ├── option_menu.d
-│   │   │   ├── option_menu.o
-│   │   │   ├── overworld.d
-│   │   │   ├── overworld.o
-│   │   │   ├── palette.d
-│   │   │   ├── palette.o
-│   │   │   ├── palette_util.d
-│   │   │   ├── palette_util.o
-│   │   │   ├── party_menu.d
-│   │   │   ├── party_menu.o
-│   │   │   ├── party_menu_specials.d
-│   │   │   ├── party_menu_specials.o
-│   │   │   ├── pc_screen_effect.d
-│   │   │   ├── pc_screen_effect.o
-│   │   │   ├── player_pc.d
-│   │   │   ├── player_pc.o
-│   │   │   ├── play_time.d
-│   │   │   ├── play_time.o
-│   │   │   ├── pokeball.d
-│   │   │   ├── pokeball.o
-│   │   │   ├── pokedex_area_markers.d
-│   │   │   ├── pokedex_area_markers.o
-│   │   │   ├── pokedex.d
-│   │   │   ├── pokedex.o
-│   │   │   ├── pokedex_screen.d
-│   │   │   ├── pokedex_screen.o
-│   │   │   ├── pokemon.d
-│   │   │   ├── pokemon_icon.d
-│   │   │   ├── pokemon_icon.o
-│   │   │   ├── pokemon_jump.d
-│   │   │   ├── pokemon_jump.o
-│   │   │   ├── pokemon.o
-│   │   │   ├── pokemon_size_record.d
-│   │   │   ├── pokemon_size_record.o
-│   │   │   ├── pokemon_special_anim.d
-│   │   │   ├── pokemon_special_anim.o
-│   │   │   ├── pokemon_special_anim_scene.d
-│   │   │   ├── pokemon_special_anim_scene.o
-│   │   │   ├── pokemon_storage_system.d
-│   │   │   ├── pokemon_storage_system_data.d
-│   │   │   ├── pokemon_storage_system_data.o
-│   │   │   ├── pokemon_storage_system_graphics.d
-│   │   │   ├── pokemon_storage_system_graphics.o
-│   │   │   ├── pokemon_storage_system_menu.d
-│   │   │   ├── pokemon_storage_system_menu.o
-│   │   │   ├── pokemon_storage_system_misc.d
-│   │   │   ├── pokemon_storage_system_misc.o
-│   │   │   ├── pokemon_storage_system.o
-│   │   │   ├── pokemon_storage_system_tasks.d
-│   │   │   ├── pokemon_storage_system_tasks.o
-│   │   │   ├── pokemon_summary_screen.d
-│   │   │   ├── pokemon_summary_screen.o
-│   │   │   ├── post_battle_event_funcs.d
-│   │   │   ├── post_battle_event_funcs.o
-│   │   │   ├── prof_pc.d
-│   │   │   ├── prof_pc.o
-│   │   │   ├── quest_log_battle.d
-│   │   │   ├── quest_log_battle.o
-│   │   │   ├── quest_log.d
-│   │   │   ├── quest_log_events.d
-│   │   │   ├── quest_log_events.o
-│   │   │   ├── quest_log.o
-│   │   │   ├── quest_log_objects.d
-│   │   │   ├── quest_log_objects.o
-│   │   │   ├── quest_log_player.d
-│   │   │   ├── quest_log_player.o
-│   │   │   ├── random.d
-│   │   │   ├── random.o
-│   │   │   ├── region_map.d
-│   │   │   ├── region_map.o
-│   │   │   ├── renewable_hidden_items.d
-│   │   │   ├── renewable_hidden_items.o
-│   │   │   ├── reset_save_heap.d
-│   │   │   ├── reset_save_heap.o
-│   │   │   ├── reshow_battle_screen.d
-│   │   │   ├── reshow_battle_screen.o
-│   │   │   ├── roamer.d
-│   │   │   ├── roamer.o
-│   │   │   ├── rom_header.d
-│   │   │   ├── rom_header_gf.d
-│   │   │   ├── rom_header_gf.o
-│   │   │   ├── rom_header.o
-│   │   │   ├── safari_zone.d
-│   │   │   ├── safari_zone.o
-│   │   │   ├── save.d
-│   │   │   ├── save_failed_screen.d
-│   │   │   ├── save_failed_screen.o
-│   │   │   ├── save_location.d
-│   │   │   ├── save_location.o
-│   │   │   ├── save_menu_util.d
-│   │   │   ├── save_menu_util.o
-│   │   │   ├── save.o
-│   │   │   ├── scanline_effect.d
-│   │   │   ├── scanline_effect.o
-│   │   │   ├── scrcmd.d
-│   │   │   ├── scrcmd.o
-│   │   │   ├── script.d
-│   │   │   ├── script_menu.d
-│   │   │   ├── script_menu.o
-│   │   │   ├── script_movement.d
-│   │   │   ├── script_movement.o
-│   │   │   ├── script.o
-│   │   │   ├── script_pokemon_util.d
-│   │   │   ├── script_pokemon_util.o
-│   │   │   ├── seagallop.d
-│   │   │   ├── seagallop.o
-│   │   │   ├── shop.d
-│   │   │   ├── shop.o
-│   │   │   ├── sloopsvc.d
-│   │   │   ├── sloopsvc.o
-│   │   │   ├── slot_machine.d
-│   │   │   ├── slot_machine.o
-│   │   │   ├── sound.d
-│   │   │   ├── sound.o
-│   │   │   ├── special_field_anim.d
-│   │   │   ├── special_field_anim.o
-│   │   │   ├── sprite.d
-│   │   │   ├── sprite.o
-│   │   │   ├── ss_anne.d
-│   │   │   ├── ss_anne.o
-│   │   │   ├── start_menu.d
-│   │   │   ├── start_menu.o
-│   │   │   ├── strings.d
-│   │   │   ├── strings.o
-│   │   │   ├── string_util.d
-│   │   │   ├── string_util.o
-│   │   │   ├── task.d
-│   │   │   ├── task.o
-│   │   │   ├── teachy_tv.d
-│   │   │   ├── teachy_tv.o
-│   │   │   ├── text.d
-│   │   │   ├── text.o
-│   │   │   ├── text_printer.d
-│   │   │   ├── text_printer.o
-│   │   │   ├── text_window.d
-│   │   │   ├── text_window_graphics.d
-│   │   │   ├── text_window_graphics.o
-│   │   │   ├── text_window.o
-│   │   │   ├── tilemap_util.d
-│   │   │   ├── tilemap_util.o
-│   │   │   ├── tileset_anims.d
-│   │   │   ├── tileset_anims.o
-│   │   │   ├── tilesets.d
-│   │   │   ├── tilesets.o
-│   │   │   ├── title_screen.d
-│   │   │   ├── title_screen.o
-│   │   │   ├── tm_case.d
-│   │   │   ├── tm_case.o
-│   │   │   ├── trade.d
-│   │   │   ├── trade.o
-│   │   │   ├── trade_scene.d
-│   │   │   ├── trade_scene.o
-│   │   │   ├── trainer_card.d
-│   │   │   ├── trainer_card.o
-│   │   │   ├── trainer_fan_club.d
-│   │   │   ├── trainer_fan_club.o
-│   │   │   ├── trainer_pokemon_sprites.d
-│   │   │   ├── trainer_pokemon_sprites.o
-│   │   │   ├── trainer_see.d
-│   │   │   ├── trainer_see.o
-│   │   │   ├── trainer_tower.d
-│   │   │   ├── trainer_tower.o
-│   │   │   ├── trainer_tower_sets.d
-│   │   │   ├── trainer_tower_sets.o
-│   │   │   ├── trig.d
-│   │   │   ├── trig.o
-│   │   │   ├── union_room_battle.d
-│   │   │   ├── union_room_battle.o
-│   │   │   ├── union_room_chat.d
-│   │   │   ├── union_room_chat_display.d
-│   │   │   ├── union_room_chat_display.o
-│   │   │   ├── union_room_chat.o
-│   │   │   ├── union_room_chat_objects.d
-│   │   │   ├── union_room_chat_objects.o
-│   │   │   ├── union_room.d
-│   │   │   ├── union_room_message.d
-│   │   │   ├── union_room_message.o
-│   │   │   ├── union_room.o
-│   │   │   ├── union_room_player_avatar.d
-│   │   │   ├── union_room_player_avatar.o
-│   │   │   ├── util.d
-│   │   │   ├── util.o
-│   │   │   ├── vs_seeker.d
-│   │   │   ├── vs_seeker.o
-│   │   │   ├── wild_encounter.d
-│   │   │   ├── wild_encounter.o
-│   │   │   ├── wild_pokemon_area.d
-│   │   │   ├── wild_pokemon_area.o
-│   │   │   ├── window_8bpp.d
-│   │   │   ├── window_8bpp.o
-│   │   │   ├── window.d
-│   │   │   ├── window.o
-│   │   │   ├── wireless_communication_status_screen.d
-│   │   │   ├── wireless_communication_status_screen.o
-│   │   │   ├── wonder_news.d
-│   │   │   └── wonder_news.o
-│   │   ├── sym_bss.ld
-│   │   ├── sym_common.ld
-│   │   └── sym_ewram.ld
-│   ├── leafgreen
-│   │   ├── data
-│   │   │   ├── battle_ai_scripts.d
-│   │   │   ├── battle_ai_scripts.o
-│   │   │   ├── battle_anim_scripts.d
-│   │   │   ├── battle_anim_scripts.o
-│   │   │   ├── battle_scripts_1.d
-│   │   │   ├── battle_scripts_1.o
-│   │   │   ├── battle_scripts_2.d
-│   │   │   ├── battle_scripts_2.o
-│   │   │   ├── event_scripts.d
-│   │   │   ├── event_scripts.o
-│   │   │   ├── field_effect_scripts.d
-│   │   │   ├── field_effect_scripts.o
-│   │   │   ├── map_events.o
-│   │   │   ├── maps.o
-│   │   │   ├── multiboot_berry_glitch_fix.d
-│   │   │   ├── multiboot_berry_glitch_fix.o
-│   │   │   ├── multiboot_ereader.d
-│   │   │   ├── multiboot_ereader.o
-│   │   │   ├── multiboot_pokemon_colosseum.d
-│   │   │   ├── multiboot_pokemon_colosseum.o
-│   │   │   ├── mystery_event_msg.d
-│   │   │   ├── mystery_event_msg.o
-│   │   │   ├── mystery_event_script_cmd_table.d
-│   │   │   ├── mystery_event_script_cmd_table.o
-│   │   │   ├── sound_data.d
-│   │   │   └── sound_data.o
-│   │   ├── sound
-│   │   │   └── songs
-│   │   │       └── midi
-│   │   ├── src
-│   │   │   ├── agb_flash_1m.d
-│   │   │   ├── agb_flash_1m.o
-│   │   │   ├── agb_flash.d
-│   │   │   ├── agb_flash_le.d
-│   │   │   ├── agb_flash_le.o
-│   │   │   ├── agb_flash_mx.d
-│   │   │   ├── agb_flash_mx.o
-│   │   │   ├── agb_flash.o
-│   │   │   ├── AgbRfu_LinkManager.d
-│   │   │   ├── AgbRfu_LinkManager.o
-│   │   │   ├── bag.d
-│   │   │   ├── bag.o
-│   │   │   ├── battle_ai_script_commands.d
-│   │   │   ├── battle_ai_script_commands.o
-│   │   │   ├── battle_ai_switch_items.d
-│   │   │   ├── battle_ai_switch_items.o
-│   │   │   ├── battle_anim_bug.d
-│   │   │   ├── battle_anim_bug.o
-│   │   │   ├── battle_anim.d
-│   │   │   ├── battle_anim_dark.d
-│   │   │   ├── battle_anim_dark.o
-│   │   │   ├── battle_anim_dragon.d
-│   │   │   ├── battle_anim_dragon.o
-│   │   │   ├── battle_anim_effects_1.d
-│   │   │   ├── battle_anim_effects_1.o
-│   │   │   ├── battle_anim_effects_2.d
-│   │   │   ├── battle_anim_effects_2.o
-│   │   │   ├── battle_anim_effects_3.d
-│   │   │   ├── battle_anim_effects_3.o
-│   │   │   ├── battle_anim_electric.d
-│   │   │   ├── battle_anim_electric.o
-│   │   │   ├── battle_anim_fight.d
-│   │   │   ├── battle_anim_fight.o
-│   │   │   ├── battle_anim_fire.d
-│   │   │   ├── battle_anim_fire.o
-│   │   │   ├── battle_anim_flying.d
-│   │   │   ├── battle_anim_flying.o
-│   │   │   ├── battle_anim_ghost.d
-│   │   │   ├── battle_anim_ghost.o
-│   │   │   ├── battle_anim_ground.d
-│   │   │   ├── battle_anim_ground.o
-│   │   │   ├── battle_anim_ice.d
-│   │   │   ├── battle_anim_ice.o
-│   │   │   ├── battle_anim_mon_movement.d
-│   │   │   ├── battle_anim_mon_movement.o
-│   │   │   ├── battle_anim_mons.d
-│   │   │   ├── battle_anim_mons.o
-│   │   │   ├── battle_anim_normal.d
-│   │   │   ├── battle_anim_normal.o
-│   │   │   ├── battle_anim.o
-│   │   │   ├── battle_anim_poison.d
-│   │   │   ├── battle_anim_poison.o
-│   │   │   ├── battle_anim_psychic.d
-│   │   │   ├── battle_anim_psychic.o
-│   │   │   ├── battle_anim_rock.d
-│   │   │   ├── battle_anim_rock.o
-│   │   │   ├── battle_anim_smokescreen.d
-│   │   │   ├── battle_anim_smokescreen.o
-│   │   │   ├── battle_anim_sound_tasks.d
-│   │   │   ├── battle_anim_sound_tasks.o
-│   │   │   ├── battle_anim_special.d
-│   │   │   ├── battle_anim_special.o
-│   │   │   ├── battle_anim_status_effects.d
-│   │   │   ├── battle_anim_status_effects.o
-│   │   │   ├── battle_anim_utility_funcs.d
-│   │   │   ├── battle_anim_utility_funcs.o
-│   │   │   ├── battle_anim_water.d
-│   │   │   ├── battle_anim_water.o
-│   │   │   ├── battle_bg.d
-│   │   │   ├── battle_bg.o
-│   │   │   ├── battle_controller_link_opponent.d
-│   │   │   ├── battle_controller_link_opponent.o
-│   │   │   ├── battle_controller_link_partner.d
-│   │   │   ├── battle_controller_link_partner.o
-│   │   │   ├── battle_controller_oak_old_man.d
-│   │   │   ├── battle_controller_oak_old_man.o
-│   │   │   ├── battle_controller_opponent.d
-│   │   │   ├── battle_controller_opponent.o
-│   │   │   ├── battle_controller_player.d
-│   │   │   ├── battle_controller_player.o
-│   │   │   ├── battle_controller_pokedude.d
-│   │   │   ├── battle_controller_pokedude.o
-│   │   │   ├── battle_controller_safari.d
-│   │   │   ├── battle_controller_safari.o
-│   │   │   ├── battle_controllers.d
-│   │   │   ├── battle_controllers.o
-│   │   │   ├── battle_gfx_sfx_util.d
-│   │   │   ├── battle_gfx_sfx_util.o
-│   │   │   ├── battle_interface.d
-│   │   │   ├── battle_interface.o
-│   │   │   ├── battle_intro.d
-│   │   │   ├── battle_intro.o
-│   │   │   ├── battle_main.d
-│   │   │   ├── battle_main.o
-│   │   │   ├── battle_message.d
-│   │   │   ├── battle_message.o
-│   │   │   ├── battle_records.d
-│   │   │   ├── battle_records.o
-│   │   │   ├── battle_script_commands.d
-│   │   │   ├── battle_script_commands.o
-│   │   │   ├── battle_setup.d
-│   │   │   ├── battle_setup.o
-│   │   │   ├── battle_tower.d
-│   │   │   ├── battle_tower.o
-│   │   │   ├── battle_transition.d
-│   │   │   ├── battle_transition.o
-│   │   │   ├── battle_util2.d
-│   │   │   ├── battle_util2.o
-│   │   │   ├── battle_util.d
-│   │   │   ├── battle_util.o
-│   │   │   ├── berry_crush.d
-│   │   │   ├── berry_crush.o
-│   │   │   ├── berry.d
-│   │   │   ├── berry_fix_program.d
-│   │   │   ├── berry_fix_program.o
-│   │   │   ├── berry.o
-│   │   │   ├── berry_pouch.d
-│   │   │   ├── berry_pouch.o
-│   │   │   ├── berry_powder.d
-│   │   │   ├── berry_powder.o
-│   │   │   ├── bg.d
-│   │   │   ├── bg.o
-│   │   │   ├── bg_regs.d
-│   │   │   ├── bg_regs.o
-│   │   │   ├── bike.d
-│   │   │   ├── bike.o
-│   │   │   ├── blend_palette.d
-│   │   │   ├── blend_palette.o
-│   │   │   ├── blit.d
-│   │   │   ├── blit.o
-│   │   │   ├── braille_text.d
-│   │   │   ├── braille_text.o
-│   │   │   ├── buy_menu_helpers.d
-│   │   │   ├── buy_menu_helpers.o
-│   │   │   ├── cable_car_util.d
-│   │   │   ├── cable_car_util.o
-│   │   │   ├── cable_club.d
-│   │   │   ├── cable_club.o
-│   │   │   ├── cereader_tool.d
-│   │   │   ├── cereader_tool.o
-│   │   │   ├── clear_save_data_screen.d
-│   │   │   ├── clear_save_data_screen.o
-│   │   │   ├── coins.d
-│   │   │   ├── coins.o
-│   │   │   ├── coord_event_weather.d
-│   │   │   ├── coord_event_weather.o
-│   │   │   ├── credits.d
-│   │   │   ├── credits.o
-│   │   │   ├── crt0.d
-│   │   │   ├── crt0.o
-│   │   │   ├── data.d
-│   │   │   ├── data.o
-│   │   │   ├── daycare.d
-│   │   │   ├── daycare.o
-│   │   │   ├── decompress.d
-│   │   │   ├── decompress.o
-│   │   │   ├── decoration.d
-│   │   │   ├── decoration.o
-│   │   │   ├── digit_obj_util.d
-│   │   │   ├── digit_obj_util.o
-│   │   │   ├── diploma.d
-│   │   │   ├── diploma.o
-│   │   │   ├── dma3_manager.d
-│   │   │   ├── dma3_manager.o
-│   │   │   ├── dodrio_berry_picking_comm.d
-│   │   │   ├── dodrio_berry_picking_comm.o
-│   │   │   ├── dodrio_berry_picking.d
-│   │   │   ├── dodrio_berry_picking.o
-│   │   │   ├── dynamic_placeholder_text_util.d
-│   │   │   ├── dynamic_placeholder_text_util.o
-│   │   │   ├── easy_chat_2.d
-│   │   │   ├── easy_chat_2.o
-│   │   │   ├── easy_chat_3.d
-│   │   │   ├── easy_chat_3.o
-│   │   │   ├── easy_chat.d
-│   │   │   ├── easy_chat.o
-│   │   │   ├── ereader_helpers.d
-│   │   │   ├── ereader_helpers.o
-│   │   │   ├── ereader_screen.d
-│   │   │   ├── ereader_screen.o
-│   │   │   ├── event_data.d
-│   │   │   ├── event_data.o
-│   │   │   ├── event_object_lock.d
-│   │   │   ├── event_object_lock.o
-│   │   │   ├── event_object_movement.d
-│   │   │   ├── event_object_movement.o
-│   │   │   ├── evolution_graphics.d
-│   │   │   ├── evolution_graphics.o
-│   │   │   ├── evolution_scene.d
-│   │   │   ├── evolution_scene.o
-│   │   │   ├── fame_checker.d
-│   │   │   ├── fame_checker.o
-│   │   │   ├── field_camera.d
-│   │   │   ├── field_camera.o
-│   │   │   ├── field_control_avatar.d
-│   │   │   ├── field_control_avatar.o
-│   │   │   ├── field_door.d
-│   │   │   ├── field_door.o
-│   │   │   ├── field_effect.d
-│   │   │   ├── field_effect_helpers.d
-│   │   │   ├── field_effect_helpers.o
-│   │   │   ├── field_effect.o
-│   │   │   ├── field_fadetransition.d
-│   │   │   ├── field_fadetransition.o
-│   │   │   ├── fieldmap.d
-│   │   │   ├── fieldmap.o
-│   │   │   ├── field_message_box.d
-│   │   │   ├── field_message_box.o
-│   │   │   ├── field_player_avatar.d
-│   │   │   ├── field_player_avatar.o
-│   │   │   ├── field_poison.d
-│   │   │   ├── field_poison.o
-│   │   │   ├── field_screen_effect.d
-│   │   │   ├── field_screen_effect.o
-│   │   │   ├── field_special_scene.d
-│   │   │   ├── field_special_scene.o
-│   │   │   ├── field_specials.d
-│   │   │   ├── field_specials.o
-│   │   │   ├── field_tasks.d
-│   │   │   ├── field_tasks.o
-│   │   │   ├── field_weather.d
-│   │   │   ├── field_weather_effects.d
-│   │   │   ├── field_weather_effects.o
-│   │   │   ├── field_weather.o
-│   │   │   ├── field_weather_util.d
-│   │   │   ├── field_weather_util.o
-│   │   │   ├── fldeff_berrytree.d
-│   │   │   ├── fldeff_berrytree.o
-│   │   │   ├── fldeff_cut.d
-│   │   │   ├── fldeff_cut.o
-│   │   │   ├── fldeff_dig.d
-│   │   │   ├── fldeff_dig.o
-│   │   │   ├── fldeff_flash.d
-│   │   │   ├── fldeff_flash.o
-│   │   │   ├── fldeff_poison.d
-│   │   │   ├── fldeff_poison.o
-│   │   │   ├── fldeff_rocksmash.d
-│   │   │   ├── fldeff_rocksmash.o
-│   │   │   ├── fldeff_softboiled.d
-│   │   │   ├── fldeff_softboiled.o
-│   │   │   ├── fldeff_strength.d
-│   │   │   ├── fldeff_strength.o
-│   │   │   ├── fldeff_sweetscent.d
-│   │   │   ├── fldeff_sweetscent.o
-│   │   │   ├── fldeff_teleport.d
-│   │   │   ├── fldeff_teleport.o
-│   │   │   ├── gpu_regs.d
-│   │   │   ├── gpu_regs.o
-│   │   │   ├── graphics.d
-│   │   │   ├── graphics.o
-│   │   │   ├── hall_of_fame.d
-│   │   │   ├── hall_of_fame.o
-│   │   │   ├── heal_location.d
-│   │   │   ├── heal_location.o
-│   │   │   ├── help_message.d
-│   │   │   ├── help_message.o
-│   │   │   ├── help_system.d
-│   │   │   ├── help_system.o
-│   │   │   ├── help_system_util.d
-│   │   │   ├── help_system_util.o
-│   │   │   ├── hof_pc.d
-│   │   │   ├── hof_pc.o
-│   │   │   ├── image_processing_effects.d
-│   │   │   ├── image_processing_effects.o
-│   │   │   ├── intro.d
-│   │   │   ├── intro.o
-│   │   │   ├── isagbprn.d
-│   │   │   ├── isagbprn.o
-│   │   │   ├── item.d
-│   │   │   ├── itemfinder.d
-│   │   │   ├── itemfinder.o
-│   │   │   ├── item_menu.d
-│   │   │   ├── item_menu_icons.d
-│   │   │   ├── item_menu_icons.o
-│   │   │   ├── item_menu.o
-│   │   │   ├── item.o
-│   │   │   ├── item_pc.d
-│   │   │   ├── item_pc.o
-│   │   │   ├── item_use.d
-│   │   │   ├── item_use.o
-│   │   │   ├── keyboard_text.d
-│   │   │   ├── keyboard_text.o
-│   │   │   ├── learn_move.d
-│   │   │   ├── learn_move.o
-│   │   │   ├── libagbsyscall.d
-│   │   │   ├── libagbsyscall.o
-│   │   │   ├── libgcnmultiboot.d
-│   │   │   ├── libgcnmultiboot.o
-│   │   │   ├── librfu_intr.d
-│   │   │   ├── librfu_intr.o
-│   │   │   ├── librfu_rfu.d
-│   │   │   ├── librfu_rfu.o
-│   │   │   ├── librfu_sio32id.d
-│   │   │   ├── librfu_sio32id.o
-│   │   │   ├── librfu_stwi.d
-│   │   │   ├── librfu_stwi.o
-│   │   │   ├── link.d
-│   │   │   ├── link.o
-│   │   │   ├── link_rfu_2.d
-│   │   │   ├── link_rfu_2.o
-│   │   │   ├── link_rfu_3.d
-│   │   │   ├── link_rfu_3.o
-│   │   │   ├── list_menu.d
-│   │   │   ├── list_menu.o
-│   │   │   ├── load_save.d
-│   │   │   ├── load_save.o
-│   │   │   ├── m4a_1.d
-│   │   │   ├── m4a_1.o
-│   │   │   ├── m4a.d
-│   │   │   ├── m4a.o
-│   │   │   ├── m4a_tables.d
-│   │   │   ├── m4a_tables.o
-│   │   │   ├── mailbox_pc.d
-│   │   │   ├── mailbox_pc.o
-│   │   │   ├── mail.d
-│   │   │   ├── mail_data.d
-│   │   │   ├── mail_data.o
-│   │   │   ├── mail.o
-│   │   │   ├── main.d
-│   │   │   ├── main_menu.d
-│   │   │   ├── main_menu.o
-│   │   │   ├── main.o
-│   │   │   ├── malloc.d
-│   │   │   ├── malloc.o
-│   │   │   ├── map_name_popup.d
-│   │   │   ├── map_name_popup.o
-│   │   │   ├── map_preview_screen.d
-│   │   │   ├── map_preview_screen.o
-│   │   │   ├── math_util.d
-│   │   │   ├── math_util.o
-│   │   │   ├── menu2.d
-│   │   │   ├── menu2.o
-│   │   │   ├── menu.d
-│   │   │   ├── menu_helpers.d
-│   │   │   ├── menu_helpers.o
-│   │   │   ├── menu_indicators.d
-│   │   │   ├── menu_indicators.o
-│   │   │   ├── menu.o
-│   │   │   ├── metatile_behavior.d
-│   │   │   ├── metatile_behavior.o
-│   │   │   ├── minigame_countdown.d
-│   │   │   ├── minigame_countdown.o
-│   │   │   ├── mini_printf.d
-│   │   │   ├── mini_printf.o
-│   │   │   ├── money.d
-│   │   │   ├── money.o
-│   │   │   ├── mon_markings.d
-│   │   │   ├── mon_markings.o
-│   │   │   ├── move_descriptions.d
-│   │   │   ├── move_descriptions.o
-│   │   │   ├── multiboot.d
-│   │   │   ├── multiboot.o
-│   │   │   ├── mystery_event_msg.d
-│   │   │   ├── mystery_event_msg.o
-│   │   │   ├── mystery_event_script.d
-│   │   │   ├── mystery_event_script.o
-│   │   │   ├── mystery_gift_client.d
-│   │   │   ├── mystery_gift_client.o
-│   │   │   ├── mystery_gift.d
-│   │   │   ├── mystery_gift_link.d
-│   │   │   ├── mystery_gift_link.o
-│   │   │   ├── mystery_gift_menu.d
-│   │   │   ├── mystery_gift_menu.o
-│   │   │   ├── mystery_gift.o
-│   │   │   ├── mystery_gift_scripts.d
-│   │   │   ├── mystery_gift_scripts.o
-│   │   │   ├── mystery_gift_server.d
-│   │   │   ├── mystery_gift_server.o
-│   │   │   ├── mystery_gift_show_card.d
-│   │   │   ├── mystery_gift_show_card.o
-│   │   │   ├── mystery_gift_show_news.d
-│   │   │   ├── mystery_gift_show_news.o
-│   │   │   ├── naming_screen.d
-│   │   │   ├── naming_screen.o
-│   │   │   ├── new_game.d
-│   │   │   ├── new_game.o
-│   │   │   ├── new_menu_helpers.d
-│   │   │   ├── new_menu_helpers.o
-│   │   │   ├── oak_speech.d
-│   │   │   ├── oak_speech.o
-│   │   │   ├── option_menu.d
-│   │   │   ├── option_menu.o
-│   │   │   ├── overworld.d
-│   │   │   ├── overworld.o
-│   │   │   ├── palette.d
-│   │   │   ├── palette.o
-│   │   │   ├── palette_util.d
-│   │   │   ├── palette_util.o
-│   │   │   ├── party_menu.d
-│   │   │   ├── party_menu.o
-│   │   │   ├── party_menu_specials.d
-│   │   │   ├── party_menu_specials.o
-│   │   │   ├── pc_screen_effect.d
-│   │   │   ├── pc_screen_effect.o
-│   │   │   ├── player_pc.d
-│   │   │   ├── player_pc.o
-│   │   │   ├── play_time.d
-│   │   │   ├── play_time.o
-│   │   │   ├── pokeball.d
-│   │   │   ├── pokeball.o
-│   │   │   ├── pokedex_area_markers.d
-│   │   │   ├── pokedex_area_markers.o
-│   │   │   ├── pokedex.d
-│   │   │   ├── pokedex.o
-│   │   │   ├── pokedex_screen.d
-│   │   │   ├── pokedex_screen.o
-│   │   │   ├── pokemon.d
-│   │   │   ├── pokemon_icon.d
-│   │   │   ├── pokemon_icon.o
-│   │   │   ├── pokemon_jump.d
-│   │   │   ├── pokemon_jump.o
-│   │   │   ├── pokemon.o
-│   │   │   ├── pokemon_size_record.d
-│   │   │   ├── pokemon_size_record.o
-│   │   │   ├── pokemon_special_anim.d
-│   │   │   ├── pokemon_special_anim.o
-│   │   │   ├── pokemon_special_anim_scene.d
-│   │   │   ├── pokemon_special_anim_scene.o
-│   │   │   ├── pokemon_storage_system.d
-│   │   │   ├── pokemon_storage_system_data.d
-│   │   │   ├── pokemon_storage_system_data.o
-│   │   │   ├── pokemon_storage_system_graphics.d
-│   │   │   ├── pokemon_storage_system_graphics.o
-│   │   │   ├── pokemon_storage_system_menu.d
-│   │   │   ├── pokemon_storage_system_menu.o
-│   │   │   ├── pokemon_storage_system_misc.d
-│   │   │   ├── pokemon_storage_system_misc.o
-│   │   │   ├── pokemon_storage_system.o
-│   │   │   ├── pokemon_storage_system_tasks.d
-│   │   │   ├── pokemon_storage_system_tasks.o
-│   │   │   ├── pokemon_summary_screen.d
-│   │   │   ├── pokemon_summary_screen.o
-│   │   │   ├── post_battle_event_funcs.d
-│   │   │   ├── post_battle_event_funcs.o
-│   │   │   ├── prof_pc.d
-│   │   │   ├── prof_pc.o
-│   │   │   ├── quest_log_battle.d
-│   │   │   ├── quest_log_battle.o
-│   │   │   ├── quest_log.d
-│   │   │   ├── quest_log_events.d
-│   │   │   ├── quest_log_events.o
-│   │   │   ├── quest_log.o
-│   │   │   ├── quest_log_objects.d
-│   │   │   ├── quest_log_objects.o
-│   │   │   ├── quest_log_player.d
-│   │   │   ├── quest_log_player.o
-│   │   │   ├── random.d
-│   │   │   ├── random.o
-│   │   │   ├── region_map.d
-│   │   │   ├── region_map.o
-│   │   │   ├── renewable_hidden_items.d
-│   │   │   ├── renewable_hidden_items.o
-│   │   │   ├── reset_save_heap.d
-│   │   │   ├── reset_save_heap.o
-│   │   │   ├── reshow_battle_screen.d
-│   │   │   ├── reshow_battle_screen.o
-│   │   │   ├── roamer.d
-│   │   │   ├── roamer.o
-│   │   │   ├── rom_header.d
-│   │   │   ├── rom_header_gf.d
-│   │   │   ├── rom_header_gf.o
-│   │   │   ├── rom_header.o
-│   │   │   ├── safari_zone.d
-│   │   │   ├── safari_zone.o
-│   │   │   ├── save.d
-│   │   │   ├── save_failed_screen.d
-│   │   │   ├── save_failed_screen.o
-│   │   │   ├── save_location.d
-│   │   │   ├── save_location.o
-│   │   │   ├── save_menu_util.d
-│   │   │   ├── save_menu_util.o
-│   │   │   ├── save.o
-│   │   │   ├── scanline_effect.d
-│   │   │   ├── scanline_effect.o
-│   │   │   ├── scrcmd.d
-│   │   │   ├── scrcmd.o
-│   │   │   ├── script.d
-│   │   │   ├── script_menu.d
-│   │   │   ├── script_menu.o
-│   │   │   ├── script_movement.d
-│   │   │   ├── script_movement.o
-│   │   │   ├── script.o
-│   │   │   ├── script_pokemon_util.d
-│   │   │   ├── script_pokemon_util.o
-│   │   │   ├── seagallop.d
-│   │   │   ├── seagallop.o
-│   │   │   ├── shop.d
-│   │   │   ├── shop.o
-│   │   │   ├── sloopsvc.d
-│   │   │   ├── sloopsvc.o
-│   │   │   ├── slot_machine.d
-│   │   │   ├── slot_machine.o
-│   │   │   ├── sound.d
-│   │   │   ├── sound.o
-│   │   │   ├── special_field_anim.d
-│   │   │   ├── special_field_anim.o
-│   │   │   ├── sprite.d
-│   │   │   ├── sprite.o
-│   │   │   ├── ss_anne.d
-│   │   │   ├── ss_anne.o
-│   │   │   ├── start_menu.d
-│   │   │   ├── start_menu.o
-│   │   │   ├── strings.d
-│   │   │   ├── strings.o
-│   │   │   ├── string_util.d
-│   │   │   ├── string_util.o
-│   │   │   ├── task.d
-│   │   │   ├── task.o
-│   │   │   ├── teachy_tv.d
-│   │   │   ├── teachy_tv.o
-│   │   │   ├── text.d
-│   │   │   ├── text.o
-│   │   │   ├── text_printer.d
-│   │   │   ├── text_printer.o
-│   │   │   ├── text_window.d
-│   │   │   ├── text_window_graphics.d
-│   │   │   ├── text_window_graphics.o
-│   │   │   ├── text_window.o
-│   │   │   ├── tilemap_util.d
-│   │   │   ├── tilemap_util.o
-│   │   │   ├── tileset_anims.d
-│   │   │   ├── tileset_anims.o
-│   │   │   ├── tilesets.d
-│   │   │   ├── tilesets.o
-│   │   │   ├── title_screen.d
-│   │   │   ├── title_screen.o
-│   │   │   ├── tm_case.d
-│   │   │   ├── tm_case.o
-│   │   │   ├── trade.d
-│   │   │   ├── trade.o
-│   │   │   ├── trade_scene.d
-│   │   │   ├── trade_scene.o
-│   │   │   ├── trainer_card.d
-│   │   │   ├── trainer_card.o
-│   │   │   ├── trainer_fan_club.d
-│   │   │   ├── trainer_fan_club.o
-│   │   │   ├── trainer_pokemon_sprites.d
-│   │   │   ├── trainer_pokemon_sprites.o
-│   │   │   ├── trainer_see.d
-│   │   │   ├── trainer_see.o
-│   │   │   ├── trainer_tower.d
-│   │   │   ├── trainer_tower.o
-│   │   │   ├── trainer_tower_sets.d
-│   │   │   ├── trainer_tower_sets.o
-│   │   │   ├── trig.d
-│   │   │   ├── trig.o
-│   │   │   ├── union_room_battle.d
-│   │   │   ├── union_room_battle.o
-│   │   │   ├── union_room_chat.d
-│   │   │   ├── union_room_chat_display.d
-│   │   │   ├── union_room_chat_display.o
-│   │   │   ├── union_room_chat.o
-│   │   │   ├── union_room_chat_objects.d
-│   │   │   ├── union_room_chat_objects.o
-│   │   │   ├── union_room.d
-│   │   │   ├── union_room_message.d
-│   │   │   ├── union_room_message.o
-│   │   │   ├── union_room.o
-│   │   │   ├── union_room_player_avatar.d
-│   │   │   ├── union_room_player_avatar.o
-│   │   │   ├── util.d
-│   │   │   ├── util.o
-│   │   │   ├── vs_seeker.d
-│   │   │   ├── vs_seeker.o
-│   │   │   ├── wild_encounter.d
-│   │   │   ├── wild_encounter.o
-│   │   │   ├── wild_pokemon_area.d
-│   │   │   ├── wild_pokemon_area.o
-│   │   │   ├── window_8bpp.d
-│   │   │   ├── window_8bpp.o
-│   │   │   ├── window.d
-│   │   │   ├── window.o
-│   │   │   ├── wireless_communication_status_screen.d
-│   │   │   ├── wireless_communication_status_screen.o
-│   │   │   ├── wonder_news.d
-│   │   │   └── wonder_news.o
-│   │   ├── sym_bss.ld
-│   │   ├── sym_common.ld
-│   │   └── sym_ewram.ld
-│   └── leafgreen_rev1
+│   └── firered
 │       ├── data
 │       │   ├── battle_ai_scripts.d
 │       │   ├── battle_ai_scripts.o
@@ -1885,25 +58,26 @@
 │       │   └── songs
 │       │       └── midi
 │       ├── src
+│       │   ├── AgbRfu_LinkManager.d
+│       │   ├── AgbRfu_LinkManager.o
+│       │   ├── agb_flash.d
+│       │   ├── agb_flash.o
 │       │   ├── agb_flash_1m.d
 │       │   ├── agb_flash_1m.o
-│       │   ├── agb_flash.d
 │       │   ├── agb_flash_le.d
 │       │   ├── agb_flash_le.o
 │       │   ├── agb_flash_mx.d
 │       │   ├── agb_flash_mx.o
-│       │   ├── agb_flash.o
-│       │   ├── AgbRfu_LinkManager.d
-│       │   ├── AgbRfu_LinkManager.o
 │       │   ├── bag.d
 │       │   ├── bag.o
 │       │   ├── battle_ai_script_commands.d
 │       │   ├── battle_ai_script_commands.o
 │       │   ├── battle_ai_switch_items.d
 │       │   ├── battle_ai_switch_items.o
+│       │   ├── battle_anim.d
+│       │   ├── battle_anim.o
 │       │   ├── battle_anim_bug.d
 │       │   ├── battle_anim_bug.o
-│       │   ├── battle_anim.d
 │       │   ├── battle_anim_dark.d
 │       │   ├── battle_anim_dark.o
 │       │   ├── battle_anim_dragon.d
@@ -1934,7 +108,6 @@
 │       │   ├── battle_anim_mons.o
 │       │   ├── battle_anim_normal.d
 │       │   ├── battle_anim_normal.o
-│       │   ├── battle_anim.o
 │       │   ├── battle_anim_poison.d
 │       │   ├── battle_anim_poison.o
 │       │   ├── battle_anim_psychic.d
@@ -1991,16 +164,16 @@
 │       │   ├── battle_tower.o
 │       │   ├── battle_transition.d
 │       │   ├── battle_transition.o
-│       │   ├── battle_util2.d
-│       │   ├── battle_util2.o
 │       │   ├── battle_util.d
 │       │   ├── battle_util.o
+│       │   ├── battle_util2.d
+│       │   ├── battle_util2.o
+│       │   ├── berry.d
+│       │   ├── berry.o
 │       │   ├── berry_crush.d
 │       │   ├── berry_crush.o
-│       │   ├── berry.d
 │       │   ├── berry_fix_program.d
 │       │   ├── berry_fix_program.o
-│       │   ├── berry.o
 │       │   ├── berry_pouch.d
 │       │   ├── berry_pouch.o
 │       │   ├── berry_powder.d
@@ -2049,18 +222,18 @@
 │       │   ├── diploma.o
 │       │   ├── dma3_manager.d
 │       │   ├── dma3_manager.o
-│       │   ├── dodrio_berry_picking_comm.d
-│       │   ├── dodrio_berry_picking_comm.o
 │       │   ├── dodrio_berry_picking.d
 │       │   ├── dodrio_berry_picking.o
+│       │   ├── dodrio_berry_picking_comm.d
+│       │   ├── dodrio_berry_picking_comm.o
 │       │   ├── dynamic_placeholder_text_util.d
 │       │   ├── dynamic_placeholder_text_util.o
+│       │   ├── easy_chat.d
+│       │   ├── easy_chat.o
 │       │   ├── easy_chat_2.d
 │       │   ├── easy_chat_2.o
 │       │   ├── easy_chat_3.d
 │       │   ├── easy_chat_3.o
-│       │   ├── easy_chat.d
-│       │   ├── easy_chat.o
 │       │   ├── ereader_helpers.d
 │       │   ├── ereader_helpers.o
 │       │   ├── ereader_screen.d
@@ -2084,13 +257,11 @@
 │       │   ├── field_door.d
 │       │   ├── field_door.o
 │       │   ├── field_effect.d
+│       │   ├── field_effect.o
 │       │   ├── field_effect_helpers.d
 │       │   ├── field_effect_helpers.o
-│       │   ├── field_effect.o
 │       │   ├── field_fadetransition.d
 │       │   ├── field_fadetransition.o
-│       │   ├── fieldmap.d
-│       │   ├── fieldmap.o
 │       │   ├── field_message_box.d
 │       │   ├── field_message_box.o
 │       │   ├── field_player_avatar.d
@@ -2106,11 +277,13 @@
 │       │   ├── field_tasks.d
 │       │   ├── field_tasks.o
 │       │   ├── field_weather.d
+│       │   ├── field_weather.o
 │       │   ├── field_weather_effects.d
 │       │   ├── field_weather_effects.o
-│       │   ├── field_weather.o
 │       │   ├── field_weather_util.d
 │       │   ├── field_weather_util.o
+│       │   ├── fieldmap.d
+│       │   ├── fieldmap.o
 │       │   ├── fldeff_berrytree.d
 │       │   ├── fldeff_berrytree.o
 │       │   ├── fldeff_cut.d
@@ -2154,17 +327,17 @@
 │       │   ├── isagbprn.d
 │       │   ├── isagbprn.o
 │       │   ├── item.d
-│       │   ├── itemfinder.d
-│       │   ├── itemfinder.o
+│       │   ├── item.o
 │       │   ├── item_menu.d
+│       │   ├── item_menu.o
 │       │   ├── item_menu_icons.d
 │       │   ├── item_menu_icons.o
-│       │   ├── item_menu.o
-│       │   ├── item.o
 │       │   ├── item_pc.d
 │       │   ├── item_pc.o
 │       │   ├── item_use.d
 │       │   ├── item_use.o
+│       │   ├── itemfinder.d
+│       │   ├── itemfinder.o
 │       │   ├── keyboard_text.d
 │       │   ├── keyboard_text.o
 │       │   ├── learn_move.d
@@ -2191,22 +364,22 @@
 │       │   ├── list_menu.o
 │       │   ├── load_save.d
 │       │   ├── load_save.o
-│       │   ├── m4a_1.d
-│       │   ├── m4a_1.o
 │       │   ├── m4a.d
 │       │   ├── m4a.o
+│       │   ├── m4a_1.d
+│       │   ├── m4a_1.o
 │       │   ├── m4a_tables.d
 │       │   ├── m4a_tables.o
-│       │   ├── mailbox_pc.d
-│       │   ├── mailbox_pc.o
 │       │   ├── mail.d
+│       │   ├── mail.o
 │       │   ├── mail_data.d
 │       │   ├── mail_data.o
-│       │   ├── mail.o
+│       │   ├── mailbox_pc.d
+│       │   ├── mailbox_pc.o
 │       │   ├── main.d
+│       │   ├── main.o
 │       │   ├── main_menu.d
 │       │   ├── main_menu.o
-│       │   ├── main.o
 │       │   ├── malloc.d
 │       │   ├── malloc.o
 │       │   ├── map_name_popup.d
@@ -2215,24 +388,24 @@
 │       │   ├── map_preview_screen.o
 │       │   ├── math_util.d
 │       │   ├── math_util.o
+│       │   ├── menu.d
+│       │   ├── menu.o
 │       │   ├── menu2.d
 │       │   ├── menu2.o
-│       │   ├── menu.d
 │       │   ├── menu_helpers.d
 │       │   ├── menu_helpers.o
 │       │   ├── menu_indicators.d
 │       │   ├── menu_indicators.o
-│       │   ├── menu.o
 │       │   ├── metatile_behavior.d
 │       │   ├── metatile_behavior.o
-│       │   ├── minigame_countdown.d
-│       │   ├── minigame_countdown.o
 │       │   ├── mini_printf.d
 │       │   ├── mini_printf.o
-│       │   ├── money.d
-│       │   ├── money.o
+│       │   ├── minigame_countdown.d
+│       │   ├── minigame_countdown.o
 │       │   ├── mon_markings.d
 │       │   ├── mon_markings.o
+│       │   ├── money.d
+│       │   ├── money.o
 │       │   ├── move_descriptions.d
 │       │   ├── move_descriptions.o
 │       │   ├── multiboot.d
@@ -2241,14 +414,14 @@
 │       │   ├── mystery_event_msg.o
 │       │   ├── mystery_event_script.d
 │       │   ├── mystery_event_script.o
+│       │   ├── mystery_gift.d
+│       │   ├── mystery_gift.o
 │       │   ├── mystery_gift_client.d
 │       │   ├── mystery_gift_client.o
-│       │   ├── mystery_gift.d
 │       │   ├── mystery_gift_link.d
 │       │   ├── mystery_gift_link.o
 │       │   ├── mystery_gift_menu.d
 │       │   ├── mystery_gift_menu.o
-│       │   ├── mystery_gift.o
 │       │   ├── mystery_gift_scripts.d
 │       │   ├── mystery_gift_scripts.o
 │       │   ├── mystery_gift_server.d
@@ -2279,24 +452,24 @@
 │       │   ├── party_menu_specials.o
 │       │   ├── pc_screen_effect.d
 │       │   ├── pc_screen_effect.o
-│       │   ├── player_pc.d
-│       │   ├── player_pc.o
 │       │   ├── play_time.d
 │       │   ├── play_time.o
+│       │   ├── player_pc.d
+│       │   ├── player_pc.o
 │       │   ├── pokeball.d
 │       │   ├── pokeball.o
-│       │   ├── pokedex_area_markers.d
-│       │   ├── pokedex_area_markers.o
 │       │   ├── pokedex.d
 │       │   ├── pokedex.o
+│       │   ├── pokedex_area_markers.d
+│       │   ├── pokedex_area_markers.o
 │       │   ├── pokedex_screen.d
 │       │   ├── pokedex_screen.o
 │       │   ├── pokemon.d
+│       │   ├── pokemon.o
 │       │   ├── pokemon_icon.d
 │       │   ├── pokemon_icon.o
 │       │   ├── pokemon_jump.d
 │       │   ├── pokemon_jump.o
-│       │   ├── pokemon.o
 │       │   ├── pokemon_size_record.d
 │       │   ├── pokemon_size_record.o
 │       │   ├── pokemon_special_anim.d
@@ -2304,6 +477,7 @@
 │       │   ├── pokemon_special_anim_scene.d
 │       │   ├── pokemon_special_anim_scene.o
 │       │   ├── pokemon_storage_system.d
+│       │   ├── pokemon_storage_system.o
 │       │   ├── pokemon_storage_system_data.d
 │       │   ├── pokemon_storage_system_data.o
 │       │   ├── pokemon_storage_system_graphics.d
@@ -2312,7 +486,6 @@
 │       │   ├── pokemon_storage_system_menu.o
 │       │   ├── pokemon_storage_system_misc.d
 │       │   ├── pokemon_storage_system_misc.o
-│       │   ├── pokemon_storage_system.o
 │       │   ├── pokemon_storage_system_tasks.d
 │       │   ├── pokemon_storage_system_tasks.o
 │       │   ├── pokemon_summary_screen.d
@@ -2321,12 +494,12 @@
 │       │   ├── post_battle_event_funcs.o
 │       │   ├── prof_pc.d
 │       │   ├── prof_pc.o
+│       │   ├── quest_log.d
+│       │   ├── quest_log.o
 │       │   ├── quest_log_battle.d
 │       │   ├── quest_log_battle.o
-│       │   ├── quest_log.d
 │       │   ├── quest_log_events.d
 │       │   ├── quest_log_events.o
-│       │   ├── quest_log.o
 │       │   ├── quest_log_objects.d
 │       │   ├── quest_log_objects.o
 │       │   ├── quest_log_player.d
@@ -2344,29 +517,29 @@
 │       │   ├── roamer.d
 │       │   ├── roamer.o
 │       │   ├── rom_header.d
+│       │   ├── rom_header.o
 │       │   ├── rom_header_gf.d
 │       │   ├── rom_header_gf.o
-│       │   ├── rom_header.o
 │       │   ├── safari_zone.d
 │       │   ├── safari_zone.o
 │       │   ├── save.d
+│       │   ├── save.o
 │       │   ├── save_failed_screen.d
 │       │   ├── save_failed_screen.o
 │       │   ├── save_location.d
 │       │   ├── save_location.o
 │       │   ├── save_menu_util.d
 │       │   ├── save_menu_util.o
-│       │   ├── save.o
 │       │   ├── scanline_effect.d
 │       │   ├── scanline_effect.o
 │       │   ├── scrcmd.d
 │       │   ├── scrcmd.o
 │       │   ├── script.d
+│       │   ├── script.o
 │       │   ├── script_menu.d
 │       │   ├── script_menu.o
 │       │   ├── script_movement.d
 │       │   ├── script_movement.o
-│       │   ├── script.o
 │       │   ├── script_pokemon_util.d
 │       │   ├── script_pokemon_util.o
 │       │   ├── seagallop.d
@@ -2387,10 +560,10 @@
 │       │   ├── ss_anne.o
 │       │   ├── start_menu.d
 │       │   ├── start_menu.o
-│       │   ├── strings.d
-│       │   ├── strings.o
 │       │   ├── string_util.d
 │       │   ├── string_util.o
+│       │   ├── strings.d
+│       │   ├── strings.o
 │       │   ├── task.d
 │       │   ├── task.o
 │       │   ├── teachy_tv.d
@@ -2400,9 +573,9 @@
 │       │   ├── text_printer.d
 │       │   ├── text_printer.o
 │       │   ├── text_window.d
+│       │   ├── text_window.o
 │       │   ├── text_window_graphics.d
 │       │   ├── text_window_graphics.o
-│       │   ├── text_window.o
 │       │   ├── tilemap_util.d
 │       │   ├── tilemap_util.o
 │       │   ├── tileset_anims.d
@@ -2431,18 +604,18 @@
 │       │   ├── trainer_tower_sets.o
 │       │   ├── trig.d
 │       │   ├── trig.o
+│       │   ├── union_room.d
+│       │   ├── union_room.o
 │       │   ├── union_room_battle.d
 │       │   ├── union_room_battle.o
 │       │   ├── union_room_chat.d
+│       │   ├── union_room_chat.o
 │       │   ├── union_room_chat_display.d
 │       │   ├── union_room_chat_display.o
-│       │   ├── union_room_chat.o
 │       │   ├── union_room_chat_objects.d
 │       │   ├── union_room_chat_objects.o
-│       │   ├── union_room.d
 │       │   ├── union_room_message.d
 │       │   ├── union_room_message.o
-│       │   ├── union_room.o
 │       │   ├── union_room_player_avatar.d
 │       │   ├── union_room_player_avatar.o
 │       │   ├── util.d
@@ -2453,10 +626,10 @@
 │       │   ├── wild_encounter.o
 │       │   ├── wild_pokemon_area.d
 │       │   ├── wild_pokemon_area.o
-│       │   ├── window_8bpp.d
-│       │   ├── window_8bpp.o
 │       │   ├── window.d
 │       │   ├── window.o
+│       │   ├── window_8bpp.d
+│       │   ├── window_8bpp.o
 │       │   ├── wireless_communication_status_screen.d
 │       │   ├── wireless_communication_status_screen.o
 │       │   ├── wonder_news.d
@@ -2465,14 +638,15 @@
 │       ├── sym_common.ld
 │       └── sym_ewram.ld
 ├── build_host
+│   ├── AgbRfu_LinkManager.o
 │   ├── agb_flash_1m.o
 │   ├── agb_flash_le.o
 │   ├── agb_flash_mx.o
-│   ├── agb_flash.o
-│   ├── AgbRfu_LinkManager.o
+│   ├── agbmain_syscalls_host.o
 │   ├── bag.o
 │   ├── battle_ai_script_commands.o
 │   ├── battle_ai_switch_items.o
+│   ├── battle_anim.o
 │   ├── battle_anim_bug.o
 │   ├── battle_anim_dark.o
 │   ├── battle_anim_dragon.o
@@ -2489,7 +663,6 @@
 │   ├── battle_anim_mon_movement.o
 │   ├── battle_anim_mons.o
 │   ├── battle_anim_normal.o
-│   ├── battle_anim.o
 │   ├── battle_anim_poison.o
 │   ├── battle_anim_psychic.o
 │   ├── battle_anim_rock.o
@@ -2518,11 +691,11 @@
 │   ├── battle_setup.o
 │   ├── battle_tower.o
 │   ├── battle_transition.o
-│   ├── battle_util2.o
 │   ├── battle_util.o
+│   ├── battle_util2.o
+│   ├── berry.o
 │   ├── berry_crush.o
 │   ├── berry_fix_program.o
-│   ├── berry.o
 │   ├── berry_pouch.o
 │   ├── berry_powder.o
 │   ├── bg.o
@@ -2539,12 +712,13 @@
 │   ├── coins.o
 │   ├── coord_event_weather.o
 │   ├── credits.o
+│   ├── crt0_stub.o
 │   ├── data
 │   │   ├── battle_ai_scripts_x86.o
 │   │   ├── battle_anim_scripts_x86.o
-│   │   ├── battle_scripts_1.o
 │   │   ├── battle_scripts_1_x86.o
 │   │   ├── battle_scripts_2_x86.o
+│   │   ├── event_scripts_x86.o
 │   │   ├── field_effect_scripts_x86.o
 │   │   ├── map_events_x86.o
 │   │   ├── maps_x86.o
@@ -2561,12 +735,12 @@
 │   ├── digit_obj_util.o
 │   ├── diploma.o
 │   ├── dma3_manager.o
-│   ├── dodrio_berry_picking_comm.o
 │   ├── dodrio_berry_picking.o
+│   ├── dodrio_berry_picking_comm.o
 │   ├── dynamic_placeholder_text_util.o
+│   ├── easy_chat.o
 │   ├── easy_chat_2.o
 │   ├── easy_chat_3.o
-│   ├── easy_chat.o
 │   ├── ereader_helpers.o
 │   ├── ereader_screen.o
 │   ├── event_data.o
@@ -2578,10 +752,9 @@
 │   ├── field_camera.o
 │   ├── field_control_avatar.o
 │   ├── field_door.o
-│   ├── field_effect_helpers.o
 │   ├── field_effect.o
+│   ├── field_effect_helpers.o
 │   ├── field_fadetransition.o
-│   ├── fieldmap.o
 │   ├── field_message_box.o
 │   ├── field_player_avatar.o
 │   ├── field_poison.o
@@ -2589,9 +762,11 @@
 │   ├── field_special_scene.o
 │   ├── field_specials.o
 │   ├── field_tasks.o
-│   ├── field_weather_effects.o
 │   ├── field_weather.o
+│   ├── field_weather_effects.o
 │   ├── field_weather_util.o
+│   ├── fieldmap.o
+│   ├── flash_host.o
 │   ├── fldeff_berrytree.o
 │   ├── fldeff_cut.o
 │   ├── fldeff_dig.o
@@ -2602,10 +777,13 @@
 │   ├── fldeff_strength.o
 │   ├── fldeff_sweetscent.o
 │   ├── fldeff_teleport.o
+│   ├── gamecube_stub.o
+│   ├── gba_memory_host.o
 │   ├── gpu_regs.o
 │   ├── graphics.o
 │   ├── hall_of_fame.o
 │   ├── heal_location.o
+│   ├── heap_host.o
 │   ├── help_message.o
 │   ├── help_system.o
 │   ├── help_system_util.o
@@ -2613,14 +791,15 @@
 │   ├── image_processing_effects.o
 │   ├── intro.o
 │   ├── isagbprn.o
-│   ├── itemfinder.o
-│   ├── item_menu_icons.o
-│   ├── item_menu.o
 │   ├── item.o
+│   ├── item_menu.o
+│   ├── item_menu_icons.o
 │   ├── item_pc.o
 │   ├── item_use.o
+│   ├── itemfinder.o
 │   ├── keyboard_text.o
 │   ├── learn_move.o
+│   ├── libagbsyscall_host.o
 │   ├── librfu_intr.o
 │   ├── librfu_rfu.o
 │   ├── librfu_sio32id.o
@@ -2630,34 +809,36 @@
 │   ├── link_rfu_3.o
 │   ├── list_menu.o
 │   ├── load_save.o
+│   ├── logs
 │   ├── m4a.o
 │   ├── m4a_tables.o
-│   ├── mailbox_pc.o
-│   ├── mail_data.o
 │   ├── mail.o
-│   ├── main_menu.o
+│   ├── mail_data.o
+│   ├── mailbox_pc.o
 │   ├── main.o
+│   ├── main_menu.o
+│   ├── main_sdl.o
 │   ├── malloc.o
 │   ├── map_name_popup.o
 │   ├── map_preview_screen.o
 │   ├── math_util.o
+│   ├── menu.o
 │   ├── menu2.o
 │   ├── menu_helpers.o
 │   ├── menu_indicators.o
-│   ├── menu.o
 │   ├── metatile_behavior.o
-│   ├── minigame_countdown.o
 │   ├── mini_printf.o
-│   ├── money.o
+│   ├── minigame_countdown.o
 │   ├── mon_markings.o
+│   ├── money.o
 │   ├── move_descriptions.o
 │   ├── multiboot.o
 │   ├── mystery_event_msg.o
 │   ├── mystery_event_script.o
+│   ├── mystery_gift.o
 │   ├── mystery_gift_client.o
 │   ├── mystery_gift_link.o
 │   ├── mystery_gift_menu.o
-│   ├── mystery_gift.o
 │   ├── mystery_gift_scripts.o
 │   ├── mystery_gift_server.o
 │   ├── mystery_gift_show_card.o
@@ -2673,30 +854,31 @@
 │   ├── party_menu.o
 │   ├── party_menu_specials.o
 │   ├── pc_screen_effect.o
-│   ├── player_pc.o
 │   ├── play_time.o
+│   ├── player_pc.o
 │   ├── pokeball.o
-│   ├── pokedex_area_markers.o
 │   ├── pokedex.o
+│   ├── pokedex_area_markers.o
 │   ├── pokedex_screen.o
+│   ├── pokefirered_host
+│   ├── pokemon.o
 │   ├── pokemon_icon.o
 │   ├── pokemon_jump.o
-│   ├── pokemon.o
 │   ├── pokemon_size_record.o
 │   ├── pokemon_special_anim.o
 │   ├── pokemon_special_anim_scene.o
+│   ├── pokemon_storage_system.o
 │   ├── pokemon_storage_system_data.o
 │   ├── pokemon_storage_system_graphics.o
 │   ├── pokemon_storage_system_menu.o
 │   ├── pokemon_storage_system_misc.o
-│   ├── pokemon_storage_system.o
 │   ├── pokemon_storage_system_tasks.o
 │   ├── pokemon_summary_screen.o
 │   ├── post_battle_event_funcs.o
 │   ├── prof_pc.o
+│   ├── quest_log.o
 │   ├── quest_log_battle.o
 │   ├── quest_log_events.o
-│   ├── quest_log.o
 │   ├── quest_log_objects.o
 │   ├── quest_log_player.o
 │   ├── random.o
@@ -2707,33 +889,35 @@
 │   ├── roamer.o
 │   ├── rom_header_gf.o
 │   ├── safari_zone.o
+│   ├── save.o
 │   ├── save_failed_screen.o
 │   ├── save_location.o
 │   ├── save_menu_util.o
-│   ├── save.o
 │   ├── scanline_effect.o
 │   ├── scrcmd.o
+│   ├── script.o
 │   ├── script_menu.o
 │   ├── script_movement.o
-│   ├── script.o
 │   ├── script_pokemon_util.o
 │   ├── seagallop.o
 │   ├── shop.o
 │   ├── sloopsvc.o
 │   ├── slot_machine.o
 │   ├── sound.o
+│   ├── sound_engine_stub.o
+│   ├── sound_stub.o
 │   ├── special_field_anim.o
 │   ├── sprite.o
 │   ├── ss_anne.o
 │   ├── start_menu.o
-│   ├── strings.o
 │   ├── string_util.o
+│   ├── strings.o
 │   ├── task.o
 │   ├── teachy_tv.o
 │   ├── text.o
 │   ├── text_printer.o
-│   ├── text_window_graphics.o
 │   ├── text_window.o
+│   ├── text_window_graphics.o
 │   ├── tilemap_util.o
 │   ├── tileset_anims.o
 │   ├── tilesets.o
@@ -2748,21 +932,23 @@
 │   ├── trainer_tower.o
 │   ├── trainer_tower_sets.o
 │   ├── trig.o
+│   ├── union_room.o
 │   ├── union_room_battle.o
-│   ├── union_room_chat_display.o
 │   ├── union_room_chat.o
+│   ├── union_room_chat_display.o
 │   ├── union_room_chat_objects.o
 │   ├── union_room_message.o
-│   ├── union_room.o
 │   ├── union_room_player_avatar.o
 │   ├── util.o
 │   ├── vs_seeker.o
 │   ├── wild_encounter.o
 │   ├── wild_pokemon_area.o
-│   ├── window_8bpp.o
 │   ├── window.o
+│   ├── window_8bpp.o
 │   ├── wireless_communication_status_screen.o
 │   └── wonder_news.o
+├── build_host_full.sh
+├── build_host_log.txt
 ├── build_tools.sh
 ├── charmap.txt
 ├── compare.sh
@@ -3060,9 +1246,6 @@
 │   │   ├── LavenderTown_VolunteerPokemonHouse
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
-│   │   ├── layouts.inc
-│   │   ├── layouts.json
-│   │   ├── layouts_table.inc
 │   │   ├── LittlerootTown_MaysHouse_2F
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
@@ -3321,7 +1504,34 @@
 │   │   ├── Prototype_SeviiIsle_9
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
+│   │   ├── RS_BattleTower
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── RS_PokemonCenter_1F
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── RS_SafariZone_Entrance
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── RS_SafariZone_Northeast
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── RS_SafariZone_RestHouse
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── RS_SafariZone_Southeast
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── RS_SafariZone_Southwest
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
 │   │   ├── RecordCorner
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── RockTunnel_1F
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── RockTunnel_B1F
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
 │   │   ├── RocketHideout_B1F
@@ -3337,12 +1547,6 @@
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
 │   │   ├── RocketHideout_Elevator
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── RockTunnel_1F
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── RockTunnel_B1F
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
 │   │   ├── Route1
@@ -3441,27 +1645,6 @@
 │   │   ├── Route9
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
-│   │   ├── RS_BattleTower
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── RS_PokemonCenter_1F
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── RS_SafariZone_Entrance
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── RS_SafariZone_Northeast
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── RS_SafariZone_RestHouse
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── RS_SafariZone_Southeast
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── RS_SafariZone_Southwest
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
 │   │   ├── RustboroCity_CuttersHouse
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
@@ -3478,6 +1661,45 @@
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
 │   │   ├── RustboroCity_Flat2_3F
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_1F_Corridor
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_2F_Corridor
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_3F_Corridor
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_B1F_Corridor
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_CaptainsOffice
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_Deck
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_Exterior
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_Kitchen
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_Room1
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSAnne_Room2
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSTidal_Corridor
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSTidal_LowerDeck
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── SSTidal_Rooms
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
 │   │   ├── SafariZone_Center
@@ -3678,45 +1900,6 @@
 │   │   ├── SootopolisCity_House3
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
-│   │   ├── SSAnne_1F_Corridor
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_2F_Corridor
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_3F_Corridor
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_B1F_Corridor
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_CaptainsOffice
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_Deck
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_Exterior
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_Kitchen
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_Room1
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSAnne_Room2
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSTidal_Corridor
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSTidal_LowerDeck
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
-│   │   ├── SSTidal_Rooms
-│   │   │   ├── border.bin
-│   │   │   └── map.bin
 │   │   ├── ThreeIsland
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
@@ -3876,9 +2059,12 @@
 │   │   ├── ViridianCity_School
 │   │   │   ├── border.bin
 │   │   │   └── map.bin
-│   │   └── ViridianForest
-│   │       ├── border.bin
-│   │       └── map.bin
+│   │   ├── ViridianForest
+│   │   │   ├── border.bin
+│   │   │   └── map.bin
+│   │   ├── layouts.inc
+│   │   ├── layouts.json
+│   │   └── layouts_table.inc
 │   ├── map_events.s
 │   ├── maps
 │   │   ├── BattleColosseum_2P
@@ -4207,7 +2393,6 @@
 │   │   │   ├── map.json
 │   │   │   ├── scripts.inc
 │   │   │   └── text.inc
-│   │   ├── connections.inc
 │   │   ├── DiglettsCave_B1F
 │   │   │   ├── connections.inc
 │   │   │   ├── events.inc
@@ -4228,7 +2413,6 @@
 │   │   │   ├── map.json
 │   │   │   ├── scripts.inc
 │   │   │   └── text.inc
-│   │   ├── events.inc
 │   │   ├── FiveIsland
 │   │   │   ├── connections.inc
 │   │   │   ├── events.inc
@@ -4564,8 +2748,6 @@
 │   │   │   ├── map.json
 │   │   │   ├── scripts.inc
 │   │   │   └── text.inc
-│   │   ├── groups.inc
-│   │   ├── headers.inc
 │   │   ├── IndigoPlateau_Exterior
 │   │   │   ├── connections.inc
 │   │   │   ├── events.inc
@@ -4633,7 +2815,6 @@
 │   │   │   ├── map.json
 │   │   │   ├── scripts.inc
 │   │   │   └── text.inc
-│   │   ├── map_groups.json
 │   │   ├── MtEmber_Exterior
 │   │   │   ├── connections.inc
 │   │   │   ├── events.inc
@@ -5179,6 +3360,20 @@
 │   │   │   ├── header.inc
 │   │   │   ├── map.json
 │   │   │   └── scripts.inc
+│   │   ├── RockTunnel_1F
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── RockTunnel_B1F
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
 │   │   ├── RocketHideout_B1F
 │   │   │   ├── connections.inc
 │   │   │   ├── events.inc
@@ -5208,20 +3403,6 @@
 │   │   │   ├── scripts.inc
 │   │   │   └── text.inc
 │   │   ├── RocketHideout_Elevator
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── RockTunnel_1F
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── RockTunnel_B1F
 │   │   │   ├── connections.inc
 │   │   │   ├── events.inc
 │   │   │   ├── header.inc
@@ -5608,6 +3789,186 @@
 │   │   │   ├── scripts.inc
 │   │   │   └── text.inc
 │   │   ├── Route9
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_1F_Corridor
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_1F_Room1
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_1F_Room2
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_1F_Room3
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_1F_Room4
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_1F_Room5
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_1F_Room6
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_1F_Room7
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_2F_Corridor
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_2F_Room1
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_2F_Room2
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_2F_Room3
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_2F_Room4
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_2F_Room5
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_2F_Room6
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_3F_Corridor
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_B1F_Corridor
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   └── scripts.inc
+│   │   ├── SSAnne_B1F_Room1
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_B1F_Room2
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_B1F_Room3
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_B1F_Room4
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_B1F_Room5
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_CaptainsOffice
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_Deck
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── SSAnne_Exterior
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   └── scripts.inc
+│   │   ├── SSAnne_Kitchen
 │   │   │   ├── connections.inc
 │   │   │   ├── events.inc
 │   │   │   ├── header.inc
@@ -6141,186 +4502,6 @@
 │   │   │   ├── map.json
 │   │   │   ├── scripts.inc
 │   │   │   └── text.inc
-│   │   ├── SSAnne_1F_Corridor
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_1F_Room1
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_1F_Room2
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_1F_Room3
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_1F_Room4
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_1F_Room5
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_1F_Room6
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_1F_Room7
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_2F_Corridor
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_2F_Room1
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_2F_Room2
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_2F_Room3
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_2F_Room4
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_2F_Room5
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_2F_Room6
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_3F_Corridor
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_B1F_Corridor
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   └── scripts.inc
-│   │   ├── SSAnne_B1F_Room1
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_B1F_Room2
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_B1F_Room3
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_B1F_Room4
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_B1F_Room5
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_CaptainsOffice
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_Deck
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
-│   │   ├── SSAnne_Exterior
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   └── scripts.inc
-│   │   ├── SSAnne_Kitchen
-│   │   │   ├── connections.inc
-│   │   │   ├── events.inc
-│   │   │   ├── header.inc
-│   │   │   ├── map.json
-│   │   │   ├── scripts.inc
-│   │   │   └── text.inc
 │   │   ├── ThreeIsland
 │   │   │   ├── connections.inc
 │   │   │   ├── events.inc
@@ -6719,13 +4900,18 @@
 │   │   │   ├── map.json
 │   │   │   ├── scripts.inc
 │   │   │   └── text.inc
-│   │   └── ViridianForest
-│   │       ├── connections.inc
-│   │       ├── events.inc
-│   │       ├── header.inc
-│   │       ├── map.json
-│   │       ├── scripts.inc
-│   │       └── text.inc
+│   │   ├── ViridianForest
+│   │   │   ├── connections.inc
+│   │   │   ├── events.inc
+│   │   │   ├── header.inc
+│   │   │   ├── map.json
+│   │   │   ├── scripts.inc
+│   │   │   └── text.inc
+│   │   ├── connections.inc
+│   │   ├── events.inc
+│   │   ├── groups.inc
+│   │   ├── headers.inc
+│   │   └── map_groups.json
 │   ├── maps.s
 │   ├── mb_berry_fix.gba
 │   ├── mb_colosseum.gba
@@ -6750,8 +4936,8 @@
 │   │   ├── hole.inc
 │   │   ├── item_ball_scripts.inc
 │   │   ├── itemfinder.inc
-│   │   ├── movement.inc
 │   │   ├── move_tutors.inc
+│   │   ├── movement.inc
 │   │   ├── mystery_event_club.inc
 │   │   ├── obtain_item.inc
 │   │   ├── pc.inc
@@ -6773,8 +4959,8 @@
 │   │   ├── test.inc
 │   │   ├── trainer_battle.inc
 │   │   ├── trainer_card.inc
-│   │   ├── trainers.inc
 │   │   ├── trainer_tower.inc
+│   │   ├── trainers.inc
 │   │   └── white_out.inc
 │   ├── sound_data.s
 │   ├── specials.inc
@@ -6794,9 +4980,9 @@
 │   │   ├── obtain_item.inc
 │   │   ├── pc.inc
 │   │   ├── pc_transfer.inc
+│   │   ├── poke_mart.inc
 │   │   ├── pokedex_rating.inc
 │   │   ├── pokedude.inc
-│   │   ├── poke_mart.inc
 │   │   ├── route23.inc
 │   │   ├── safari_zone.inc
 │   │   ├── save.inc
@@ -7286,12 +5472,29 @@
 │               ├── tiles.4bpp
 │               ├── tiles.4bpp.lz
 │               └── tiles.png
+├── debug_frame_1184.bmp
+├── debug_frame_1184.txt
+├── debug_frame_1802.bmp
+├── debug_frame_1802.txt
+├── debug_frame_198.bmp
+├── debug_frame_198.txt
+├── debug_frame_2529.bmp
+├── debug_frame_2529.txt
+├── debug_frame_2618.bmp
+├── debug_frame_2618.txt
+├── debug_frame_2800.bmp
+├── debug_frame_2800.txt
+├── debug_frame_315.bmp
+├── debug_frame_315.txt
+├── debug_frame_402.bmp
+├── debug_frame_402.txt
 ├── docs
 │   ├── bugs_and_glitches.md
 │   └── legacy_WSL1_INSTALL.md
-├── firered_rev1.sha1
 ├── firered.sha1
+├── firered_rev1.sha1
 ├── firered_switch.sha1
+├── gba_port_commands_summary.txt
 ├── graphics
 │   ├── battle_anims
 │   │   ├── backgrounds
@@ -7330,11 +5533,11 @@
 │   │   │   ├── drill.4bpp.lz
 │   │   │   ├── drill.bin
 │   │   │   ├── drill.bin.lz
-│   │   │   ├── drill_contests.bin
-│   │   │   ├── drill_contests.bin.lz
 │   │   │   ├── drill.gbapal
 │   │   │   ├── drill.gbapal.lz
 │   │   │   ├── drill.png
+│   │   │   ├── drill_contests.bin
+│   │   │   ├── drill_contests.bin.lz
 │   │   │   ├── fissure.4bpp
 │   │   │   ├── fissure.4bpp.lz
 │   │   │   ├── fissure.bin
@@ -7353,24 +5556,24 @@
 │   │   │   ├── ghost.png
 │   │   │   ├── guillotine.4bpp
 │   │   │   ├── guillotine.4bpp.lz
-│   │   │   ├── guillotine_contests.bin
-│   │   │   ├── guillotine_contests.bin.lz
 │   │   │   ├── guillotine.gbapal
 │   │   │   ├── guillotine.gbapal.lz
+│   │   │   ├── guillotine.png
+│   │   │   ├── guillotine_contests.bin
+│   │   │   ├── guillotine_contests.bin.lz
 │   │   │   ├── guillotine_opponent.bin
 │   │   │   ├── guillotine_opponent.bin.lz
 │   │   │   ├── guillotine_player.bin
 │   │   │   ├── guillotine_player.bin.lz
-│   │   │   ├── guillotine.png
 │   │   │   ├── highspeed.4bpp
 │   │   │   ├── highspeed.4bpp.lz
 │   │   │   ├── highspeed.gbapal
 │   │   │   ├── highspeed.gbapal.lz
+│   │   │   ├── highspeed.png
 │   │   │   ├── highspeed_opponent.bin
 │   │   │   ├── highspeed_opponent.bin.lz
 │   │   │   ├── highspeed_player.bin
 │   │   │   ├── highspeed_player.bin.lz
-│   │   │   ├── highspeed.png
 │   │   │   ├── ice.4bpp
 │   │   │   ├── ice.4bpp.lz
 │   │   │   ├── ice.bin
@@ -7380,15 +5583,15 @@
 │   │   │   ├── ice.png
 │   │   │   ├── impact.4bpp
 │   │   │   ├── impact.4bpp.lz
-│   │   │   ├── impact_contests.bin
-│   │   │   ├── impact_contests.bin.lz
 │   │   │   ├── impact.gbapal
 │   │   │   ├── impact.gbapal.lz
+│   │   │   ├── impact.png
+│   │   │   ├── impact_contests.bin
+│   │   │   ├── impact_contests.bin.lz
 │   │   │   ├── impact_opponent.bin
 │   │   │   ├── impact_opponent.bin.lz
 │   │   │   ├── impact_player.bin
 │   │   │   ├── impact_player.bin.lz
-│   │   │   ├── impact.png
 │   │   │   ├── in_air.4bpp
 │   │   │   ├── in_air.4bpp.lz
 │   │   │   ├── in_air.bin
@@ -7410,15 +5613,15 @@
 │   │   │   ├── sandstorm_brew.png
 │   │   │   ├── scary_face.4bpp
 │   │   │   ├── scary_face.4bpp.lz
-│   │   │   ├── scary_face_contest.bin
-│   │   │   ├── scary_face_contest.bin.lz
 │   │   │   ├── scary_face.gbapal
 │   │   │   ├── scary_face.gbapal.lz
+│   │   │   ├── scary_face.png
+│   │   │   ├── scary_face_contest.bin
+│   │   │   ├── scary_face_contest.bin.lz
 │   │   │   ├── scary_face_opponent.bin
 │   │   │   ├── scary_face_opponent.bin.lz
 │   │   │   ├── scary_face_player.bin
 │   │   │   ├── scary_face_player.bin.lz
-│   │   │   ├── scary_face.png
 │   │   │   ├── sky.gbapal
 │   │   │   ├── sky.gbapal.lz
 │   │   │   ├── sky.pal
@@ -7436,18 +5639,18 @@
 │   │   │   ├── thunder.png
 │   │   │   ├── water.4bpp
 │   │   │   ├── water.4bpp.lz
-│   │   │   ├── water_contest.bin
-│   │   │   ├── water_contest.bin.lz
 │   │   │   ├── water.gbapal
 │   │   │   ├── water.gbapal.lz
+│   │   │   ├── water.png
+│   │   │   ├── water_contest.bin
+│   │   │   ├── water_contest.bin.lz
 │   │   │   ├── water_muddy.gbapal
 │   │   │   ├── water_muddy.gbapal.lz
 │   │   │   ├── water_muddy.pal
 │   │   │   ├── water_opponent.bin
 │   │   │   ├── water_opponent.bin.lz
 │   │   │   ├── water_player.bin
-│   │   │   ├── water_player.bin.lz
-│   │   │   └── water.png
+│   │   │   └── water_player.bin.lz
 │   │   ├── masks
 │   │   │   ├── cure_bubbles.4bpp
 │   │   │   ├── cure_bubbles.4bpp.lz
@@ -7475,6 +5678,9 @@
 │   │   │   ├── metal_shine.gbapal
 │   │   │   ├── metal_shine.gbapal.lz
 │   │   │   ├── metal_shine.png
+│   │   │   ├── stat.4bpp
+│   │   │   ├── stat.4bpp.lz
+│   │   │   ├── stat.png
 │   │   │   ├── stat1.gbapal
 │   │   │   ├── stat1.gbapal.lz
 │   │   │   ├── stat1.pal
@@ -7484,8 +5690,6 @@
 │   │   │   ├── stat3.gbapal
 │   │   │   ├── stat3.gbapal.lz
 │   │   │   ├── stat3.pal
-│   │   │   ├── stat.4bpp
-│   │   │   ├── stat.4bpp.lz
 │   │   │   ├── stat4.gbapal
 │   │   │   ├── stat4.gbapal.lz
 │   │   │   ├── stat4.pal
@@ -7501,7 +5705,6 @@
 │   │   │   ├── stat8.gbapal
 │   │   │   ├── stat8.gbapal.lz
 │   │   │   ├── stat8.pal
-│   │   │   ├── stat.png
 │   │   │   ├── stat_tilemap_1.bin
 │   │   │   ├── stat_tilemap_1.bin.lz
 │   │   │   ├── stat_tilemap_2.bin
@@ -7517,16 +5720,16 @@
 │   │   │   ├── air_slash.gbapal
 │   │   │   ├── air_slash.gbapal.lz
 │   │   │   ├── air_slash.png
-│   │   │   ├── air_wave_2.4bpp
-│   │   │   ├── air_wave_2.4bpp.lz
-│   │   │   ├── air_wave_2.gbapal
-│   │   │   ├── air_wave_2.gbapal.lz
-│   │   │   ├── air_wave_2.png
 │   │   │   ├── air_wave.4bpp
 │   │   │   ├── air_wave.4bpp.lz
 │   │   │   ├── air_wave.gbapal
 │   │   │   ├── air_wave.gbapal.lz
 │   │   │   ├── air_wave.png
+│   │   │   ├── air_wave_2.4bpp
+│   │   │   ├── air_wave_2.4bpp.lz
+│   │   │   ├── air_wave_2.gbapal
+│   │   │   ├── air_wave_2.gbapal.lz
+│   │   │   ├── air_wave_2.png
 │   │   │   ├── alert.4bpp
 │   │   │   ├── alert.4bpp.lz
 │   │   │   ├── alert.gbapal
@@ -7547,16 +5750,16 @@
 │   │   │   ├── anger.gbapal
 │   │   │   ├── anger.gbapal.lz
 │   │   │   ├── anger.png
-│   │   │   ├── bell_2.4bpp
-│   │   │   ├── bell_2.4bpp.lz
-│   │   │   ├── bell_2.gbapal
-│   │   │   ├── bell_2.gbapal.lz
-│   │   │   ├── bell_2.png
 │   │   │   ├── bell.4bpp
 │   │   │   ├── bell.4bpp.lz
 │   │   │   ├── bell.gbapal
 │   │   │   ├── bell.gbapal.lz
 │   │   │   ├── bell.png
+│   │   │   ├── bell_2.4bpp
+│   │   │   ├── bell_2.4bpp.lz
+│   │   │   ├── bell_2.gbapal
+│   │   │   ├── bell_2.gbapal.lz
+│   │   │   ├── bell_2.png
 │   │   │   ├── bent_spoon.4bpp
 │   │   │   ├── bent_spoon.4bpp.lz
 │   │   │   ├── bent_spoon.gbapal
@@ -7567,17 +5770,17 @@
 │   │   │   ├── bird.gbapal
 │   │   │   ├── bird.gbapal.lz
 │   │   │   ├── bird.png
-│   │   │   ├── black_ball_2.4bpp
-│   │   │   ├── black_ball_2.4bpp.lz
-│   │   │   ├── black_ball_2.gbapal
-│   │   │   ├── black_ball_2.gbapal.lz
-│   │   │   ├── black_ball_2.png
 │   │   │   ├── black_ball.4bpp
 │   │   │   ├── black_ball.4bpp.lz
 │   │   │   ├── black_ball.gbapal
 │   │   │   ├── black_ball.gbapal.lz
 │   │   │   ├── black_ball.pal
 │   │   │   ├── black_ball.png
+│   │   │   ├── black_ball_2.4bpp
+│   │   │   ├── black_ball_2.4bpp.lz
+│   │   │   ├── black_ball_2.gbapal
+│   │   │   ├── black_ball_2.gbapal.lz
+│   │   │   ├── black_ball_2.png
 │   │   │   ├── black_smoke.4bpp
 │   │   │   ├── black_smoke.4bpp.lz
 │   │   │   ├── black_smoke.gbapal
@@ -7588,19 +5791,14 @@
 │   │   │   ├── blue_burst.gbapal
 │   │   │   ├── blue_burst.gbapal.lz
 │   │   │   ├── blue_burst.png
-│   │   │   ├── blue_flames_2.4bpp
-│   │   │   ├── blue_flames_2.4bpp.lz
-│   │   │   ├── blue_flames_2.png
 │   │   │   ├── blue_flames.4bpp
 │   │   │   ├── blue_flames.4bpp.lz
 │   │   │   ├── blue_flames.gbapal
 │   │   │   ├── blue_flames.gbapal.lz
 │   │   │   ├── blue_flames.png
-│   │   │   ├── bluegreen_orb.4bpp
-│   │   │   ├── bluegreen_orb.4bpp.lz
-│   │   │   ├── bluegreen_orb.gbapal
-│   │   │   ├── bluegreen_orb.gbapal.lz
-│   │   │   ├── bluegreen_orb.png
+│   │   │   ├── blue_flames_2.4bpp
+│   │   │   ├── blue_flames_2.4bpp.lz
+│   │   │   ├── blue_flames_2.png
 │   │   │   ├── blue_light_wall.gbapal
 │   │   │   ├── blue_light_wall.gbapal.lz
 │   │   │   ├── blue_light_wall.pal
@@ -7612,12 +5810,12 @@
 │   │   │   ├── blue_orb.gbapal
 │   │   │   ├── blue_orb.gbapal.lz
 │   │   │   ├── blue_orb.pal
-│   │   │   ├── blue_ring_2.gbapal
-│   │   │   ├── blue_ring_2.gbapal.lz
-│   │   │   ├── blue_ring_2.pal
 │   │   │   ├── blue_ring.gbapal
 │   │   │   ├── blue_ring.gbapal.lz
 │   │   │   ├── blue_ring.pal
+│   │   │   ├── blue_ring_2.gbapal
+│   │   │   ├── blue_ring_2.gbapal.lz
+│   │   │   ├── blue_ring_2.pal
 │   │   │   ├── blue_shards.4bpp
 │   │   │   ├── blue_shards.4bpp.lz
 │   │   │   ├── blue_shards.gbapal
@@ -7628,16 +5826,21 @@
 │   │   │   ├── blue_star.gbapal
 │   │   │   ├── blue_star.gbapal.lz
 │   │   │   ├── blue_star.png
-│   │   │   ├── bone_2.4bpp
-│   │   │   ├── bone_2.4bpp.lz
-│   │   │   ├── bone_2.gbapal
-│   │   │   ├── bone_2.gbapal.lz
-│   │   │   ├── bone_2.png
+│   │   │   ├── bluegreen_orb.4bpp
+│   │   │   ├── bluegreen_orb.4bpp.lz
+│   │   │   ├── bluegreen_orb.gbapal
+│   │   │   ├── bluegreen_orb.gbapal.lz
+│   │   │   ├── bluegreen_orb.png
 │   │   │   ├── bone.4bpp
 │   │   │   ├── bone.4bpp.lz
 │   │   │   ├── bone.gbapal
 │   │   │   ├── bone.gbapal.lz
 │   │   │   ├── bone.png
+│   │   │   ├── bone_2.4bpp
+│   │   │   ├── bone_2.4bpp.lz
+│   │   │   ├── bone_2.gbapal
+│   │   │   ├── bone_2.gbapal.lz
+│   │   │   ├── bone_2.png
 │   │   │   ├── breaking_egg.4bpp
 │   │   │   ├── breaking_egg.4bpp.lz
 │   │   │   ├── breaking_egg.gbapal
@@ -7658,17 +5861,17 @@
 │   │   │   ├── brown_triangle.png
 │   │   │   ├── bubble.4bpp
 │   │   │   ├── bubble.4bpp.lz
-│   │   │   ├── bubble_burst_2.4bpp
-│   │   │   ├── bubble_burst_2.4bpp.lz
-│   │   │   ├── bubble_burst_2.gbapal
-│   │   │   ├── bubble_burst_2.gbapal.lz
-│   │   │   ├── bubble_burst_2.png
+│   │   │   ├── bubble.png
 │   │   │   ├── bubble_burst.4bpp
 │   │   │   ├── bubble_burst.4bpp.lz
 │   │   │   ├── bubble_burst.gbapal
 │   │   │   ├── bubble_burst.gbapal.lz
 │   │   │   ├── bubble_burst.png
-│   │   │   ├── bubble.png
+│   │   │   ├── bubble_burst_2.4bpp
+│   │   │   ├── bubble_burst_2.4bpp.lz
+│   │   │   ├── bubble_burst_2.gbapal
+│   │   │   ├── bubble_burst_2.gbapal.lz
+│   │   │   ├── bubble_burst_2.png
 │   │   │   ├── circle_impact.4bpp
 │   │   │   ├── circle_impact.4bpp.lz
 │   │   │   ├── circle_impact.gbapal
@@ -7685,26 +5888,26 @@
 │   │   │   ├── clapping.gbapal
 │   │   │   ├── clapping.gbapal.lz
 │   │   │   ├── clapping.png
-│   │   │   ├── claw_slash_2.4bpp
-│   │   │   ├── claw_slash_2.4bpp.lz
-│   │   │   ├── claw_slash_2.gbapal
-│   │   │   ├── claw_slash_2.gbapal.lz
-│   │   │   ├── claw_slash_2.png
 │   │   │   ├── claw_slash.4bpp
 │   │   │   ├── claw_slash.4bpp.lz
 │   │   │   ├── claw_slash.gbapal
 │   │   │   ├── claw_slash.gbapal.lz
 │   │   │   ├── claw_slash.png
-│   │   │   ├── closing_eye_2.4bpp
-│   │   │   ├── closing_eye_2.4bpp.lz
-│   │   │   ├── closing_eye_2.gbapal
-│   │   │   ├── closing_eye_2.gbapal.lz
-│   │   │   ├── closing_eye_2.png
+│   │   │   ├── claw_slash_2.4bpp
+│   │   │   ├── claw_slash_2.4bpp.lz
+│   │   │   ├── claw_slash_2.gbapal
+│   │   │   ├── claw_slash_2.gbapal.lz
+│   │   │   ├── claw_slash_2.png
 │   │   │   ├── closing_eye.4bpp
 │   │   │   ├── closing_eye.4bpp.lz
 │   │   │   ├── closing_eye.gbapal
 │   │   │   ├── closing_eye.gbapal.lz
 │   │   │   ├── closing_eye.png
+│   │   │   ├── closing_eye_2.4bpp
+│   │   │   ├── closing_eye_2.4bpp.lz
+│   │   │   ├── closing_eye_2.gbapal
+│   │   │   ├── closing_eye_2.gbapal.lz
+│   │   │   ├── closing_eye_2.png
 │   │   │   ├── coin.4bpp
 │   │   │   ├── coin.4bpp.lz
 │   │   │   ├── coin.gbapal
@@ -7753,14 +5956,19 @@
 │   │   │   ├── eclipsing_orb.gbapal
 │   │   │   ├── eclipsing_orb.gbapal.lz
 │   │   │   ├── eclipsing_orb.png
-│   │   │   ├── electricity.4bpp
-│   │   │   ├── electricity.4bpp.lz
-│   │   │   ├── electricity.png
 │   │   │   ├── electric_orbs.4bpp
 │   │   │   ├── electric_orbs.4bpp.lz
 │   │   │   ├── electric_orbs.gbapal
 │   │   │   ├── electric_orbs.gbapal.lz
 │   │   │   ├── electric_orbs.png
+│   │   │   ├── electricity.4bpp
+│   │   │   ├── electricity.4bpp.lz
+│   │   │   ├── electricity.png
+│   │   │   ├── explosion.4bpp
+│   │   │   ├── explosion.4bpp.lz
+│   │   │   ├── explosion.gbapal
+│   │   │   ├── explosion.gbapal.lz
+│   │   │   ├── explosion.png
 │   │   │   ├── explosion_2.4bpp
 │   │   │   ├── explosion_2.4bpp.lz
 │   │   │   ├── explosion_2.gbapal
@@ -7771,8 +5979,6 @@
 │   │   │   ├── explosion_3.png
 │   │   │   ├── explosion_4.4bpp
 │   │   │   ├── explosion_4.4bpp.lz
-│   │   │   ├── explosion.4bpp
-│   │   │   ├── explosion.4bpp.lz
 │   │   │   ├── explosion_4.gbapal
 │   │   │   ├── explosion_4.gbapal.lz
 │   │   │   ├── explosion_4.png
@@ -7784,9 +5990,6 @@
 │   │   │   ├── explosion_6.gbapal
 │   │   │   ├── explosion_6.gbapal.lz
 │   │   │   ├── explosion_6.png
-│   │   │   ├── explosion.gbapal
-│   │   │   ├── explosion.gbapal.lz
-│   │   │   ├── explosion.png
 │   │   │   ├── eye.4bpp
 │   │   │   ├── eye.4bpp.lz
 │   │   │   ├── eye.gbapal
@@ -7807,36 +6010,36 @@
 │   │   │   ├── fangs.gbapal
 │   │   │   ├── fangs.gbapal.lz
 │   │   │   ├── fangs.png
-│   │   │   ├── finger_2.4bpp
-│   │   │   ├── finger_2.4bpp.lz
-│   │   │   ├── finger_2.png
 │   │   │   ├── finger.4bpp
 │   │   │   ├── finger.4bpp.lz
 │   │   │   ├── finger.gbapal
 │   │   │   ├── finger.gbapal.lz
 │   │   │   ├── finger.png
+│   │   │   ├── finger_2.4bpp
+│   │   │   ├── finger_2.4bpp.lz
+│   │   │   ├── finger_2.png
 │   │   │   ├── fire.4bpp
 │   │   │   ├── fire.4bpp.lz
 │   │   │   ├── fire.gbapal
 │   │   │   ├── fire.gbapal.lz
+│   │   │   ├── fire.png
 │   │   │   ├── fire_plume.4bpp
 │   │   │   ├── fire_plume.4bpp.lz
 │   │   │   ├── fire_plume.png
-│   │   │   ├── fire.png
 │   │   │   ├── flat_rock.4bpp
 │   │   │   ├── flat_rock.4bpp.lz
 │   │   │   ├── flat_rock.gbapal
 │   │   │   ├── flat_rock.gbapal.lz
 │   │   │   ├── flat_rock.png
-│   │   │   ├── flower_0.4bpp
-│   │   │   ├── flower_0.png
-│   │   │   ├── flower_1.4bpp
-│   │   │   ├── flower_1.png
 │   │   │   ├── flower.4bpp
 │   │   │   ├── flower.4bpp.lz
 │   │   │   ├── flower.gbapal
 │   │   │   ├── flower.gbapal.lz
 │   │   │   ├── flower.pal
+│   │   │   ├── flower_0.4bpp
+│   │   │   ├── flower_0.png
+│   │   │   ├── flower_1.4bpp
+│   │   │   ├── flower_1.png
 │   │   │   ├── flying_dirt.4bpp
 │   │   │   ├── flying_dirt.4bpp.lz
 │   │   │   ├── flying_dirt.gbapal
@@ -7873,16 +6076,16 @@
 │   │   │   ├── ghostly_spirit.gbapal
 │   │   │   ├── ghostly_spirit.gbapal.lz
 │   │   │   ├── ghostly_spirit.png
-│   │   │   ├── glass_2.4bpp
-│   │   │   ├── glass_2.4bpp.lz
-│   │   │   ├── glass_2.gbapal
-│   │   │   ├── glass_2.gbapal.lz
-│   │   │   ├── glass_2.png
 │   │   │   ├── glass.4bpp
 │   │   │   ├── glass.4bpp.lz
 │   │   │   ├── glass.gbapal
 │   │   │   ├── glass.gbapal.lz
 │   │   │   ├── glass.png
+│   │   │   ├── glass_2.4bpp
+│   │   │   ├── glass_2.4bpp.lz
+│   │   │   ├── glass_2.gbapal
+│   │   │   ├── glass_2.gbapal.lz
+│   │   │   ├── glass_2.png
 │   │   │   ├── glowy_blue_orb.gbapal
 │   │   │   ├── glowy_blue_orb.gbapal.lz
 │   │   │   ├── glowy_blue_orb.pal
@@ -7960,34 +6163,34 @@
 │   │   │   ├── hatched_egg.4bpp
 │   │   │   ├── hatched_egg.4bpp.lz
 │   │   │   ├── hatched_egg.png
+│   │   │   ├── hit.4bpp
+│   │   │   ├── hit.4bpp.lz
+│   │   │   ├── hit.gbapal
+│   │   │   ├── hit.gbapal.lz
+│   │   │   ├── hit.png
 │   │   │   ├── hit_2.gbapal
 │   │   │   ├── hit_2.gbapal.lz
 │   │   │   ├── hit_2.pal
-│   │   │   ├── hit.4bpp
-│   │   │   ├── hit.4bpp.lz
 │   │   │   ├── hit_duplicate.4bpp
 │   │   │   ├── hit_duplicate.4bpp.lz
 │   │   │   ├── hit_duplicate.gbapal
 │   │   │   ├── hit_duplicate.gbapal.lz
 │   │   │   ├── hit_duplicate.png
-│   │   │   ├── hit.gbapal
-│   │   │   ├── hit.gbapal.lz
-│   │   │   ├── hit.png
 │   │   │   ├── hollow_orb.4bpp
 │   │   │   ├── hollow_orb.4bpp.lz
 │   │   │   ├── hollow_orb.gbapal
 │   │   │   ├── hollow_orb.gbapal.lz
 │   │   │   ├── hollow_orb.png
-│   │   │   ├── horn_hit_2.4bpp
-│   │   │   ├── horn_hit_2.4bpp.lz
-│   │   │   ├── horn_hit_2.gbapal
-│   │   │   ├── horn_hit_2.gbapal.lz
-│   │   │   ├── horn_hit_2.png
 │   │   │   ├── horn_hit.4bpp
 │   │   │   ├── horn_hit.4bpp.lz
 │   │   │   ├── horn_hit.gbapal
 │   │   │   ├── horn_hit.gbapal.lz
 │   │   │   ├── horn_hit.png
+│   │   │   ├── horn_hit_2.4bpp
+│   │   │   ├── horn_hit_2.4bpp.lz
+│   │   │   ├── horn_hit_2.gbapal
+│   │   │   ├── horn_hit_2.gbapal.lz
+│   │   │   ├── horn_hit_2.png
 │   │   │   ├── humanoid_foot.4bpp
 │   │   │   ├── humanoid_foot.4bpp.lz
 │   │   │   ├── humanoid_foot.gbapal
@@ -8001,6 +6204,11 @@
 │   │   │   ├── ice_chunk.gbapal
 │   │   │   ├── ice_chunk.gbapal.lz
 │   │   │   ├── ice_chunk.png
+│   │   │   ├── ice_crystals.4bpp
+│   │   │   ├── ice_crystals.4bpp.lz
+│   │   │   ├── ice_crystals.gbapal
+│   │   │   ├── ice_crystals.gbapal.lz
+│   │   │   ├── ice_crystals.pal
 │   │   │   ├── ice_crystals_0.4bpp
 │   │   │   ├── ice_crystals_0.png
 │   │   │   ├── ice_crystals_1.4bpp
@@ -8010,12 +6218,12 @@
 │   │   │   ├── ice_crystals_3.4bpp
 │   │   │   ├── ice_crystals_3.png
 │   │   │   ├── ice_crystals_4.4bpp
-│   │   │   ├── ice_crystals.4bpp
-│   │   │   ├── ice_crystals.4bpp.lz
 │   │   │   ├── ice_crystals_4.png
-│   │   │   ├── ice_crystals.gbapal
-│   │   │   ├── ice_crystals.gbapal.lz
-│   │   │   ├── ice_crystals.pal
+│   │   │   ├── ice_cube.4bpp
+│   │   │   ├── ice_cube.4bpp.lz
+│   │   │   ├── ice_cube.gbapal
+│   │   │   ├── ice_cube.gbapal.lz
+│   │   │   ├── ice_cube.pal
 │   │   │   ├── ice_cube_0.4bpp
 │   │   │   ├── ice_cube_0.png
 │   │   │   ├── ice_cube_1.4bpp
@@ -8024,11 +6232,6 @@
 │   │   │   ├── ice_cube_2.png
 │   │   │   ├── ice_cube_3.4bpp
 │   │   │   ├── ice_cube_3.png
-│   │   │   ├── ice_cube.4bpp
-│   │   │   ├── ice_cube.4bpp.lz
-│   │   │   ├── ice_cube.gbapal
-│   │   │   ├── ice_cube.gbapal.lz
-│   │   │   ├── ice_cube.pal
 │   │   │   ├── ice_spikes.4bpp
 │   │   │   ├── ice_spikes.4bpp.lz
 │   │   │   ├── ice_spikes.png
@@ -8037,6 +6240,11 @@
 │   │   │   ├── icicle_spear.gbapal
 │   │   │   ├── icicle_spear.gbapal.lz
 │   │   │   ├── icicle_spear.png
+│   │   │   ├── impact.4bpp
+│   │   │   ├── impact.4bpp.lz
+│   │   │   ├── impact.gbapal
+│   │   │   ├── impact.gbapal.lz
+│   │   │   ├── impact.png
 │   │   │   ├── impact_2.4bpp
 │   │   │   ├── impact_2.4bpp.lz
 │   │   │   ├── impact_2.gbapal
@@ -8047,11 +6255,6 @@
 │   │   │   ├── impact_3.gbapal
 │   │   │   ├── impact_3.gbapal.lz
 │   │   │   ├── impact_3.png
-│   │   │   ├── impact.4bpp
-│   │   │   ├── impact.4bpp.lz
-│   │   │   ├── impact.gbapal
-│   │   │   ├── impact.gbapal.lz
-│   │   │   ├── impact.png
 │   │   │   ├── item_bag.4bpp
 │   │   │   ├── item_bag.4bpp.lz
 │   │   │   ├── item_bag.gbapal
@@ -8092,14 +6295,14 @@
 │   │   │   ├── lightbulb.gbapal
 │   │   │   ├── lightbulb.gbapal.lz
 │   │   │   ├── lightbulb.png
+│   │   │   ├── lightning.4bpp
+│   │   │   ├── lightning.4bpp.lz
+│   │   │   ├── lightning.png
 │   │   │   ├── lightning_2.4bpp
 │   │   │   ├── lightning_2.4bpp.lz
 │   │   │   ├── lightning_2.gbapal
 │   │   │   ├── lightning_2.gbapal.lz
 │   │   │   ├── lightning_2.png
-│   │   │   ├── lightning.4bpp
-│   │   │   ├── lightning.4bpp.lz
-│   │   │   ├── lightning.png
 │   │   │   ├── lock_on.4bpp
 │   │   │   ├── lock_on.4bpp.lz
 │   │   │   ├── lock_on.gbapal
@@ -8158,31 +6361,31 @@
 │   │   │   ├── movement_waves.gbapal
 │   │   │   ├── movement_waves.gbapal.lz
 │   │   │   ├── movement_waves.png
-│   │   │   ├── mud_sand_0.4bpp
-│   │   │   ├── mud_sand_0.png
-│   │   │   ├── mud_sand_1.4bpp
-│   │   │   ├── mud_sand_1.png
 │   │   │   ├── mud_sand.4bpp
 │   │   │   ├── mud_sand.4bpp.lz
 │   │   │   ├── mud_sand.gbapal
 │   │   │   ├── mud_sand.gbapal.lz
 │   │   │   ├── mud_sand.pal
+│   │   │   ├── mud_sand_0.4bpp
+│   │   │   ├── mud_sand_0.png
+│   │   │   ├── mud_sand_1.4bpp
+│   │   │   ├── mud_sand_1.png
 │   │   │   ├── mud_unk.4bpp
 │   │   │   ├── mud_unk.4bpp.lz
 │   │   │   ├── mud_unk.gbapal
 │   │   │   ├── mud_unk.gbapal.lz
 │   │   │   ├── mud_unk.png
+│   │   │   ├── music_notes.4bpp
+│   │   │   ├── music_notes.4bpp.lz
+│   │   │   ├── music_notes.gbapal
+│   │   │   ├── music_notes.gbapal.lz
+│   │   │   ├── music_notes.png
 │   │   │   ├── music_notes_2.4bpp
 │   │   │   ├── music_notes_2.4bpp.lz
 │   │   │   ├── music_notes_2.gbapal
 │   │   │   ├── music_notes_2.gbapal.lz
 │   │   │   ├── music_notes_2.pal
 │   │   │   ├── music_notes_2.png
-│   │   │   ├── music_notes.4bpp
-│   │   │   ├── music_notes.4bpp.lz
-│   │   │   ├── music_notes.gbapal
-│   │   │   ├── music_notes.gbapal.lz
-│   │   │   ├── music_notes.png
 │   │   │   ├── nail.4bpp
 │   │   │   ├── nail.4bpp.lz
 │   │   │   ├── nail.gbapal
@@ -8205,10 +6408,10 @@
 │   │   │   ├── orange.4bpp.lz
 │   │   │   ├── orange.gbapal
 │   │   │   ├── orange.gbapal.lz
+│   │   │   ├── orange.png
 │   │   │   ├── orange_light_wall.gbapal
 │   │   │   ├── orange_light_wall.gbapal.lz
 │   │   │   ├── orange_light_wall.pal
-│   │   │   ├── orange.png
 │   │   │   ├── orb.4bpp
 │   │   │   ├── orb.4bpp.lz
 │   │   │   ├── orb.gbapal
@@ -8232,16 +6435,16 @@
 │   │   │   ├── paw_print.gbapal
 │   │   │   ├── paw_print.gbapal.lz
 │   │   │   ├── paw_print.png
-│   │   │   ├── pencil_2.4bpp
-│   │   │   ├── pencil_2.4bpp.lz
-│   │   │   ├── pencil_2.gbapal
-│   │   │   ├── pencil_2.gbapal.lz
-│   │   │   ├── pencil_2.png
 │   │   │   ├── pencil.4bpp
 │   │   │   ├── pencil.4bpp.lz
 │   │   │   ├── pencil.gbapal
 │   │   │   ├── pencil.gbapal.lz
 │   │   │   ├── pencil.png
+│   │   │   ├── pencil_2.4bpp
+│   │   │   ├── pencil_2.4bpp.lz
+│   │   │   ├── pencil_2.gbapal
+│   │   │   ├── pencil_2.gbapal.lz
+│   │   │   ├── pencil_2.png
 │   │   │   ├── petal.4bpp
 │   │   │   ├── petal.4bpp.lz
 │   │   │   ├── petal.gbapal
@@ -8257,14 +6460,14 @@
 │   │   │   ├── pink_glove.gbapal
 │   │   │   ├── pink_glove.gbapal.lz
 │   │   │   ├── pink_glove.png
+│   │   │   ├── pink_heart.gbapal
+│   │   │   ├── pink_heart.gbapal.lz
+│   │   │   ├── pink_heart.pal
 │   │   │   ├── pink_heart_2.4bpp
 │   │   │   ├── pink_heart_2.4bpp.lz
 │   │   │   ├── pink_heart_2.gbapal
 │   │   │   ├── pink_heart_2.gbapal.lz
 │   │   │   ├── pink_heart_2.png
-│   │   │   ├── pink_heart.gbapal
-│   │   │   ├── pink_heart.gbapal.lz
-│   │   │   ├── pink_heart.pal
 │   │   │   ├── pink_orb.4bpp
 │   │   │   ├── pink_orb.4bpp.lz
 │   │   │   ├── pink_orb.gbapal
@@ -8337,16 +6540,16 @@
 │   │   │   ├── purple_swipe.4bpp
 │   │   │   ├── purple_swipe.4bpp.lz
 │   │   │   ├── purple_swipe.png
-│   │   │   ├── rainbow_rings.4bpp
-│   │   │   ├── rainbow_rings.4bpp.lz
-│   │   │   ├── rainbow_rings.gbapal
-│   │   │   ├── rainbow_rings.gbapal.lz
-│   │   │   ├── rainbow_rings.png
 │   │   │   ├── rain_drops.4bpp
 │   │   │   ├── rain_drops.4bpp.lz
 │   │   │   ├── rain_drops.gbapal
 │   │   │   ├── rain_drops.gbapal.lz
 │   │   │   ├── rain_drops.png
+│   │   │   ├── rainbow_rings.4bpp
+│   │   │   ├── rainbow_rings.4bpp.lz
+│   │   │   ├── rainbow_rings.gbapal
+│   │   │   ├── rainbow_rings.gbapal.lz
+│   │   │   ├── rainbow_rings.png
 │   │   │   ├── rapid_spin.4bpp
 │   │   │   ├── rapid_spin.4bpp.lz
 │   │   │   ├── rapid_spin.gbapal
@@ -8376,14 +6579,14 @@
 │   │   │   ├── red_light_wall.gbapal
 │   │   │   ├── red_light_wall.gbapal.lz
 │   │   │   ├── red_light_wall.pal
-│   │   │   ├── red_orb_2.gbapal
-│   │   │   ├── red_orb_2.gbapal.lz
-│   │   │   ├── red_orb_2.pal
 │   │   │   ├── red_orb.4bpp
 │   │   │   ├── red_orb.4bpp.lz
 │   │   │   ├── red_orb.gbapal
 │   │   │   ├── red_orb.gbapal.lz
 │   │   │   ├── red_orb.png
+│   │   │   ├── red_orb_2.gbapal
+│   │   │   ├── red_orb_2.gbapal.lz
+│   │   │   ├── red_orb_2.pal
 │   │   │   ├── red_particles.4bpp
 │   │   │   ├── red_particles.4bpp.lz
 │   │   │   ├── red_particles.gbapal
@@ -8434,33 +6637,33 @@
 │   │   │   ├── safari_bait.gbapal
 │   │   │   ├── safari_bait.gbapal.lz
 │   │   │   ├── safari_bait.png
-│   │   │   ├── sap_drip_2.gbapal
-│   │   │   ├── sap_drip_2.gbapal.lz
-│   │   │   ├── sap_drip_2.pal
 │   │   │   ├── sap_drip.4bpp
 │   │   │   ├── sap_drip.4bpp.lz
 │   │   │   ├── sap_drip.gbapal
 │   │   │   ├── sap_drip.gbapal.lz
 │   │   │   ├── sap_drip.png
+│   │   │   ├── sap_drip_2.gbapal
+│   │   │   ├── sap_drip_2.gbapal.lz
+│   │   │   ├── sap_drip_2.pal
+│   │   │   ├── scratch.4bpp
+│   │   │   ├── scratch.4bpp.lz
+│   │   │   ├── scratch.png
 │   │   │   ├── scratch_2.4bpp
 │   │   │   ├── scratch_2.4bpp.lz
 │   │   │   ├── scratch_2.png
 │   │   │   ├── scratch_3.4bpp
 │   │   │   ├── scratch_3.4bpp.lz
 │   │   │   ├── scratch_3.png
-│   │   │   ├── scratch.4bpp
-│   │   │   ├── scratch.4bpp.lz
-│   │   │   ├── scratch.png
-│   │   │   ├── seed_2.4bpp
-│   │   │   ├── seed_2.4bpp.lz
-│   │   │   ├── seed_2.gbapal
-│   │   │   ├── seed_2.gbapal.lz
-│   │   │   ├── seed_2.png
 │   │   │   ├── seed.4bpp
 │   │   │   ├── seed.4bpp.lz
 │   │   │   ├── seed.gbapal
 │   │   │   ├── seed.gbapal.lz
 │   │   │   ├── seed.png
+│   │   │   ├── seed_2.4bpp
+│   │   │   ├── seed_2.4bpp.lz
+│   │   │   ├── seed_2.gbapal
+│   │   │   ├── seed_2.gbapal.lz
+│   │   │   ├── seed_2.png
 │   │   │   ├── shadow_ball.4bpp
 │   │   │   ├── shadow_ball.4bpp.lz
 │   │   │   ├── shadow_ball.gbapal
@@ -8471,6 +6674,9 @@
 │   │   │   ├── sharp_teeth.gbapal
 │   │   │   ├── sharp_teeth.gbapal.lz
 │   │   │   ├── sharp_teeth.png
+│   │   │   ├── shock.4bpp
+│   │   │   ├── shock.4bpp.lz
+│   │   │   ├── shock.png
 │   │   │   ├── shock_2.4bpp
 │   │   │   ├── shock_2.4bpp.lz
 │   │   │   ├── shock_2.gbapal
@@ -8483,30 +6689,27 @@
 │   │   │   ├── shock_3.png
 │   │   │   ├── shock_4.4bpp
 │   │   │   ├── shock_4.4bpp.lz
-│   │   │   ├── shock.4bpp
-│   │   │   ├── shock.4bpp.lz
 │   │   │   ├── shock_4.gbapal
 │   │   │   ├── shock_4.gbapal.lz
 │   │   │   ├── shock_4.png
-│   │   │   ├── shock.png
-│   │   │   ├── slam_hit_2.4bpp
-│   │   │   ├── slam_hit_2.4bpp.lz
-│   │   │   ├── slam_hit_2.gbapal
-│   │   │   ├── slam_hit_2.gbapal.lz
-│   │   │   ├── slam_hit_2.png
 │   │   │   ├── slam_hit.4bpp
 │   │   │   ├── slam_hit.4bpp.lz
 │   │   │   ├── slam_hit.gbapal
 │   │   │   ├── slam_hit.gbapal.lz
 │   │   │   ├── slam_hit.png
-│   │   │   ├── slash_2.gbapal
-│   │   │   ├── slash_2.gbapal.lz
-│   │   │   ├── slash_2.pal
+│   │   │   ├── slam_hit_2.4bpp
+│   │   │   ├── slam_hit_2.4bpp.lz
+│   │   │   ├── slam_hit_2.gbapal
+│   │   │   ├── slam_hit_2.gbapal.lz
+│   │   │   ├── slam_hit_2.png
 │   │   │   ├── slash.4bpp
 │   │   │   ├── slash.4bpp.lz
 │   │   │   ├── slash.gbapal
 │   │   │   ├── slash.gbapal.lz
 │   │   │   ├── slash.png
+│   │   │   ├── slash_2.gbapal
+│   │   │   ├── slash_2.gbapal.lz
+│   │   │   ├── slash_2.pal
 │   │   │   ├── sleep_powder.gbapal
 │   │   │   ├── sleep_powder.gbapal.lz
 │   │   │   ├── sleep_powder.pal
@@ -8530,14 +6733,14 @@
 │   │   │   ├── smellingsalt_effect.gbapal
 │   │   │   ├── smellingsalt_effect.gbapal.lz
 │   │   │   ├── smellingsalt_effect.png
-│   │   │   ├── smoke_2.4bpp
-│   │   │   ├── smoke_2.4bpp.lz
-│   │   │   ├── smoke_2.png
 │   │   │   ├── smoke.4bpp
 │   │   │   ├── smoke.4bpp.lz
 │   │   │   ├── smoke.gbapal
 │   │   │   ├── smoke.gbapal.lz
 │   │   │   ├── smoke.png
+│   │   │   ├── smoke_2.4bpp
+│   │   │   ├── smoke_2.4bpp.lz
+│   │   │   ├── smoke_2.png
 │   │   │   ├── smokescreen_impact.4bpp
 │   │   │   ├── smokescreen_impact.4bpp.lz
 │   │   │   ├── smokescreen_impact.gbapal
@@ -8553,6 +6756,11 @@
 │   │   │   ├── snowball.gbapal
 │   │   │   ├── snowball.gbapal.lz
 │   │   │   ├── snowball.png
+│   │   │   ├── spark.4bpp
+│   │   │   ├── spark.4bpp.lz
+│   │   │   ├── spark.gbapal
+│   │   │   ├── spark.gbapal.lz
+│   │   │   ├── spark.pal
 │   │   │   ├── spark_0.4bpp
 │   │   │   ├── spark_0.png
 │   │   │   ├── spark_1.4bpp
@@ -8562,10 +6770,6 @@
 │   │   │   ├── spark_2.gbapal
 │   │   │   ├── spark_2.gbapal.lz
 │   │   │   ├── spark_2.png
-│   │   │   ├── spark.4bpp
-│   │   │   ├── spark.4bpp.lz
-│   │   │   ├── spark.gbapal
-│   │   │   ├── spark.gbapal.lz
 │   │   │   ├── spark_h.4bpp
 │   │   │   ├── spark_h.4bpp.lz
 │   │   │   ├── spark_h.png
@@ -8590,7 +6794,6 @@
 │   │   │   ├── sparkle_6.gbapal
 │   │   │   ├── sparkle_6.gbapal.lz
 │   │   │   ├── sparkle_6.png
-│   │   │   ├── spark.pal
 │   │   │   ├── speed_dust.4bpp
 │   │   │   ├── speed_dust.4bpp.lz
 │   │   │   ├── speed_dust.gbapal
@@ -8638,27 +6841,27 @@
 │   │   │   ├── sprout.4bpp
 │   │   │   ├── sprout.4bpp.lz
 │   │   │   ├── sprout.png
-│   │   │   ├── string_2.4bpp
-│   │   │   ├── string_2.4bpp.lz
-│   │   │   ├── string_2.gbapal
-│   │   │   ├── string_2.gbapal.lz
-│   │   │   ├── string_2.png
 │   │   │   ├── string.4bpp
 │   │   │   ├── string.4bpp.lz
 │   │   │   ├── string.gbapal
 │   │   │   ├── string.gbapal.lz
 │   │   │   ├── string.png
+│   │   │   ├── string_2.4bpp
+│   │   │   ├── string_2.4bpp.lz
+│   │   │   ├── string_2.gbapal
+│   │   │   ├── string_2.gbapal.lz
+│   │   │   ├── string_2.png
 │   │   │   ├── stun_spore.gbapal
 │   │   │   ├── stun_spore.gbapal.lz
 │   │   │   ├── stun_spore.pal
 │   │   │   ├── substitute.4bpp
 │   │   │   ├── substitute.4bpp.lz
-│   │   │   ├── substitute_back.4bpp
-│   │   │   ├── substitute_back.4bpp.lz
-│   │   │   ├── substitute_back.png
 │   │   │   ├── substitute.gbapal
 │   │   │   ├── substitute.gbapal.lz
 │   │   │   ├── substitute.png
+│   │   │   ├── substitute_back.4bpp
+│   │   │   ├── substitute_back.4bpp.lz
+│   │   │   ├── substitute_back.png
 │   │   │   ├── sunlight.4bpp
 │   │   │   ├── sunlight.4bpp.lz
 │   │   │   ├── sunlight.gbapal
@@ -8677,16 +6880,16 @@
 │   │   │   ├── swipe.gbapal
 │   │   │   ├── swipe.gbapal.lz
 │   │   │   ├── swipe.png
-│   │   │   ├── sword_2.4bpp
-│   │   │   ├── sword_2.4bpp.lz
-│   │   │   ├── sword_2.gbapal
-│   │   │   ├── sword_2.gbapal.lz
-│   │   │   ├── sword_2.png
 │   │   │   ├── sword.4bpp
 │   │   │   ├── sword.4bpp.lz
 │   │   │   ├── sword.gbapal
 │   │   │   ├── sword.gbapal.lz
 │   │   │   ├── sword.png
+│   │   │   ├── sword_2.4bpp
+│   │   │   ├── sword_2.4bpp.lz
+│   │   │   ├── sword_2.gbapal
+│   │   │   ├── sword_2.gbapal.lz
+│   │   │   ├── sword_2.png
 │   │   │   ├── tag_hand.4bpp
 │   │   │   ├── tag_hand.4bpp.lz
 │   │   │   ├── tag_hand.png
@@ -8741,16 +6944,16 @@
 │   │   │   ├── unknown.gbapal
 │   │   │   ├── unknown.gbapal.lz
 │   │   │   ├── unknown.png
-│   │   │   ├── vine_2.4bpp
-│   │   │   ├── vine_2.4bpp.lz
-│   │   │   ├── vine_2.gbapal
-│   │   │   ├── vine_2.gbapal.lz
-│   │   │   ├── vine_2.png
 │   │   │   ├── vine.4bpp
 │   │   │   ├── vine.4bpp.lz
 │   │   │   ├── vine.gbapal
 │   │   │   ├── vine.gbapal.lz
 │   │   │   ├── vine.png
+│   │   │   ├── vine_2.4bpp
+│   │   │   ├── vine_2.4bpp.lz
+│   │   │   ├── vine_2.gbapal
+│   │   │   ├── vine_2.gbapal.lz
+│   │   │   ├── vine_2.png
 │   │   │   ├── void_lines.4bpp
 │   │   │   ├── void_lines.4bpp.lz
 │   │   │   ├── void_lines.gbapal
@@ -8766,14 +6969,14 @@
 │   │   │   ├── water_column.gbapal
 │   │   │   ├── water_column.gbapal.lz
 │   │   │   ├── water_column.png
-│   │   │   ├── water_droplet_2.4bpp
-│   │   │   ├── water_droplet_2.4bpp.lz
-│   │   │   ├── water_droplet_2.png
 │   │   │   ├── water_droplet.4bpp
 │   │   │   ├── water_droplet.4bpp.lz
 │   │   │   ├── water_droplet.gbapal
 │   │   │   ├── water_droplet.gbapal.lz
 │   │   │   ├── water_droplet.png
+│   │   │   ├── water_droplet_2.4bpp
+│   │   │   ├── water_droplet_2.4bpp.lz
+│   │   │   ├── water_droplet_2.png
 │   │   │   ├── water_impact.4bpp
 │   │   │   ├── water_impact.4bpp.lz
 │   │   │   ├── water_impact.gbapal
@@ -8801,19 +7004,19 @@
 │   │   │   ├── whip_hit.gbapal
 │   │   │   ├── whip_hit.gbapal.lz
 │   │   │   ├── whip_hit.pal
-│   │   │   ├── whirlwind_2.4bpp
-│   │   │   ├── whirlwind_2.4bpp.lz
-│   │   │   ├── whirlwind_2.png
 │   │   │   ├── whirlwind.4bpp
 │   │   │   ├── whirlwind.4bpp.lz
 │   │   │   ├── whirlwind.gbapal
 │   │   │   ├── whirlwind.gbapal.lz
+│   │   │   ├── whirlwind.png
+│   │   │   ├── whirlwind_2.4bpp
+│   │   │   ├── whirlwind_2.4bpp.lz
+│   │   │   ├── whirlwind_2.png
 │   │   │   ├── whirlwind_lines.4bpp
 │   │   │   ├── whirlwind_lines.4bpp.lz
 │   │   │   ├── whirlwind_lines.gbapal
 │   │   │   ├── whirlwind_lines.gbapal.lz
 │   │   │   ├── whirlwind_lines.png
-│   │   │   ├── whirlwind.png
 │   │   │   ├── white_bag.4bpp
 │   │   │   ├── white_bag.4bpp.lz
 │   │   │   ├── white_bag.gbapal
@@ -8853,16 +7056,16 @@
 │   │   │   ├── yellow_star.gbapal
 │   │   │   ├── yellow_star.gbapal.lz
 │   │   │   ├── yellow_star.png
-│   │   │   ├── yellow_unk_2.4bpp
-│   │   │   ├── yellow_unk_2.4bpp.lz
-│   │   │   ├── yellow_unk_2.gbapal
-│   │   │   ├── yellow_unk_2.gbapal.lz
-│   │   │   ├── yellow_unk_2.png
 │   │   │   ├── yellow_unk.4bpp
 │   │   │   ├── yellow_unk.4bpp.lz
 │   │   │   ├── yellow_unk.gbapal
 │   │   │   ├── yellow_unk.gbapal.lz
 │   │   │   ├── yellow_unk.png
+│   │   │   ├── yellow_unk_2.4bpp
+│   │   │   ├── yellow_unk_2.4bpp.lz
+│   │   │   ├── yellow_unk_2.gbapal
+│   │   │   ├── yellow_unk_2.gbapal.lz
+│   │   │   ├── yellow_unk_2.png
 │   │   │   ├── z.4bpp
 │   │   │   ├── z.4bpp.lz
 │   │   │   ├── z.gbapal
@@ -8886,21 +7089,21 @@
 │   │       ├── line_sketch_2.gbapal.lz
 │   │       ├── line_sketch_2.pal
 │   │       ├── line_sketch_2.png
-│   │       ├── spinning_ball_2.gbapal
-│   │       ├── spinning_ball_2.gbapal.lz
-│   │       ├── spinning_ball_2.pal
 │   │       ├── spinning_ball.4bpp
 │   │       ├── spinning_ball.4bpp.lz
 │   │       ├── spinning_ball.gbapal
 │   │       ├── spinning_ball.gbapal.lz
 │   │       ├── spinning_ball.png
+│   │       ├── spinning_ball_2.gbapal
+│   │       ├── spinning_ball_2.gbapal.lz
+│   │       ├── spinning_ball_2.pal
+│   │       ├── unknown.gbapal
+│   │       ├── unknown.pal
 │   │       ├── unknown_1.bin
 │   │       ├── unknown_2.bin
 │   │       ├── unknown_3.bin
 │   │       ├── unknown_4.bin
 │   │       ├── unknown_4.bin.lz
-│   │       ├── unknown.gbapal
-│   │       ├── unknown.pal
 │   │       ├── water.4bpp
 │   │       ├── water.bin
 │   │       └── water.png
@@ -8910,6 +7113,8 @@
 │   │   ├── enemy_mon_shadow.png
 │   │   ├── healthbar.gbapal
 │   │   ├── healthbar.pal
+│   │   ├── healthbox.gbapal
+│   │   ├── healthbox.pal
 │   │   ├── healthbox_doubles_opponent.4bpp
 │   │   ├── healthbox_doubles_opponent.4bpp.lz
 │   │   ├── healthbox_doubles_opponent.png
@@ -8918,8 +7123,6 @@
 │   │   ├── healthbox_doubles_player.png
 │   │   ├── healthbox_elements.4bpp
 │   │   ├── healthbox_elements.png
-│   │   ├── healthbox.gbapal
-│   │   ├── healthbox.pal
 │   │   ├── healthbox_safari.4bpp
 │   │   ├── healthbox_safari.4bpp.lz
 │   │   ├── healthbox_safari.png
@@ -8936,10 +7139,6 @@
 │   │   ├── party_summary_bar.4bpp
 │   │   ├── party_summary_bar.4bpp.lz
 │   │   ├── party_summary_bar.png
-│   │   ├── textbox1.gbapal
-│   │   ├── textbox1.pal
-│   │   ├── textbox2.gbapal
-│   │   ├── textbox2.pal
 │   │   ├── textbox.4bpp
 │   │   ├── textbox.4bpp.lz
 │   │   ├── textbox.bin
@@ -8947,25 +7146,29 @@
 │   │   ├── textbox.gbapal
 │   │   ├── textbox.gbapal.lz
 │   │   ├── textbox.png
+│   │   ├── textbox1.gbapal
+│   │   ├── textbox1.pal
+│   │   ├── textbox2.gbapal
+│   │   ├── textbox2.pal
 │   │   ├── unused.4bpp
 │   │   ├── unused.png
+│   │   ├── unused_window.4bpp
+│   │   ├── unused_window.4bpp.lz
+│   │   ├── unused_window.gbapal
+│   │   ├── unused_window.gbapal.lz
+│   │   ├── unused_window.png
 │   │   ├── unused_window2.4bpp
 │   │   ├── unused_window2.4bpp.lz
+│   │   ├── unused_window2.png
 │   │   ├── unused_window2bar.4bpp
 │   │   ├── unused_window2bar.4bpp.lz
 │   │   ├── unused_window2bar.png
-│   │   ├── unused_window2.png
 │   │   ├── unused_window3.4bpp
 │   │   ├── unused_window3.4bpp.lz
 │   │   ├── unused_window3.png
 │   │   ├── unused_window4.4bpp
 │   │   ├── unused_window4.4bpp.lz
-│   │   ├── unused_window.4bpp
-│   │   ├── unused_window.4bpp.lz
-│   │   ├── unused_window4.png
-│   │   ├── unused_window.gbapal
-│   │   ├── unused_window.gbapal.lz
-│   │   └── unused_window.png
+│   │   └── unused_window4.png
 │   ├── battle_records
 │   │   ├── bg_tiles.4bpp
 │   │   ├── bg_tiles.bin
@@ -9132,15 +7335,15 @@
 │   │   │   │   ├── anim_tiles.png
 │   │   │   │   ├── map.bin
 │   │   │   │   ├── map.bin.lz
+│   │   │   │   ├── palette.gbapal
+│   │   │   │   ├── palette.gbapal.lz
+│   │   │   │   ├── palette.pal
 │   │   │   │   ├── palette2.gbapal
 │   │   │   │   ├── palette2.gbapal.lz
 │   │   │   │   ├── palette2.pal
 │   │   │   │   ├── palette3.gbapal
 │   │   │   │   ├── palette3.gbapal.lz
 │   │   │   │   ├── palette3.pal
-│   │   │   │   ├── palette.gbapal
-│   │   │   │   ├── palette.gbapal.lz
-│   │   │   │   ├── palette.pal
 │   │   │   │   ├── tiles.4bpp
 │   │   │   │   ├── tiles.4bpp.lz
 │   │   │   │   └── tiles.png
@@ -9232,7 +7435,7 @@
 │   │   ├── unused_trainer.pal
 │   │   ├── vs.4bpp
 │   │   ├── vs.4bpp.lz
-│   │   ├── vsbar_tilemap.bin
+│   │   ├── vs.png
 │   │   ├── vs_frame.4bpp
 │   │   ├── vs_frame.4bpp.lz
 │   │   ├── vs_frame.bin
@@ -9240,16 +7443,16 @@
 │   │   ├── vs_frame.gbapal
 │   │   ├── vs_frame.gbapal.lz
 │   │   ├── vs_frame.png
-│   │   └── vs.png
+│   │   └── vsbar_tilemap.bin
 │   ├── berry_blender
 │   │   ├── center.8bpp
 │   │   ├── center.8bpp.lz
 │   │   ├── center.png
 │   │   ├── outer.4bpp
 │   │   ├── outer.4bpp.lz
+│   │   ├── outer.png
 │   │   ├── outer_map.bin
-│   │   ├── outer_map.bin.lz
-│   │   └── outer.png
+│   │   └── outer_map.bin.lz
 │   ├── berry_crush
 │   │   ├── bg.bin
 │   │   ├── bg.bin.lz
@@ -9257,12 +7460,12 @@
 │   │   ├── container_cap.bin.lz
 │   │   ├── crusher.4bpp
 │   │   ├── crusher.4bpp.lz
+│   │   ├── crusher.gbapal
+│   │   ├── crusher.png
 │   │   ├── crusher_base.4bpp
 │   │   ├── crusher_base.4bpp.lz
 │   │   ├── crusher_base.gbapal
 │   │   ├── crusher_base.png
-│   │   ├── crusher.gbapal
-│   │   ├── crusher.png
 │   │   ├── crusher_top.bin
 │   │   ├── crusher_top.bin.lz
 │   │   ├── impact.4bpp
@@ -9289,20 +7492,20 @@
 │   │   ├── gba_transfer.4bpp.lz
 │   │   ├── gba_transfer.bin
 │   │   ├── gba_transfer.bin.lz
+│   │   ├── gba_transfer.gbapal
+│   │   ├── gba_transfer.png
 │   │   ├── gba_transfer_error.4bpp
 │   │   ├── gba_transfer_error.4bpp.lz
 │   │   ├── gba_transfer_error.bin
 │   │   ├── gba_transfer_error.bin.lz
 │   │   ├── gba_transfer_error.gbapal
 │   │   ├── gba_transfer_error.png
-│   │   ├── gba_transfer.gbapal
 │   │   ├── gba_transfer_highlight.4bpp
 │   │   ├── gba_transfer_highlight.4bpp.lz
 │   │   ├── gba_transfer_highlight.bin
 │   │   ├── gba_transfer_highlight.bin.lz
 │   │   ├── gba_transfer_highlight.gbapal
 │   │   ├── gba_transfer_highlight.png
-│   │   ├── gba_transfer.png
 │   │   ├── logo.4bpp
 │   │   ├── logo.4bpp.lz
 │   │   ├── logo.bin
@@ -9320,12 +7523,12 @@
 │   │   ├── background.4bpp.lz
 │   │   ├── background.bin
 │   │   ├── background.bin.lz
-│   │   ├── background_female.gbapal
-│   │   ├── background_female.gbapal.lz
-│   │   ├── background_female.pal
 │   │   ├── background.gbapal
 │   │   ├── background.gbapal.lz
 │   │   ├── background.png
+│   │   ├── background_female.gbapal
+│   │   ├── background_female.gbapal.lz
+│   │   ├── background_female.pal
 │   │   ├── berry_pouch.4bpp
 │   │   ├── berry_pouch.4bpp.lz
 │   │   ├── berry_pouch.gbapal
@@ -9345,9 +7548,9 @@
 │   ├── contest
 │   │   ├── applause.4bpp
 │   │   ├── applause.4bpp.lz
+│   │   ├── applause.png
 │   │   ├── applause_meter.4bpp
 │   │   ├── applause_meter.png
-│   │   ├── applause.png
 │   │   ├── audience.4bpp
 │   │   ├── audience.4bpp.lz
 │   │   ├── audience.bin
@@ -9391,13 +7594,13 @@
 │   │   │   ├── interface.png
 │   │   │   ├── meter.4bpp
 │   │   │   ├── meter.png
-│   │   │   ├── numbers_2.4bpp
-│   │   │   ├── numbers_2.png
 │   │   │   ├── numbers.4bpp
 │   │   │   ├── numbers.4bpp.lz
 │   │   │   ├── numbers.gbapal
 │   │   │   ├── numbers.gbapal.lz
 │   │   │   ├── numbers.png
+│   │   │   ├── numbers_2.4bpp
+│   │   │   ├── numbers_2.png
 │   │   │   ├── palette.gbapal
 │   │   │   ├── palette.gbapal.lz
 │   │   │   ├── palette.pal
@@ -9426,18 +7629,18 @@
 │   │   ├── next_turn.4bpp
 │   │   ├── next_turn.4bpp.lz
 │   │   ├── next_turn.gbapal
+│   │   ├── next_turn.png
 │   │   ├── next_turn_numbers.4bpp
 │   │   ├── next_turn_numbers.png
-│   │   ├── next_turn.png
 │   │   ├── next_turn_random.4bpp
 │   │   ├── next_turn_random.png
-│   │   ├── results_bg.bin
-│   │   ├── results_bg.bin.lz
 │   │   ├── results.gbapal
 │   │   ├── results.gbapal.lz
+│   │   ├── results.pal
+│   │   ├── results_bg.bin
+│   │   ├── results_bg.bin.lz
 │   │   ├── results_interface.bin
 │   │   ├── results_interface.bin.lz
-│   │   ├── results.pal
 │   │   ├── results_winner_banner.bin
 │   │   ├── results_winner_banner.bin.lz
 │   │   ├── slider_heart.4bpp
@@ -9491,13 +7694,13 @@
 │   │   ├── pokeball.4bpp.lz
 │   │   ├── pokeball.bin
 │   │   ├── pokeball.bin.lz
+│   │   ├── pokeball.png
 │   │   ├── pokeball_blastoise.gbapal
 │   │   ├── pokeball_blastoise.pal
 │   │   ├── pokeball_charizard.gbapal
 │   │   ├── pokeball_charizard.pal
 │   │   ├── pokeball_pikachu.gbapal
 │   │   ├── pokeball_pikachu.pal
-│   │   ├── pokeball.png
 │   │   ├── pokeball_venusaur.gbapal
 │   │   ├── pokeball_venusaur.pal
 │   │   ├── rival.4bpp
@@ -9562,10 +7765,10 @@
 │   │   ├── tree_border.4bpp
 │   │   ├── tree_border.4bpp.lz
 │   │   ├── tree_border.gbapal
-│   │   ├── tree_border_left.bin
-│   │   ├── tree_border_left.bin.lz
 │   │   ├── tree_border.pal
 │   │   ├── tree_border.png
+│   │   ├── tree_border_left.bin
+│   │   ├── tree_border_left.bin.lz
 │   │   ├── tree_border_right.bin
 │   │   └── tree_border_right.bin.lz
 │   ├── door_anims
@@ -9576,9 +7779,9 @@
 │   │   ├── cinnabar_lab.4bpp
 │   │   ├── cinnabar_lab.png
 │   │   ├── dept_store.4bpp
+│   │   ├── dept_store.png
 │   │   ├── dept_store_elevator.4bpp
 │   │   ├── dept_store_elevator.png
-│   │   ├── dept_store.png
 │   │   ├── four_island_day_care.4bpp
 │   │   ├── four_island_day_care.png
 │   │   ├── fuchsia.4bpp
@@ -9614,9 +7817,9 @@
 │   │   ├── sevii_67.4bpp
 │   │   ├── sevii_67.png
 │   │   ├── silph_co.4bpp
+│   │   ├── silph_co.png
 │   │   ├── silph_co_elevator.4bpp
 │   │   ├── silph_co_elevator.png
-│   │   ├── silph_co.png
 │   │   ├── sliding_double.4bpp
 │   │   ├── sliding_double.png
 │   │   ├── sliding_single.4bpp
@@ -9662,14 +7865,14 @@
 │   │   ├── start_select_buttons.4bpp
 │   │   ├── start_select_buttons.png
 │   │   ├── text.gbapal
+│   │   ├── text.pal
 │   │   ├── text_input_frame.4bpp
 │   │   ├── text_input_frame.4bpp.lz
+│   │   ├── text_input_frame.png
 │   │   ├── text_input_frame_green.gbapal
 │   │   ├── text_input_frame_green.pal
 │   │   ├── text_input_frame_orange.gbapal
 │   │   ├── text_input_frame_orange.pal
-│   │   ├── text_input_frame.png
-│   │   ├── text.pal
 │   │   ├── title_text.gbapal
 │   │   ├── title_text.pal
 │   │   ├── triangle_cursor.4bpp
@@ -9682,13 +7885,13 @@
 │   │   ├── window.gbapal
 │   │   └── window.png
 │   ├── evolution_scene
-│   │   ├── bg2.bin
-│   │   ├── bg2.bin.lz
 │   │   ├── bg.4bpp
 │   │   ├── bg.4bpp.lz
 │   │   ├── bg.bin
 │   │   ├── bg.bin.lz
 │   │   ├── bg.png
+│   │   ├── bg2.bin
+│   │   ├── bg2.bin.lz
 │   │   ├── gray_transition_intro.gbapal
 │   │   ├── gray_transition_intro.pal
 │   │   ├── sparkle.4bpp
@@ -9830,14 +8033,14 @@
 │   │       ├── tree_disguise.png
 │   │       ├── underwater_bubbles.4bpp
 │   │       ├── underwater_bubbles.png
+│   │       ├── unused_grass.4bpp
+│   │       ├── unused_grass.png
 │   │       ├── unused_grass_2.4bpp
 │   │       ├── unused_grass_2.png
 │   │       ├── unused_grass_3.4bpp
 │   │       ├── unused_grass_3.png
 │   │       ├── unused_grass_4.4bpp
-│   │       ├── unused_grass.4bpp
 │   │       ├── unused_grass_4.png
-│   │       ├── unused_grass.png
 │   │       ├── unused_sand.4bpp
 │   │       ├── unused_sand.png
 │   │       ├── water_surfacing.4bpp
@@ -9863,10 +8066,10 @@
 │   │   ├── champion_room_lighting_8.pal
 │   │   ├── deoxys_rock_0.gbapal
 │   │   ├── deoxys_rock_0.pal
-│   │   ├── deoxys_rock_10.gbapal
-│   │   ├── deoxys_rock_10.pal
 │   │   ├── deoxys_rock_1.gbapal
 │   │   ├── deoxys_rock_1.pal
+│   │   ├── deoxys_rock_10.gbapal
+│   │   ├── deoxys_rock_10.pal
 │   │   ├── deoxys_rock_2.gbapal
 │   │   ├── deoxys_rock_2.pal
 │   │   ├── deoxys_rock_3.gbapal
@@ -9885,12 +8088,12 @@
 │   │   ├── deoxys_rock_9.pal
 │   │   ├── elite_four_lighting_0.gbapal
 │   │   ├── elite_four_lighting_0.pal
+│   │   ├── elite_four_lighting_1.gbapal
+│   │   ├── elite_four_lighting_1.pal
 │   │   ├── elite_four_lighting_10.gbapal
 │   │   ├── elite_four_lighting_10.pal
 │   │   ├── elite_four_lighting_11.gbapal
 │   │   ├── elite_four_lighting_11.pal
-│   │   ├── elite_four_lighting_1.gbapal
-│   │   ├── elite_four_lighting_1.pal
 │   │   ├── elite_four_lighting_2.gbapal
 │   │   ├── elite_four_lighting_2.pal
 │   │   ├── elite_four_lighting_3.gbapal
@@ -9951,15 +8154,15 @@
 │   │   ├── msg_window.png
 │   │   └── unused.bin
 │   ├── interface
+│   │   ├── bag.gbapal
+│   │   ├── bag.gbapal.lz
+│   │   ├── bag.pal
 │   │   ├── bag_female.4bpp
 │   │   ├── bag_female.4bpp.lz
 │   │   ├── bag_female.png
-│   │   ├── bag.gbapal
-│   │   ├── bag.gbapal.lz
 │   │   ├── bag_male.4bpp
 │   │   ├── bag_male.4bpp.lz
 │   │   ├── bag_male.png
-│   │   ├── bag.pal
 │   │   ├── bag_swap.4bpp
 │   │   ├── bag_swap.4bpp.lz
 │   │   ├── bag_swap.gbapal
@@ -10037,11 +8240,11 @@
 │   │   ├── dex_caught_pokeball.pal
 │   │   ├── hp_bar_anim.4bpp
 │   │   ├── hp_bar_anim.png
+│   │   ├── hp_numbers.4bpp
+│   │   ├── hp_numbers.4bpp.lz
 │   │   ├── hpbar_unused.4bpp
 │   │   ├── hpbar_unused.4bpp.lz
 │   │   ├── hpbar_unused.png
-│   │   ├── hp_numbers.4bpp
-│   │   ├── hp_numbers.4bpp.lz
 │   │   ├── learn_move.4bpp
 │   │   ├── learn_move.4bpp.lz
 │   │   ├── learn_move.bin
@@ -10063,11 +8266,11 @@
 │   │   ├── red_arrow.4bpp
 │   │   ├── red_arrow.4bpp.lz
 │   │   ├── red_arrow.gbapal
+│   │   ├── red_arrow.pal
+│   │   ├── red_arrow.png
 │   │   ├── red_arrow_other.4bpp
 │   │   ├── red_arrow_other.4bpp.lz
 │   │   ├── red_arrow_other.png
-│   │   ├── red_arrow.pal
-│   │   ├── red_arrow.png
 │   │   ├── save_failed_screen.gbapal
 │   │   ├── save_failed_screen.pal
 │   │   ├── select_button.4bpp
@@ -10110,11 +8313,11 @@
 │   │   │   ├── presents.4bpp
 │   │   │   ├── presents.4bpp.lz
 │   │   │   ├── presents.png
+│   │   │   ├── sparkles.gbapal
+│   │   │   ├── sparkles.pal
 │   │   │   ├── sparkles_big.4bpp
 │   │   │   ├── sparkles_big.4bpp.lz
 │   │   │   ├── sparkles_big.png
-│   │   │   ├── sparkles.gbapal
-│   │   │   ├── sparkles.pal
 │   │   │   ├── sparkles_small.4bpp
 │   │   │   ├── sparkles_small.4bpp.lz
 │   │   │   ├── sparkles_small.png
@@ -10149,14 +8352,15 @@
 │   │   │   ├── bg.png
 │   │   │   ├── gengar.4bpp
 │   │   │   ├── gengar.4bpp.lz
+│   │   │   ├── gengar.png
 │   │   │   ├── gengar_close.4bpp
 │   │   │   ├── gengar_close.4bpp.lz
 │   │   │   ├── gengar_close.bin
 │   │   │   ├── gengar_close.bin.lz
 │   │   │   ├── gengar_close.png
-│   │   │   ├── gengar.png
 │   │   │   ├── nidorino.4bpp
 │   │   │   ├── nidorino.4bpp.lz
+│   │   │   ├── nidorino.png
 │   │   │   ├── nidorino_close.4bpp
 │   │   │   ├── nidorino_close.4bpp.lz
 │   │   │   ├── nidorino_close.bin
@@ -10164,7 +8368,6 @@
 │   │   │   ├── nidorino_close.gbapal
 │   │   │   ├── nidorino_close.pal
 │   │   │   ├── nidorino_close.png
-│   │   │   ├── nidorino.png
 │   │   │   ├── plants.4bpp
 │   │   │   ├── plants.4bpp.lz
 │   │   │   ├── plants.bin
@@ -10202,9 +8405,6 @@
 │   │       ├── swipe.4bpp.lz
 │   │       ├── swipe.gbapal
 │   │       └── swipe.png
-│   ├── itemfinder
-│   │   ├── spr_tiles.4bpp
-│   │   └── spr_tiles.png
 │   ├── item_menu
 │   │   ├── bag_window_pal.gbapal
 │   │   ├── bag_window_pal.pal
@@ -10212,14 +8412,14 @@
 │   │   ├── bg.4bpp.lz
 │   │   ├── bg.bin
 │   │   ├── bg.bin.lz
+│   │   ├── bg.gbapal
+│   │   ├── bg.gbapal.lz
+│   │   ├── bg.png
 │   │   ├── bg_female.gbapal
 │   │   ├── bg_female.gbapal.lz
 │   │   ├── bg_female.pal
-│   │   ├── bg.gbapal
-│   │   ├── bg.gbapal.lz
 │   │   ├── bg_item_pc.bin
 │   │   ├── bg_item_pc.bin.lz
-│   │   ├── bg.png
 │   │   └── list.bin
 │   ├── item_pc
 │   │   ├── bg.4bpp
@@ -10229,6 +8429,9 @@
 │   │   ├── bg.gbapal
 │   │   ├── bg.gbapal.lz
 │   │   └── bg.png
+│   ├── itemfinder
+│   │   ├── spr_tiles.4bpp
+│   │   └── spr_tiles.png
 │   ├── items
 │   │   ├── icon_palettes
 │   │   │   ├── acro_bike.gbapal
@@ -10699,15 +8902,15 @@
 │   │   │   ├── poke_ball.gbapal
 │   │   │   ├── poke_ball.gbapal.lz
 │   │   │   ├── poke_ball.pal
-│   │   │   ├── pokeblock_case.gbapal
-│   │   │   ├── pokeblock_case.gbapal.lz
-│   │   │   ├── pokeblock_case.pal
 │   │   │   ├── poke_doll.gbapal
 │   │   │   ├── poke_doll.gbapal.lz
 │   │   │   ├── poke_doll.pal
 │   │   │   ├── poke_flute.gbapal
 │   │   │   ├── poke_flute.gbapal.lz
 │   │   │   ├── poke_flute.pal
+│   │   │   ├── pokeblock_case.gbapal
+│   │   │   ├── pokeblock_case.gbapal.lz
+│   │   │   ├── pokeblock_case.pal
 │   │   │   ├── pomeg_berry.gbapal
 │   │   │   ├── pomeg_berry.gbapal.lz
 │   │   │   ├── pomeg_berry.pal
@@ -10846,12 +9049,12 @@
 │   │   │   ├── soft_sand.gbapal
 │   │   │   ├── soft_sand.gbapal.lz
 │   │   │   ├── soft_sand.pal
-│   │   │   ├── soothe_bell.gbapal
-│   │   │   ├── soothe_bell.gbapal.lz
-│   │   │   ├── soothe_bell.pal
 │   │   │   ├── soot_sack.gbapal
 │   │   │   ├── soot_sack.gbapal.lz
 │   │   │   ├── soot_sack.pal
+│   │   │   ├── soothe_bell.gbapal
+│   │   │   ├── soothe_bell.gbapal.lz
+│   │   │   ├── soothe_bell.pal
 │   │   │   ├── soul_dew.gbapal
 │   │   │   ├── soul_dew.gbapal.lz
 │   │   │   ├── soul_dew.pal
@@ -10864,12 +9067,12 @@
 │   │   │   ├── ss_ticket.gbapal
 │   │   │   ├── ss_ticket.gbapal.lz
 │   │   │   ├── ss_ticket.pal
-│   │   │   ├── starf_berry.gbapal
-│   │   │   ├── starf_berry.gbapal.lz
-│   │   │   ├── starf_berry.pal
 │   │   │   ├── star.gbapal
 │   │   │   ├── star.gbapal.lz
 │   │   │   ├── star.pal
+│   │   │   ├── starf_berry.gbapal
+│   │   │   ├── starf_berry.gbapal.lz
+│   │   │   ├── starf_berry.pal
 │   │   │   ├── steel_tm_hm.gbapal
 │   │   │   ├── steel_tm_hm.gbapal.lz
 │   │   │   ├── steel_tm_hm.pal
@@ -10891,12 +9094,12 @@
 │   │   │   ├── tamato_berry.gbapal
 │   │   │   ├── tamato_berry.gbapal.lz
 │   │   │   ├── tamato_berry.pal
-│   │   │   ├── teachy_tv.gbapal
-│   │   │   ├── teachy_tv.gbapal.lz
-│   │   │   ├── teachy_tv.pal
 │   │   │   ├── tea.gbapal
 │   │   │   ├── tea.gbapal.lz
 │   │   │   ├── tea.pal
+│   │   │   ├── teachy_tv.gbapal
+│   │   │   ├── teachy_tv.gbapal.lz
+│   │   │   ├── teachy_tv.pal
 │   │   │   ├── thick_club.gbapal
 │   │   │   ├── thick_club.gbapal.lz
 │   │   │   ├── thick_club.pal
@@ -11369,15 +9572,15 @@
 │   │       ├── poke_ball.4bpp
 │   │       ├── poke_ball.4bpp.lz
 │   │       ├── poke_ball.png
-│   │       ├── pokeblock_case.4bpp
-│   │       ├── pokeblock_case.4bpp.lz
-│   │       ├── pokeblock_case.png
 │   │       ├── poke_doll.4bpp
 │   │       ├── poke_doll.4bpp.lz
 │   │       ├── poke_doll.png
 │   │       ├── poke_flute.4bpp
 │   │       ├── poke_flute.4bpp.lz
 │   │       ├── poke_flute.png
+│   │       ├── pokeblock_case.4bpp
+│   │       ├── pokeblock_case.4bpp.lz
+│   │       ├── pokeblock_case.png
 │   │       ├── pomeg_berry.4bpp
 │   │       ├── pomeg_berry.4bpp.lz
 │   │       ├── pomeg_berry.png
@@ -11386,10 +9589,10 @@
 │   │       ├── potion.png
 │   │       ├── powder.4bpp
 │   │       ├── powder.4bpp.lz
+│   │       ├── powder.png
 │   │       ├── powder_jar.4bpp
 │   │       ├── powder_jar.4bpp.lz
 │   │       ├── powder_jar.png
-│   │       ├── powder.png
 │   │       ├── pp_max.4bpp
 │   │       ├── pp_max.4bpp.lz
 │   │       ├── pp_max.png
@@ -11516,12 +9719,12 @@
 │   │       ├── soft_sand.4bpp
 │   │       ├── soft_sand.4bpp.lz
 │   │       ├── soft_sand.png
-│   │       ├── soothe_bell.4bpp
-│   │       ├── soothe_bell.4bpp.lz
-│   │       ├── soothe_bell.png
 │   │       ├── soot_sack.4bpp
 │   │       ├── soot_sack.4bpp.lz
 │   │       ├── soot_sack.png
+│   │       ├── soothe_bell.4bpp
+│   │       ├── soothe_bell.4bpp.lz
+│   │       ├── soothe_bell.png
 │   │       ├── soul_dew.4bpp
 │   │       ├── soul_dew.4bpp.lz
 │   │       ├── soul_dew.png
@@ -11534,15 +9737,15 @@
 │   │       ├── ss_ticket.4bpp
 │   │       ├── ss_ticket.4bpp.lz
 │   │       ├── ss_ticket.png
+│   │       ├── star_piece.4bpp
+│   │       ├── star_piece.4bpp.lz
+│   │       ├── star_piece.png
 │   │       ├── stardust.4bpp
 │   │       ├── stardust.4bpp.lz
 │   │       ├── stardust.png
 │   │       ├── starf_berry.4bpp
 │   │       ├── starf_berry.4bpp.lz
 │   │       ├── starf_berry.png
-│   │       ├── star_piece.4bpp
-│   │       ├── star_piece.4bpp.lz
-│   │       ├── star_piece.png
 │   │       ├── status_heal.4bpp
 │   │       ├── status_heal.4bpp.lz
 │   │       ├── status_heal.png
@@ -11563,10 +9766,10 @@
 │   │       ├── tamato_berry.png
 │   │       ├── tea.4bpp
 │   │       ├── tea.4bpp.lz
+│   │       ├── tea.png
 │   │       ├── teachy_tv.4bpp
 │   │       ├── teachy_tv.4bpp.lz
 │   │       ├── teachy_tv.png
-│   │       ├── tea.png
 │   │       ├── thick_club.4bpp
 │   │       ├── thick_club.4bpp.lz
 │   │       ├── thick_club.png
@@ -11846,6 +10049,13 @@
 │   │   │   ├── tiles.4bpp.lz
 │   │   │   ├── tiles.gbapal
 │   │   │   └── tiles.png
+│   │   ├── rock_tunnel
+│   │   │   ├── tilemap.bin
+│   │   │   ├── tilemap.bin.lz
+│   │   │   ├── tiles.4bpp
+│   │   │   ├── tiles.4bpp.lz
+│   │   │   ├── tiles.gbapal
+│   │   │   └── tiles.png
 │   │   ├── rocket_hideout
 │   │   │   ├── tilemap.bin
 │   │   │   ├── tilemap.bin.lz
@@ -11854,13 +10064,6 @@
 │   │   │   ├── tiles.gbapal
 │   │   │   └── tiles.png
 │   │   ├── rocket_warehouse
-│   │   │   ├── tilemap.bin
-│   │   │   ├── tilemap.bin.lz
-│   │   │   ├── tiles.4bpp
-│   │   │   ├── tiles.4bpp.lz
-│   │   │   ├── tiles.gbapal
-│   │   │   └── tiles.png
-│   │   ├── rock_tunnel
 │   │   │   ├── tilemap.bin
 │   │   │   ├── tilemap.bin.lz
 │   │   │   ├── tiles.4bpp
@@ -11941,19 +10144,19 @@
 │   │   ├── buttons.gbapal
 │   │   ├── buttons.pal
 │   │   ├── cursor.4bpp
-│   │   ├── cursor_filled.4bpp
-│   │   ├── cursor_filled.png
 │   │   ├── cursor.gbapal
 │   │   ├── cursor.pal
 │   │   ├── cursor.png
+│   │   ├── cursor_filled.4bpp
+│   │   ├── cursor_filled.png
 │   │   ├── cursor_squished.4bpp
 │   │   ├── cursor_squished.png
 │   │   ├── input_arrow.4bpp
 │   │   ├── input_arrow.png
 │   │   ├── keyboard.gbapal
+│   │   ├── keyboard.pal
 │   │   ├── keyboard_lower.bin
 │   │   ├── keyboard_lower.bin.lz
-│   │   ├── keyboard.pal
 │   │   ├── keyboard_symbols.bin
 │   │   ├── keyboard_symbols.bin.lz
 │   │   ├── keyboard_upper.bin
@@ -12430,6 +10633,10 @@
 │   │   └── slot_wide_no_hp.bin
 │   ├── pokedex
 │   │   ├── area_markers
+│   │   │   ├── marker.4bpp
+│   │   │   ├── marker.4bpp.lz
+│   │   │   ├── marker.gbapal
+│   │   │   ├── marker.pal
 │   │   │   ├── marker_0.4bpp
 │   │   │   ├── marker_0.png
 │   │   │   ├── marker_1.4bpp
@@ -12439,15 +10646,11 @@
 │   │   │   ├── marker_3.4bpp
 │   │   │   ├── marker_3.png
 │   │   │   ├── marker_4.4bpp
-│   │   │   ├── marker.4bpp
-│   │   │   ├── marker.4bpp.lz
 │   │   │   ├── marker_4.png
 │   │   │   ├── marker_5.4bpp
 │   │   │   ├── marker_5.png
 │   │   │   ├── marker_6.4bpp
-│   │   │   ├── marker_6.png
-│   │   │   ├── marker.gbapal
-│   │   │   └── marker.pal
+│   │   │   └── marker_6.png
 │   │   ├── blit_wide_ellipse.4bpp
 │   │   ├── blit_wide_ellipse.png
 │   │   ├── cat_icon_abc.4bpp
@@ -13697,24 +11900,24 @@
 │   │   ├── deoxys
 │   │   │   ├── back.4bpp
 │   │   │   ├── back.4bpp.lz
+│   │   │   ├── back.png
 │   │   │   ├── back_def.4bpp
 │   │   │   ├── back_def.4bpp.lz
 │   │   │   ├── back_def.png
-│   │   │   ├── back.png
 │   │   │   ├── footprint.1bpp
 │   │   │   ├── footprint.png
 │   │   │   ├── front.4bpp
 │   │   │   ├── front.4bpp.lz
+│   │   │   ├── front.png
 │   │   │   ├── front_def.4bpp
 │   │   │   ├── front_def.4bpp.lz
 │   │   │   ├── front_def.png
-│   │   │   ├── front.png
 │   │   │   ├── icon.4bpp
+│   │   │   ├── icon.png
 │   │   │   ├── icon_attack.4bpp
 │   │   │   ├── icon_attack.png
 │   │   │   ├── icon_defense.4bpp
 │   │   │   ├── icon_defense.png
-│   │   │   ├── icon.png
 │   │   │   ├── normal.gbapal
 │   │   │   ├── normal.gbapal.lz
 │   │   │   ├── normal.pal
@@ -19539,9 +17742,9 @@
 │   │   ├── cursor_shadow.4bpp
 │   │   ├── cursor_shadow.png
 │   │   ├── interface.gbapal
+│   │   ├── interface.pal
 │   │   ├── interface_no_display_mon.gbapal
 │   │   ├── interface_no_display_mon.pal
-│   │   ├── interface.pal
 │   │   ├── item_info_frame.4bpp
 │   │   ├── item_info_frame.gbapal
 │   │   ├── item_info_frame.png
@@ -19568,13 +17771,13 @@
 │   │   ├── scrolling_bg.bin
 │   │   ├── scrolling_bg.bin.lz
 │   │   ├── scrolling_bg.gbapal
+│   │   ├── scrolling_bg.png
 │   │   ├── scrolling_bg_move_items.gbapal
 │   │   ├── scrolling_bg_move_items.pal
-│   │   ├── scrolling_bg.png
-│   │   ├── unused_choose_box_menu.gbapal
-│   │   ├── unused_choose_box_menu.pal
 │   │   ├── unused.gbapal
 │   │   ├── unused.pal
+│   │   ├── unused_choose_box_menu.gbapal
+│   │   ├── unused_choose_box_menu.pal
 │   │   ├── wallpapers
 │   │   │   ├── beach
 │   │   │   │   ├── tilemap.bin
@@ -19717,20 +17920,20 @@
 │   │   ├── map_edge.4bpp.lz
 │   │   ├── map_edge.bin
 │   │   ├── map_edge.bin.lz
+│   │   ├── map_edge.gbapal
+│   │   ├── map_edge.png
 │   │   ├── map_edge_bottom_left.4bpp
 │   │   ├── map_edge_bottom_left.4bpp.lz
 │   │   ├── map_edge_bottom_left.png
 │   │   ├── map_edge_bottom_right.4bpp
 │   │   ├── map_edge_bottom_right.4bpp.lz
 │   │   ├── map_edge_bottom_right.png
-│   │   ├── map_edge.gbapal
 │   │   ├── map_edge_mid_left.4bpp
 │   │   ├── map_edge_mid_left.4bpp.lz
 │   │   ├── map_edge_mid_left.png
 │   │   ├── map_edge_mid_right.4bpp
 │   │   ├── map_edge_mid_right.4bpp.lz
 │   │   ├── map_edge_mid_right.png
-│   │   ├── map_edge.png
 │   │   ├── map_edge_top_left.4bpp
 │   │   ├── map_edge_top_left.4bpp.lz
 │   │   ├── map_edge_top_left.png
@@ -19761,19 +17964,19 @@
 │   │   ├── sevii_67.bin
 │   │   ├── sevii_67.bin.lz
 │   │   ├── switch_map_cursor.gbapal
+│   │   ├── switch_map_cursor.pal
 │   │   ├── switch_map_cursor_left.4bpp
 │   │   ├── switch_map_cursor_left.4bpp.lz
 │   │   ├── switch_map_cursor_left.png
-│   │   ├── switch_map_cursor.pal
 │   │   ├── switch_map_cursor_right.4bpp
 │   │   ├── switch_map_cursor_right.4bpp.lz
 │   │   ├── switch_map_cursor_right.png
 │   │   ├── switch_map_kanto_sevii_123.bin
 │   │   ├── switch_map_kanto_sevii_123.bin.lz
-│   │   ├── switch_map_kanto_sevii_all2.bin
-│   │   ├── switch_map_kanto_sevii_all2.bin.lz
 │   │   ├── switch_map_kanto_sevii_all.bin
 │   │   ├── switch_map_kanto_sevii_all.bin.lz
+│   │   ├── switch_map_kanto_sevii_all2.bin
+│   │   ├── switch_map_kanto_sevii_all2.bin.lz
 │   │   ├── switch_map_menu.4bpp
 │   │   ├── switch_map_menu.4bpp.lz
 │   │   ├── switch_map_menu.png
@@ -19898,10 +18101,10 @@
 │   │   ├── marking.gbapal
 │   │   ├── marking.pal
 │   │   ├── move_selection_cursor.gbapal
+│   │   ├── move_selection_cursor.pal
 │   │   ├── move_selection_cursor_left.4bpp
 │   │   ├── move_selection_cursor_left.4bpp.lz
 │   │   ├── move_selection_cursor_left.png
-│   │   ├── move_selection_cursor.pal
 │   │   ├── move_selection_cursor_right.4bpp
 │   │   ├── move_selection_cursor_right.4bpp.lz
 │   │   ├── move_selection_cursor_right.png
@@ -19957,6 +18160,7 @@
 │   │   ├── signpost.4bpp
 │   │   ├── signpost.png
 │   │   ├── std.4bpp
+│   │   ├── std.png
 │   │   ├── stdpal_0.gbapal
 │   │   ├── stdpal_0.pal
 │   │   ├── stdpal_1.gbapal
@@ -19967,13 +18171,12 @@
 │   │   ├── stdpal_3.pal
 │   │   ├── stdpal_4.gbapal
 │   │   ├── stdpal_4.pal
-│   │   ├── std.png
-│   │   ├── type10.4bpp
-│   │   ├── type10.gbapal
-│   │   ├── type10.png
 │   │   ├── type1.4bpp
 │   │   ├── type1.gbapal
 │   │   ├── type1.png
+│   │   ├── type10.4bpp
+│   │   ├── type10.gbapal
+│   │   ├── type10.png
 │   │   ├── type2.4bpp
 │   │   ├── type2.gbapal
 │   │   ├── type2.png
@@ -20119,56 +18322,56 @@
 │   │   ├── cursor.pal
 │   │   ├── cursor.png
 │   │   ├── gba.4bpp
+│   │   ├── gba.gbapal
+│   │   ├── gba.pal
+│   │   ├── gba.png
 │   │   ├── gba_affine.8bpp
+│   │   ├── gba_affine.png
 │   │   ├── gba_affine_map_cable.bin
 │   │   ├── gba_affine_map_wireless.bin
-│   │   ├── gba_affine.png
-│   │   ├── gba.gbapal
 │   │   ├── gba_map_cable.bin
 │   │   ├── gba_map_wireless.bin
-│   │   ├── gba.pal
 │   │   ├── gba_pal2.gbapal
 │   │   ├── gba_pal2.pal
-│   │   ├── gba.png
 │   │   ├── gba_screen.4bpp
 │   │   ├── gba_screen.png
 │   │   ├── link_mon.gbapal
+│   │   ├── link_mon.pal
 │   │   ├── link_mon_glow.4bpp
 │   │   ├── link_mon_glow.png
-│   │   ├── link_mon.pal
 │   │   ├── link_mon_shadow.4bpp
 │   │   ├── link_mon_shadow.png
 │   │   ├── menu.4bpp
 │   │   ├── menu.bin
 │   │   ├── menu.gbapal
-│   │   ├── menu_mon_box.bin
 │   │   ├── menu.pal
 │   │   ├── menu.png
+│   │   ├── menu_mon_box.bin
 │   │   ├── moves_box_map.bin
 │   │   ├── party_box_map.bin
 │   │   ├── pokeball.4bpp
 │   │   ├── pokeball.gbapal
 │   │   ├── pokeball.png
 │   │   ├── pokeball_symbol.8bpp
-│   │   ├── pokeball_symbol_map.bin
 │   │   ├── pokeball_symbol.png
+│   │   ├── pokeball_symbol_map.bin
 │   │   ├── shadow.gbapal
-│   │   ├── shadow_map.bin
 │   │   ├── shadow.pal
+│   │   ├── shadow_map.bin
 │   │   ├── stripes_bg2_map.bin
 │   │   ├── stripes_bg3_map.bin
 │   │   ├── text.gbapal
 │   │   ├── text.pal
+│   │   ├── unused.bin
 │   │   ├── unused1.gbapal
 │   │   ├── unused1.pal
-│   │   ├── unused.bin
 │   │   ├── wireless_signal.4bpp
 │   │   ├── wireless_signal.4bpp.lz
 │   │   ├── wireless_signal.bin
 │   │   ├── wireless_signal.bin.lz
+│   │   ├── wireless_signal.png
 │   │   ├── wireless_signal_closeup.bin
 │   │   ├── wireless_signal_closeup.bin.lz
-│   │   ├── wireless_signal.png
 │   │   ├── wireless_signal_receive.gbapal
 │   │   ├── wireless_signal_receive.pal
 │   │   ├── wireless_signal_send.gbapal
@@ -20228,17 +18431,17 @@
 │   │   ├── silver.pal
 │   │   ├── star.gbapal
 │   │   ├── star.pal
+│   │   ├── stickers.4bpp
+│   │   ├── stickers.4bpp.lz
+│   │   ├── stickers.png
 │   │   ├── stickers1.gbapal
 │   │   ├── stickers1.pal
 │   │   ├── stickers2.gbapal
 │   │   ├── stickers2.pal
 │   │   ├── stickers3.gbapal
 │   │   ├── stickers3.pal
-│   │   ├── stickers.4bpp
-│   │   ├── stickers.4bpp.lz
 │   │   ├── stickers4.gbapal
 │   │   ├── stickers4.pal
-│   │   ├── stickers.png
 │   │   ├── tiles.4bpp
 │   │   ├── tiles.4bpp.lz
 │   │   ├── tiles.png
@@ -20896,12 +19099,12 @@
 │   │       ├── leader_winona.gbapal
 │   │       ├── leader_winona.gbapal.lz
 │   │       ├── leader_winona.pal
-│   │       ├── leaf_back_pic.gbapal
-│   │       ├── leaf_back_pic.gbapal.lz
-│   │       ├── leaf_back_pic.pal
 │   │       ├── leaf.gbapal
 │   │       ├── leaf.gbapal.lz
 │   │       ├── leaf.pal
+│   │       ├── leaf_back_pic.gbapal
+│   │       ├── leaf_back_pic.gbapal.lz
+│   │       ├── leaf_back_pic.pal
 │   │       ├── magma_admin_f.gbapal
 │   │       ├── magma_admin_f.gbapal.lz
 │   │       ├── magma_admin_f.pal
@@ -20965,12 +19168,12 @@
 │   │       ├── psychic_m.gbapal
 │   │       ├── psychic_m.gbapal.lz
 │   │       ├── psychic_m.pal
-│   │       ├── red_back_pic.gbapal
-│   │       ├── red_back_pic.gbapal.lz
-│   │       ├── red_back_pic.pal
 │   │       ├── red.gbapal
 │   │       ├── red.gbapal.lz
 │   │       ├── red.pal
+│   │       ├── red_back_pic.gbapal
+│   │       ├── red_back_pic.gbapal.lz
+│   │       ├── red_back_pic.pal
 │   │       ├── rich_boy.gbapal
 │   │       ├── rich_boy.gbapal.lz
 │   │       ├── rich_boy.pal
@@ -21177,11 +19380,11 @@
 │   │   ├── selector_cursor.4bpp
 │   │   ├── selector_cursor.4bpp.lz
 │   │   ├── selector_cursor.png
+│   │   ├── text_entry.gbapal
+│   │   ├── text_entry.pal
 │   │   ├── text_entry_cursor.4bpp
 │   │   ├── text_entry_cursor.4bpp.lz
 │   │   ├── text_entry_cursor.png
-│   │   ├── text_entry.gbapal
-│   │   ├── text_entry.pal
 │   │   ├── unused.gbapal
 │   │   └── unused.pal
 │   ├── unused
@@ -21244,10 +19447,10 @@
 │   │   ├── old_beatup.gbapal
 │   │   ├── old_beatup.gbapal.lz
 │   │   ├── old_beatup.png
-│   │   ├── old_bulbasaur2.4bpp
-│   │   ├── old_bulbasaur2.png
 │   │   ├── old_bulbasaur.4bpp
 │   │   ├── old_bulbasaur.png
+│   │   ├── old_bulbasaur2.4bpp
+│   │   ├── old_bulbasaur2.png
 │   │   ├── old_charizard.4bpp
 │   │   ├── old_charizard.png
 │   │   ├── old_charmap.4bpp
@@ -21388,6 +19591,9 @@
 │   │   ├── bg7.gbapal
 │   │   ├── bg7.pal
 │   │   ├── bg7.png
+│   │   ├── stamp_shadow.4bpp
+│   │   ├── stamp_shadow.4bpp.lz
+│   │   ├── stamp_shadow.png
 │   │   ├── stamp_shadow_0.gbapal
 │   │   ├── stamp_shadow_0.pal
 │   │   ├── stamp_shadow_1.gbapal
@@ -21396,8 +19602,6 @@
 │   │   ├── stamp_shadow_2.pal
 │   │   ├── stamp_shadow_3.gbapal
 │   │   ├── stamp_shadow_3.pal
-│   │   ├── stamp_shadow.4bpp
-│   │   ├── stamp_shadow.4bpp.lz
 │   │   ├── stamp_shadow_4.gbapal
 │   │   ├── stamp_shadow_4.pal
 │   │   ├── stamp_shadow_5.gbapal
@@ -21405,8 +19609,7 @@
 │   │   ├── stamp_shadow_6.gbapal
 │   │   ├── stamp_shadow_6.pal
 │   │   ├── stamp_shadow_7.gbapal
-│   │   ├── stamp_shadow_7.pal
-│   │   └── stamp_shadow.png
+│   │   └── stamp_shadow_7.pal
 │   └── wonder_news
 │       ├── bg0.4bpp
 │       ├── bg0.4bpp.lz
@@ -21441,17 +19644,28 @@
 │       └── bg7.png
 ├── graphics_file_rules.mk
 ├── host_src
-│   └── libagbsyscall_host.c
+│   ├── agbmain_syscalls_host.c
+│   ├── crt0_stub.c
+│   ├── flash_host.c
+│   ├── gamecube_stub.c
+│   ├── gba_memory_host.c
+│   ├── gba_memory_host.h
+│   ├── heap_host.c
+│   ├── libagbsyscall_host.c
+│   ├── main_sdl.c
+│   ├── sound_engine_stub.c
+│   ├── sound_engine_stub.c.bak
+│   └── sound_stub.c
 ├── include
 │   ├── AgbRfu_LinkManager.h
 │   ├── bag.h
+│   ├── battle.h
 │   ├── battle_ai_script_commands.h
 │   ├── battle_ai_switch_items.h
 │   ├── battle_anim.h
 │   ├── battle_bg.h
 │   ├── battle_controllers.h
 │   ├── battle_gfx_sfx_util.h
-│   ├── battle.h
 │   ├── battle_interface.h
 │   ├── battle_main.h
 │   ├── battle_message.h
@@ -21461,11 +19675,11 @@
 │   ├── battle_setup.h
 │   ├── battle_tower.h
 │   ├── battle_transition.h
-│   ├── battle_util2.h
 │   ├── battle_util.h
+│   ├── battle_util2.h
+│   ├── berry.h
 │   ├── berry_crush.h
 │   ├── berry_fix_program.h
-│   ├── berry.h
 │   ├── berry_pouch.h
 │   ├── berry_powder.h
 │   ├── bg.h
@@ -21482,9 +19696,9 @@
 │   ├── config.h
 │   ├── constants
 │   │   ├── abilities.h
+│   │   ├── battle.h
 │   │   ├── battle_ai.h
 │   │   ├── battle_anim.h
-│   │   ├── battle.h
 │   │   ├── battle_move_effects.h
 │   │   ├── battle_script_commands.h
 │   │   ├── battle_setup.h
@@ -21516,8 +19730,8 @@
 │   │   ├── map_event_ids.h
 │   │   ├── map_groups.h
 │   │   ├── map_scripts.h
-│   │   ├── maps.h
 │   │   ├── map_types.h
+│   │   ├── maps.h
 │   │   ├── menu.h
 │   │   ├── metatile_behaviors.h
 │   │   ├── metatile_labels.h
@@ -21538,9 +19752,9 @@
 │   │   ├── trade.h
 │   │   ├── trainer_card.h
 │   │   ├── trainer_fan_club.h
-│   │   ├── trainers.h
 │   │   ├── trainer_tower.h
 │   │   ├── trainer_types.h
+│   │   ├── trainers.h
 │   │   ├── union_room.h
 │   │   ├── vars.h
 │   │   └── weather.h
@@ -21572,17 +19786,17 @@
 │   ├── field_effect_helpers.h
 │   ├── field_effect_scripts.h
 │   ├── field_fadetransition.h
-│   ├── fieldmap.h
 │   ├── field_message_box.h
 │   ├── field_player_avatar.h
 │   ├── field_poison.h
-│   ├── field_screen_effect.h
 │   ├── field_screen.h
+│   ├── field_screen_effect.h
 │   ├── field_specials.h
 │   ├── field_tasks.h
-│   ├── field_weather_effects.h
 │   ├── field_weather.h
+│   ├── field_weather_effects.h
 │   ├── field_weather_util.h
+│   ├── fieldmap.h
 │   ├── fldeff.h
 │   ├── gba
 │   │   ├── defines.h
@@ -21607,12 +19821,12 @@
 │   ├── help_system.h
 │   ├── image_processing_effects.h
 │   ├── intro.h
-│   ├── itemfinder.h
 │   ├── item.h
 │   ├── item_menu.h
 │   ├── item_menu_icons.h
 │   ├── item_pc.h
 │   ├── item_use.h
+│   ├── itemfinder.h
 │   ├── keyboard_text.h
 │   ├── libgcnmultiboot.h
 │   ├── librfu.h
@@ -21621,9 +19835,9 @@
 │   ├── list_menu.h
 │   ├── load_save.h
 │   ├── m4a.h
-│   ├── mailbox_pc.h
-│   ├── mail_data.h
 │   ├── mail.h
+│   ├── mail_data.h
+│   ├── mailbox_pc.h
 │   ├── main.h
 │   ├── main_menu.h
 │   ├── malloc.h
@@ -21634,15 +19848,15 @@
 │   ├── menu_helpers.h
 │   ├── menu_indicators.h
 │   ├── metatile_behavior.h
-│   ├── minigame_countdown.h
 │   ├── mini_printf.h
-│   ├── money.h
+│   ├── minigame_countdown.h
 │   ├── mon_markings.h
+│   ├── money.h
 │   ├── multiboot.h
 │   ├── mystery_event_msg.h
 │   ├── mystery_event_script.h
-│   ├── mystery_gift_client.h
 │   ├── mystery_gift.h
+│   ├── mystery_gift_client.h
 │   ├── mystery_gift_link.h
 │   ├── mystery_gift_menu.h
 │   ├── mystery_gift_server.h
@@ -21656,11 +19870,11 @@
 │   ├── palette_util.h
 │   ├── party_menu.h
 │   ├── pc_screen_effect.h
-│   ├── player_pc.h
 │   ├── play_time.h
+│   ├── player_pc.h
 │   ├── pokeball.h
-│   ├── pokedex_area_markers.h
 │   ├── pokedex.h
+│   ├── pokedex_area_markers.h
 │   ├── pokedex_screen.h
 │   ├── pokemon.h
 │   ├── pokemon_icon.h
@@ -21672,8 +19886,8 @@
 │   ├── pokemon_storage_system.h
 │   ├── pokemon_storage_system_internal.h
 │   ├── pokemon_summary_screen.h
-│   ├── quest_log_battle.h
 │   ├── quest_log.h
+│   ├── quest_log_battle.h
 │   ├── quest_log_objects.h
 │   ├── quest_log_player.h
 │   ├── random.h
@@ -21683,8 +19897,8 @@
 │   ├── reshow_battle_screen.h
 │   ├── roamer.h
 │   ├── safari_zone.h
-│   ├── save_failed_screen.h
 │   ├── save.h
+│   ├── save_failed_screen.h
 │   ├── save_location.h
 │   ├── save_menu_util.h
 │   ├── scanline_effect.h
@@ -21699,13 +19913,13 @@
 │   ├── special_field_anim.h
 │   ├── sprite.h
 │   ├── start_menu.h
-│   ├── strings.h
 │   ├── string_util.h
+│   ├── strings.h
 │   ├── task.h
 │   ├── teachy_tv.h
 │   ├── text.h
-│   ├── text_window_graphics.h
 │   ├── text_window.h
+│   ├── text_window_graphics.h
 │   ├── tilemap_util.h
 │   ├── tileset_anims.h
 │   ├── tilesets.h
@@ -21720,11 +19934,11 @@
 │   ├── trainer_see.h
 │   ├── trainer_tower.h
 │   ├── trig.h
-│   ├── union_room_battle.h
-│   ├── union_room_chat_display.h
-│   ├── union_room_chat.h
-│   ├── union_room_chat_objects.h
 │   ├── union_room.h
+│   ├── union_room_battle.h
+│   ├── union_room_chat.h
+│   ├── union_room_chat_display.h
+│   ├── union_room_chat_objects.h
 │   ├── union_room_message.h
 │   ├── union_room_player_avatar.h
 │   ├── util.h
@@ -21733,33 +19947,29 @@
 │   ├── wild_pokemon_area.h
 │   ├── window.h
 │   └── wonder_news.h
-├── INSTALL.md
 ├── json_data_rules.mk
+├── last_check.txt
 ├── ld_script.ld
 ├── ld_script_modern.ld
 ├── ld_script_rev10.ld
-├── leafgreen_rev1.sha1
 ├── leafgreen.sha1
+├── leafgreen_rev1.sha1
 ├── leafgreen_switch.sha1
-├── Makefile
+├── link_host.sh
 ├── make_tools.mk
 ├── map_data_rules.mk
-├── pokefirered.elf
-├── pokefirered.gba
+├── onetime
+├── only
 ├── pokefirered.map
 ├── pokefirered_rev1.elf
-├── pokefirered_rev1.gba
 ├── pokefirered_rev1.map
 ├── pokeleafgreen.elf
-├── pokeleafgreen.gba
 ├── pokeleafgreen.map
 ├── pokeleafgreen_rev1.elf
-├── pokeleafgreen_rev1.gba
 ├── pokeleafgreen_rev1.map
-├── PORTING_NOTES.md
-├── README.md
 ├── replace.sh
 ├── sound
+│   ├── MPlayDef.s
 │   ├── cry_tables.inc
 │   ├── direct_sound_data.inc
 │   ├── direct_sound_samples
@@ -22059,9 +20269,9 @@
 │   │   │   ├── jynx.bin
 │   │   │   ├── jynx.wav
 │   │   │   ├── kabuto.bin
+│   │   │   ├── kabuto.wav
 │   │   │   ├── kabutops.bin
 │   │   │   ├── kabutops.wav
-│   │   │   ├── kabuto.wav
 │   │   │   ├── kadabra.bin
 │   │   │   ├── kadabra.wav
 │   │   │   ├── kakuna.bin
@@ -22171,9 +20381,9 @@
 │   │   │   ├── metapod.bin
 │   │   │   ├── metapod.wav
 │   │   │   ├── mew.bin
+│   │   │   ├── mew.wav
 │   │   │   ├── mewtwo.bin
 │   │   │   ├── mewtwo.wav
-│   │   │   ├── mew.wav
 │   │   │   ├── mightyena.bin
 │   │   │   ├── mightyena.wav
 │   │   │   ├── milotic.bin
@@ -22233,9 +20443,9 @@
 │   │   │   ├── onix.bin
 │   │   │   ├── onix.wav
 │   │   │   ├── paras.bin
+│   │   │   ├── paras.wav
 │   │   │   ├── parasect.bin
 │   │   │   ├── parasect.wav
-│   │   │   ├── paras.wav
 │   │   │   ├── pelipper.bin
 │   │   │   ├── pelipper.wav
 │   │   │   ├── persian.bin
@@ -22245,9 +20455,9 @@
 │   │   │   ├── pichu.bin
 │   │   │   ├── pichu.wav
 │   │   │   ├── pidgeot.bin
+│   │   │   ├── pidgeot.wav
 │   │   │   ├── pidgeotto.bin
 │   │   │   ├── pidgeotto.wav
-│   │   │   ├── pidgeot.wav
 │   │   │   ├── pidgey.bin
 │   │   │   ├── pidgey.wav
 │   │   │   ├── pikachu.bin
@@ -22272,10 +20482,10 @@
 │   │   │   ├── ponyta.wav
 │   │   │   ├── poochyena.bin
 │   │   │   ├── poochyena.wav
-│   │   │   ├── porygon2.bin
-│   │   │   ├── porygon2.wav
 │   │   │   ├── porygon.bin
 │   │   │   ├── porygon.wav
+│   │   │   ├── porygon2.bin
+│   │   │   ├── porygon2.wav
 │   │   │   ├── primeape.bin
 │   │   │   ├── primeape.wav
 │   │   │   ├── psyduck.bin
@@ -22559,9 +20769,9 @@
 │   │   ├── register_noise.bin
 │   │   ├── register_noise.wav
 │   │   ├── sc88pro_accordion.bin
+│   │   ├── sc88pro_accordion.wav
 │   │   ├── sc88pro_accordion_duplicate.bin
 │   │   ├── sc88pro_accordion_duplicate.wav
-│   │   ├── sc88pro_accordion.wav
 │   │   ├── sc88pro_bubbles.bin
 │   │   ├── sc88pro_bubbles.wav
 │   │   ├── sc88pro_fingered_bass.bin
@@ -22719,7 +20929,6 @@
 │   │   ├── wave_77.bin
 │   │   └── wave_77.wav
 │   ├── keysplit_tables.inc
-│   ├── MPlayDef.s
 │   ├── music_player_table.inc
 │   ├── programmable_wave_data.inc
 │   ├── programmable_wave_samples
@@ -22734,15 +20943,16 @@
 │   │   ├── 09.pcm
 │   │   ├── 10.pcm
 │   │   └── 11.pcm
+│   ├── song_table.inc
 │   ├── songs
 │   │   └── midi
 │   │       ├── midi.cfg
 │   │       ├── mus_berry_pick.mid
 │   │       ├── mus_berry_pick.s
-│   │       ├── mus_caught_intro.mid
-│   │       ├── mus_caught_intro.s
 │   │       ├── mus_caught.mid
 │   │       ├── mus_caught.s
+│   │       ├── mus_caught_intro.mid
+│   │       ├── mus_caught_intro.s
 │   │       ├── mus_celadon.mid
 │   │       ├── mus_celadon.s
 │   │       ├── mus_cinnabar.mid
@@ -22767,10 +20977,10 @@
 │   │       ├── mus_encounter_rival.s
 │   │       ├── mus_encounter_rocket.mid
 │   │       ├── mus_encounter_rocket.s
-│   │       ├── mus_evolution_intro.mid
-│   │       ├── mus_evolution_intro.s
 │   │       ├── mus_evolution.mid
 │   │       ├── mus_evolution.s
+│   │       ├── mus_evolution_intro.mid
+│   │       ├── mus_evolution_intro.s
 │   │       ├── mus_evolved.mid
 │   │       ├── mus_evolved.s
 │   │       ├── mus_follow_me.mid
@@ -22811,10 +21021,10 @@
 │   │       ├── mus_new_game_instruct.s
 │   │       ├── mus_new_game_intro.mid
 │   │       ├── mus_new_game_intro.s
-│   │       ├── mus_oak_lab.mid
-│   │       ├── mus_oak_lab.s
 │   │       ├── mus_oak.mid
 │   │       ├── mus_oak.s
+│   │       ├── mus_oak_lab.mid
+│   │       ├── mus_oak_lab.s
 │   │       ├── mus_obtain_badge.mid
 │   │       ├── mus_obtain_badge.s
 │   │       ├── mus_obtain_berry.mid
@@ -22845,10 +21055,10 @@
 │   │       ├── mus_rival_exit.s
 │   │       ├── mus_rocket_hideout.mid
 │   │       ├── mus_rocket_hideout.s
-│   │       ├── mus_route11.mid
-│   │       ├── mus_route11.s
 │   │       ├── mus_route1.mid
 │   │       ├── mus_route1.s
+│   │       ├── mus_route11.mid
+│   │       ├── mus_route11.s
 │   │       ├── mus_route24.mid
 │   │       ├── mus_route24.s
 │   │       ├── mus_route3.mid
@@ -22927,6 +21137,8 @@
 │   │       ├── se_bag_cursor.s
 │   │       ├── se_bag_pocket.mid
 │   │       ├── se_bag_pocket.s
+│   │       ├── se_ball.mid
+│   │       ├── se_ball.s
 │   │       ├── se_ball_bounce_1.mid
 │   │       ├── se_ball_bounce_1.s
 │   │       ├── se_ball_bounce_2.mid
@@ -22937,16 +21149,8 @@
 │   │       ├── se_ball_bounce_4.s
 │   │       ├── se_ball_click.mid
 │   │       ├── se_ball_click.s
-│   │       ├── se_ball.mid
-│   │       ├── se_balloon_blue.mid
-│   │       ├── se_balloon_blue.s
-│   │       ├── se_balloon_red.mid
-│   │       ├── se_balloon_red.s
-│   │       ├── se_balloon_yellow.mid
-│   │       ├── se_balloon_yellow.s
 │   │       ├── se_ball_open.mid
 │   │       ├── se_ball_open.s
-│   │       ├── se_ball.s
 │   │       ├── se_ball_throw.mid
 │   │       ├── se_ball_throw.s
 │   │       ├── se_ball_trade.mid
@@ -22957,6 +21161,12 @@
 │   │       ├── se_ball_tray_enter.s
 │   │       ├── se_ball_tray_exit.mid
 │   │       ├── se_ball_tray_exit.s
+│   │       ├── se_balloon_blue.mid
+│   │       ├── se_balloon_blue.s
+│   │       ├── se_balloon_red.mid
+│   │       ├── se_balloon_red.s
+│   │       ├── se_balloon_yellow.mid
+│   │       ├── se_balloon_yellow.s
 │   │       ├── se_bang.mid
 │   │       ├── se_bang.s
 │   │       ├── se_berry_blender.mid
@@ -22972,9 +21182,9 @@
 │   │       ├── se_bridge_walk.mid
 │   │       ├── se_bridge_walk.s
 │   │       ├── se_card_flip.mid
+│   │       ├── se_card_flip.s
 │   │       ├── se_card_flipping.mid
 │   │       ├── se_card_flipping.s
-│   │       ├── se_card_flip.s
 │   │       ├── se_card_open.mid
 │   │       ├── se_card_open.s
 │   │       ├── se_click.mid
@@ -23021,10 +21231,10 @@
 │   │       ├── se_escalator.s
 │   │       ├── se_exit.mid
 │   │       ├── se_exit.s
-│   │       ├── se_exp_max.mid
-│   │       ├── se_exp_max.s
 │   │       ├── se_exp.mid
 │   │       ├── se_exp.s
+│   │       ├── se_exp_max.mid
+│   │       ├── se_exp_max.s
 │   │       ├── se_failure.mid
 │   │       ├── se_failure.s
 │   │       ├── se_faint.mid
@@ -23061,16 +21271,16 @@
 │   │       ├── se_ledge.s
 │   │       ├── se_low_health.mid
 │   │       ├── se_low_health.s
-│   │       ├── se_m_absorb_2.mid
-│   │       ├── se_m_absorb_2.s
 │   │       ├── se_m_absorb.mid
 │   │       ├── se_m_absorb.s
+│   │       ├── se_m_absorb_2.mid
+│   │       ├── se_m_absorb_2.s
 │   │       ├── se_m_acid_armor.mid
 │   │       ├── se_m_acid_armor.s
-│   │       ├── se_m_attract2.mid
-│   │       ├── se_m_attract2.s
 │   │       ├── se_m_attract.mid
 │   │       ├── se_m_attract.s
+│   │       ├── se_m_attract2.mid
+│   │       ├── se_m_attract2.s
 │   │       ├── se_m_barrier.mid
 │   │       ├── se_m_barrier.s
 │   │       ├── se_m_baton_pass.mid
@@ -23081,24 +21291,24 @@
 │   │       ├── se_m_bind.s
 │   │       ├── se_m_bite.mid
 │   │       ├── se_m_bite.s
-│   │       ├── se_m_blizzard2.mid
-│   │       ├── se_m_blizzard2.s
 │   │       ├── se_m_blizzard.mid
 │   │       ├── se_m_blizzard.s
+│   │       ├── se_m_blizzard2.mid
+│   │       ├── se_m_blizzard2.s
 │   │       ├── se_m_bonemerang.mid
 │   │       ├── se_m_bonemerang.s
 │   │       ├── se_m_brick_break.mid
 │   │       ├── se_m_brick_break.s
+│   │       ├── se_m_bubble.mid
+│   │       ├── se_m_bubble.s
 │   │       ├── se_m_bubble2.mid
 │   │       ├── se_m_bubble2.s
 │   │       ├── se_m_bubble3.mid
 │   │       ├── se_m_bubble3.s
-│   │       ├── se_m_bubble_beam2.mid
-│   │       ├── se_m_bubble_beam2.s
 │   │       ├── se_m_bubble_beam.mid
 │   │       ├── se_m_bubble_beam.s
-│   │       ├── se_m_bubble.mid
-│   │       ├── se_m_bubble.s
+│   │       ├── se_m_bubble_beam2.mid
+│   │       ├── se_m_bubble_beam2.s
 │   │       ├── se_m_charge.mid
 │   │       ├── se_m_charge.s
 │   │       ├── se_m_charm.mid
@@ -23131,22 +21341,22 @@
 │   │       ├── se_m_earthquake.s
 │   │       ├── se_m_ember.mid
 │   │       ├── se_m_ember.s
-│   │       ├── se_m_encore2.mid
-│   │       ├── se_m_encore2.s
 │   │       ├── se_m_encore.mid
 │   │       ├── se_m_encore.s
+│   │       ├── se_m_encore2.mid
+│   │       ├── se_m_encore2.s
 │   │       ├── se_m_explosion.mid
 │   │       ├── se_m_explosion.s
 │   │       ├── se_m_faint_attack.mid
 │   │       ├── se_m_faint_attack.s
 │   │       ├── se_m_fire_punch.mid
 │   │       ├── se_m_fire_punch.s
-│   │       ├── se_m_flamethrower.mid
-│   │       ├── se_m_flamethrower.s
-│   │       ├── se_m_flame_wheel2.mid
-│   │       ├── se_m_flame_wheel2.s
 │   │       ├── se_m_flame_wheel.mid
 │   │       ├── se_m_flame_wheel.s
+│   │       ├── se_m_flame_wheel2.mid
+│   │       ├── se_m_flame_wheel2.s
+│   │       ├── se_m_flamethrower.mid
+│   │       ├── se_m_flamethrower.s
 │   │       ├── se_m_flatter.mid
 │   │       ├── se_m_flatter.s
 │   │       ├── se_m_fly.mid
@@ -23155,10 +21365,10 @@
 │   │       ├── se_m_giga_drain.s
 │   │       ├── se_m_grasswhistle.mid
 │   │       ├── se_m_grasswhistle.s
-│   │       ├── se_m_gust2.mid
-│   │       ├── se_m_gust2.s
 │   │       ├── se_m_gust.mid
 │   │       ├── se_m_gust.s
+│   │       ├── se_m_gust2.mid
+│   │       ├── se_m_gust2.s
 │   │       ├── se_m_hail.mid
 │   │       ├── se_m_hail.s
 │   │       ├── se_m_harden.mid
@@ -23175,10 +21385,10 @@
 │   │       ├── se_m_horn_attack.s
 │   │       ├── se_m_hydro_pump.mid
 │   │       ├── se_m_hydro_pump.s
-│   │       ├── se_m_hyper_beam2.mid
-│   │       ├── se_m_hyper_beam2.s
 │   │       ├── se_m_hyper_beam.mid
 │   │       ├── se_m_hyper_beam.s
+│   │       ├── se_m_hyper_beam2.mid
+│   │       ├── se_m_hyper_beam2.s
 │   │       ├── se_m_icy_wind.mid
 │   │       ├── se_m_icy_wind.s
 │   │       ├── se_m_jump_kick.mid
@@ -23189,10 +21399,10 @@
 │   │       ├── se_m_lick.s
 │   │       ├── se_m_lock_on.mid
 │   │       ├── se_m_lock_on.s
-│   │       ├── se_m_mega_kick2.mid
-│   │       ├── se_m_mega_kick2.s
 │   │       ├── se_m_mega_kick.mid
 │   │       ├── se_m_mega_kick.s
+│   │       ├── se_m_mega_kick2.mid
+│   │       ├── se_m_mega_kick2.s
 │   │       ├── se_m_metronome.mid
 │   │       ├── se_m_metronome.s
 │   │       ├── se_m_milk_drink.mid
@@ -23215,32 +21425,32 @@
 │   │       ├── se_m_petal_dance.s
 │   │       ├── se_m_poison_powder.mid
 │   │       ├── se_m_poison_powder.s
-│   │       ├── se_m_psybeam2.mid
-│   │       ├── se_m_psybeam2.s
 │   │       ├── se_m_psybeam.mid
 │   │       ├── se_m_psybeam.s
+│   │       ├── se_m_psybeam2.mid
+│   │       ├── se_m_psybeam2.s
 │   │       ├── se_m_rain_dance.mid
 │   │       ├── se_m_rain_dance.s
-│   │       ├── se_m_razor_wind2.mid
-│   │       ├── se_m_razor_wind2.s
 │   │       ├── se_m_razor_wind.mid
 │   │       ├── se_m_razor_wind.s
+│   │       ├── se_m_razor_wind2.mid
+│   │       ├── se_m_razor_wind2.s
 │   │       ├── se_m_reflect.mid
 │   │       ├── se_m_reflect.s
 │   │       ├── se_m_reversal.mid
 │   │       ├── se_m_reversal.s
 │   │       ├── se_m_rock_throw.mid
 │   │       ├── se_m_rock_throw.s
-│   │       ├── se_m_sacred_fire2.mid
-│   │       ├── se_m_sacred_fire2.s
 │   │       ├── se_m_sacred_fire.mid
 │   │       ├── se_m_sacred_fire.s
+│   │       ├── se_m_sacred_fire2.mid
+│   │       ├── se_m_sacred_fire2.s
 │   │       ├── se_m_sand_attack.mid
 │   │       ├── se_m_sand_attack.s
-│   │       ├── se_m_sandstorm.mid
-│   │       ├── se_m_sandstorm.s
 │   │       ├── se_m_sand_tomb.mid
 │   │       ├── se_m_sand_tomb.s
+│   │       ├── se_m_sandstorm.mid
+│   │       ├── se_m_sandstorm.s
 │   │       ├── se_m_scratch.mid
 │   │       ├── se_m_scratch.s
 │   │       ├── se_m_screech.mid
@@ -23265,18 +21475,18 @@
 │   │       ├── se_m_stat_increase.s
 │   │       ├── se_m_strength.mid
 │   │       ├── se_m_strength.s
-│   │       ├── se_m_string_shot2.mid
-│   │       ├── se_m_string_shot2.s
 │   │       ├── se_m_string_shot.mid
 │   │       ├── se_m_string_shot.s
+│   │       ├── se_m_string_shot2.mid
+│   │       ├── se_m_string_shot2.s
 │   │       ├── se_m_supersonic.mid
 │   │       ├── se_m_supersonic.s
 │   │       ├── se_m_surf.mid
 │   │       ├── se_m_surf.s
-│   │       ├── se_m_swagger2.mid
-│   │       ├── se_m_swagger2.s
 │   │       ├── se_m_swagger.mid
 │   │       ├── se_m_swagger.s
+│   │       ├── se_m_swagger2.mid
+│   │       ├── se_m_swagger2.s
 │   │       ├── se_m_sweet_scent.mid
 │   │       ├── se_m_sweet_scent.s
 │   │       ├── se_m_swift.mid
@@ -23291,32 +21501,28 @@
 │   │       ├── se_m_teeter_dance.s
 │   │       ├── se_m_teleport.mid
 │   │       ├── se_m_teleport.s
-│   │       ├── se_m_thunderbolt2.mid
-│   │       ├── se_m_thunderbolt2.s
-│   │       ├── se_m_thunderbolt.mid
-│   │       ├── se_m_thunderbolt.s
 │   │       ├── se_m_thunder_wave.mid
 │   │       ├── se_m_thunder_wave.s
+│   │       ├── se_m_thunderbolt.mid
+│   │       ├── se_m_thunderbolt.s
+│   │       ├── se_m_thunderbolt2.mid
+│   │       ├── se_m_thunderbolt2.s
 │   │       ├── se_m_toxic.mid
 │   │       ├── se_m_toxic.s
-│   │       ├── se_m_tri_attack2.mid
-│   │       ├── se_m_tri_attack2.s
 │   │       ├── se_m_tri_attack.mid
 │   │       ├── se_m_tri_attack.s
+│   │       ├── se_m_tri_attack2.mid
+│   │       ├── se_m_tri_attack2.s
 │   │       ├── se_m_twister.mid
 │   │       ├── se_m_twister.s
-│   │       ├── se_mud_ball.mid
-│   │       ├── se_mud_ball.s
-│   │       ├── se_mugshot.mid
-│   │       ├── se_mugshot.s
 │   │       ├── se_m_uproar.mid
 │   │       ├── se_m_uproar.s
 │   │       ├── se_m_vicegrip.mid
 │   │       ├── se_m_vicegrip.s
-│   │       ├── se_m_vital_throw2.mid
-│   │       ├── se_m_vital_throw2.s
 │   │       ├── se_m_vital_throw.mid
 │   │       ├── se_m_vital_throw.s
+│   │       ├── se_m_vital_throw2.mid
+│   │       ├── se_m_vital_throw2.s
 │   │       ├── se_m_waterfall.mid
 │   │       ├── se_m_waterfall.s
 │   │       ├── se_m_whirlpool.mid
@@ -23325,20 +21531,24 @@
 │   │       ├── se_m_wing_attack.s
 │   │       ├── se_m_yawn.mid
 │   │       ├── se_m_yawn.s
+│   │       ├── se_mud_ball.mid
+│   │       ├── se_mud_ball.s
+│   │       ├── se_mugshot.mid
+│   │       ├── se_mugshot.s
+│   │       ├── se_not_effective.mid
+│   │       ├── se_not_effective.s
 │   │       ├── se_note_a.mid
 │   │       ├── se_note_a.s
 │   │       ├── se_note_b.mid
 │   │       ├── se_note_b.s
-│   │       ├── se_note_c_high.mid
-│   │       ├── se_note_c_high.s
 │   │       ├── se_note_c.mid
 │   │       ├── se_note_c.s
+│   │       ├── se_note_c_high.mid
+│   │       ├── se_note_c_high.s
 │   │       ├── se_note_d.mid
 │   │       ├── se_note_d.s
 │   │       ├── se_note_e.mid
 │   │       ├── se_note_e.s
-│   │       ├── se_not_effective.mid
-│   │       ├── se_not_effective.s
 │   │       ├── se_note_f.mid
 │   │       ├── se_note_f.s
 │   │       ├── se_note_g.mid
@@ -23371,10 +21581,10 @@
 │   │       ├── se_repel.s
 │   │       ├── se_rotating_gate.mid
 │   │       ├── se_rotating_gate.s
-│   │       ├── se_roulette_ball2.mid
-│   │       ├── se_roulette_ball2.s
 │   │       ├── se_roulette_ball.mid
 │   │       ├── se_roulette_ball.s
+│   │       ├── se_roulette_ball2.mid
+│   │       ├── se_roulette_ball2.s
 │   │       ├── se_rs_door.mid
 │   │       ├── se_rs_door.s
 │   │       ├── se_rs_shop.mid
@@ -23401,10 +21611,10 @@
 │   │       ├── se_switch.s
 │   │       ├── se_taillow_wing_flap.mid
 │   │       ├── se_taillow_wing_flap.s
-│   │       ├── se_thunder2.mid
-│   │       ├── se_thunder2.s
 │   │       ├── se_thunder.mid
 │   │       ├── se_thunder.s
+│   │       ├── se_thunder2.mid
+│   │       ├── se_thunder2.s
 │   │       ├── se_thunderstorm.mid
 │   │       ├── se_thunderstorm.s
 │   │       ├── se_thunderstorm_stop.mid
@@ -23431,20 +21641,19 @@
 │   │       ├── se_warp_out.s
 │   │       ├── se_win_open.mid
 │   │       └── se_win_open.s
-│   ├── song_table.inc
 │   └── voice_groups.inc
 ├── spritesheet_rules.mk
 ├── src
-│   ├── agb_flash_1m.c
+│   ├── AgbRfu_LinkManager.c
 │   ├── agb_flash.c
+│   ├── agb_flash_1m.c
 │   ├── agb_flash_le.c
 │   ├── agb_flash_mx.c
-│   ├── AgbRfu_LinkManager.c
 │   ├── bag.c
 │   ├── battle_ai_script_commands.c
 │   ├── battle_ai_switch_items.c
-│   ├── battle_anim_bug.c
 │   ├── battle_anim.c
+│   ├── battle_anim_bug.c
 │   ├── battle_anim_dark.c
 │   ├── battle_anim_dragon.c
 │   ├── battle_anim_effects_1.c
@@ -23488,8 +21697,8 @@
 │   ├── battle_setup.c
 │   ├── battle_tower.c
 │   ├── battle_transition.c
-│   ├── battle_util2.c
 │   ├── battle_util.c
+│   ├── battle_util2.c
 │   ├── berry.c
 │   ├── berry_crush.c
 │   ├── berry_fix_program.c
@@ -23535,19 +21744,19 @@
 │   │   │   ├── easy_chat_group_move_1.h
 │   │   │   ├── easy_chat_group_move_2.h
 │   │   │   ├── easy_chat_group_people.h
-│   │   │   ├── easy_chat_group_pokemon2.h
 │   │   │   ├── easy_chat_group_pokemon.h
-│   │   │   ├── easy_chat_groups.h
+│   │   │   ├── easy_chat_group_pokemon2.h
 │   │   │   ├── easy_chat_group_speech.h
 │   │   │   ├── easy_chat_group_status.h
 │   │   │   ├── easy_chat_group_time.h
 │   │   │   ├── easy_chat_group_trainer.h
 │   │   │   ├── easy_chat_group_trendy_saying.h
 │   │   │   ├── easy_chat_group_voices.h
+│   │   │   ├── easy_chat_groups.h
 │   │   │   └── easy_chat_words_by_letter.h
 │   │   ├── field_effects
-│   │   │   ├── field_effect_objects.h
-│   │   │   └── field_effect_object_template_pointers.h
+│   │   │   ├── field_effect_object_template_pointers.h
+│   │   │   └── field_effect_objects.h
 │   │   ├── graphics
 │   │   │   ├── battle_terrain_unused.h
 │   │   │   ├── interface_pokeballs.h
@@ -23586,8 +21795,8 @@
 │   │   │   ├── pokedex_categories.h
 │   │   │   ├── pokedex_entries.h
 │   │   │   ├── pokedex_orders.h
-│   │   │   ├── pokedex_text_fr.h
 │   │   │   ├── pokedex_text.h
+│   │   │   ├── pokedex_text_fr.h
 │   │   │   ├── pokedex_text_lg.h
 │   │   │   ├── species_info.h
 │   │   │   ├── tmhm_learnsets.h
@@ -23646,9 +21855,9 @@
 │   ├── dodrio_berry_picking.c
 │   ├── dodrio_berry_picking_comm.c
 │   ├── dynamic_placeholder_text_util.c
+│   ├── easy_chat.c
 │   ├── easy_chat_2.c
 │   ├── easy_chat_3.c
-│   ├── easy_chat.c
 │   ├── ereader_helpers.c
 │   ├── ereader_screen.c
 │   ├── event_data.c
@@ -23663,17 +21872,17 @@
 │   ├── field_effect.c
 │   ├── field_effect_helpers.c
 │   ├── field_fadetransition.c
-│   ├── fieldmap.c
 │   ├── field_message_box.c
 │   ├── field_player_avatar.c
 │   ├── field_poison.c
 │   ├── field_screen_effect.c
-│   ├── field_specials.c
 │   ├── field_special_scene.c
+│   ├── field_specials.c
 │   ├── field_tasks.c
 │   ├── field_weather.c
 │   ├── field_weather_effects.c
 │   ├── field_weather_util.c
+│   ├── fieldmap.c
 │   ├── fldeff_berrytree.c
 │   ├── fldeff_cut.c
 │   ├── fldeff_dig.c
@@ -23696,11 +21905,11 @@
 │   ├── intro.c
 │   ├── isagbprn.c
 │   ├── item.c
-│   ├── itemfinder.c
 │   ├── item_menu.c
 │   ├── item_menu_icons.c
 │   ├── item_pc.c
 │   ├── item_use.c
+│   ├── itemfinder.c
 │   ├── keyboard_text.c
 │   ├── learn_move.c
 │   ├── libagbsyscall.s
@@ -23714,27 +21923,27 @@
 │   ├── link_rfu_3.c
 │   ├── list_menu.c
 │   ├── load_save.c
-│   ├── m4a_1.s
 │   ├── m4a.c
+│   ├── m4a_1.s
 │   ├── m4a_tables.c
-│   ├── mailbox_pc.c
 │   ├── mail.c
 │   ├── mail_data.c
+│   ├── mailbox_pc.c
 │   ├── main.c
 │   ├── main_menu.c
 │   ├── malloc.c
 │   ├── map_name_popup.c
 │   ├── map_preview_screen.c
 │   ├── math_util.c
-│   ├── menu2.c
 │   ├── menu.c
+│   ├── menu2.c
 │   ├── menu_helpers.c
 │   ├── menu_indicators.c
 │   ├── metatile_behavior.c
-│   ├── minigame_countdown.c
 │   ├── mini_printf.c
-│   ├── money.c
+│   ├── minigame_countdown.c
 │   ├── mon_markings.c
+│   ├── money.c
 │   ├── move_descriptions.c
 │   ├── multiboot.c
 │   ├── mystery_event_msg.c
@@ -23758,11 +21967,11 @@
 │   ├── party_menu.c
 │   ├── party_menu_specials.c
 │   ├── pc_screen_effect.c
-│   ├── player_pc.c
 │   ├── play_time.c
+│   ├── player_pc.c
 │   ├── pokeball.c
-│   ├── pokedex_area_markers.c
 │   ├── pokedex.c
+│   ├── pokedex_area_markers.c
 │   ├── pokedex_screen.c
 │   ├── pokemon.c
 │   ├── pokemon_icon.c
@@ -23779,8 +21988,8 @@
 │   ├── pokemon_summary_screen.c
 │   ├── post_battle_event_funcs.c
 │   ├── prof_pc.c
-│   ├── quest_log_battle.c
 │   ├── quest_log.c
+│   ├── quest_log_battle.c
 │   ├── quest_log_events.c
 │   ├── quest_log_objects.c
 │   ├── quest_log_player.c
@@ -23790,8 +21999,8 @@
 │   ├── reset_save_heap.c
 │   ├── reshow_battle_screen.c
 │   ├── roamer.c
-│   ├── rom_header_gf.c
 │   ├── rom_header.s
+│   ├── rom_header_gf.c
 │   ├── safari_zone.c
 │   ├── save.c
 │   ├── save_failed_screen.c
@@ -23812,8 +22021,8 @@
 │   ├── sprite.c
 │   ├── ss_anne.c
 │   ├── start_menu.c
-│   ├── strings.c
 │   ├── string_util.c
+│   ├── strings.c
 │   ├── task.c
 │   ├── teachy_tv.c
 │   ├── text.c
@@ -23834,8 +22043,8 @@
 │   ├── trainer_tower.c
 │   ├── trainer_tower_sets.c
 │   ├── trig.c
-│   ├── union_room_battle.c
 │   ├── union_room.c
+│   ├── union_room_battle.c
 │   ├── union_room_chat.c
 │   ├── union_room_chat_display.c
 │   ├── union_room_chat_objects.c
@@ -23845,16 +22054,16 @@
 │   ├── vs_seeker.c
 │   ├── wild_encounter.c
 │   ├── wild_pokemon_area.c
-│   ├── window_8bpp.c
 │   ├── window.c
+│   ├── window_8bpp.c
 │   ├── wireless_communication_status_screen.c
 │   └── wonder_news.c
-├── sym_bss_rev10.txt
 ├── sym_bss.txt
-├── sym_common_rev10.txt
+├── sym_bss_rev10.txt
 ├── sym_common.txt
-├── sym_ewram_rev10.txt
+├── sym_common_rev10.txt
 ├── sym_ewram.txt
+├── sym_ewram_rev10.txt
 ├── tileset_rules.mk
 ├── tools
 │   ├── agbcc
@@ -23864,6 +22073,7 @@
 │   │   │   └── old_agbcc
 │   │   ├── include
 │   │   │   ├── _ansi.h
+│   │   │   ├── _syslist.h
 │   │   │   ├── ar.h
 │   │   │   ├── assert.h
 │   │   │   ├── ctype.h
@@ -23901,6 +22111,7 @@
 │   │   │   ├── stdlib.h
 │   │   │   ├── string.h
 │   │   │   ├── sys
+│   │   │   │   ├── _types.h
 │   │   │   │   ├── config.h
 │   │   │   │   ├── dirent.h
 │   │   │   │   ├── errno.h
@@ -23912,15 +22123,13 @@
 │   │   │   │   ├── signal.h
 │   │   │   │   ├── stat-dj.h
 │   │   │   │   ├── stat.h
-│   │   │   │   ├── timeb.h
 │   │   │   │   ├── time.h
+│   │   │   │   ├── timeb.h
 │   │   │   │   ├── times.h
-│   │   │   │   ├── _types.h
 │   │   │   │   ├── types.h
 │   │   │   │   ├── unistd.h
 │   │   │   │   ├── utime.h
 │   │   │   │   └── wait.h
-│   │   │   ├── _syslist.h
 │   │   │   ├── termios.h
 │   │   │   ├── time.h
 │   │   │   ├── unctrl.h
@@ -23931,17 +22140,19 @@
 │   │       ├── libc.a
 │   │       └── libgcc.a
 │   ├── bin2c
-│   │   ├── bin2c
-│   │   ├── bin2c.c
 │   │   ├── LICENSE
-│   │   └── Makefile
+│   │   ├── Makefile
+│   │   ├── bin2c
+│   │   └── bin2c.c
 │   ├── gbafix
 │   │   ├── COPYING
+│   │   ├── Makefile
 │   │   ├── elf.h
 │   │   ├── gbafix
-│   │   ├── gbafix.c
-│   │   └── Makefile
+│   │   └── gbafix.c
 │   ├── gbagfx
+│   │   ├── LICENSE
+│   │   ├── Makefile
 │   │   ├── convert_png.c
 │   │   ├── convert_png.h
 │   │   ├── font.c
@@ -23954,57 +22165,55 @@
 │   │   ├── huff.h
 │   │   ├── jasc_pal.c
 │   │   ├── jasc_pal.h
-│   │   ├── LICENSE
 │   │   ├── lz.c
 │   │   ├── lz.h
 │   │   ├── main.c
-│   │   ├── Makefile
 │   │   ├── options.h
 │   │   ├── rl.c
 │   │   ├── rl.h
 │   │   ├── util.c
 │   │   └── util.h
 │   ├── jsonproc
+│   │   ├── Makefile
 │   │   ├── inja.hpp
 │   │   ├── jsonproc
 │   │   ├── jsonproc.cpp
 │   │   ├── jsonproc.h
-│   │   ├── Makefile
 │   │   └── nlohmann
 │   │       └── json.hpp
 │   ├── mapjson
+│   │   ├── Makefile
 │   │   ├── json11.cpp
 │   │   ├── json11.h
-│   │   ├── Makefile
 │   │   ├── mapjson
 │   │   ├── mapjson.cpp
 │   │   └── mapjson.h
 │   ├── mid2agb
+│   │   ├── LICENSE
+│   │   ├── Makefile
 │   │   ├── agb.cpp
 │   │   ├── agb.h
 │   │   ├── error.cpp
 │   │   ├── error.h
-│   │   ├── LICENSE
 │   │   ├── main.cpp
 │   │   ├── main.h
-│   │   ├── Makefile
 │   │   ├── mid2agb
 │   │   ├── midi.cpp
 │   │   ├── midi.h
 │   │   ├── tables.cpp
 │   │   └── tables.h
 │   ├── preproc
+│   │   ├── LICENSE
+│   │   ├── Makefile
 │   │   ├── asm_file.cpp
 │   │   ├── asm_file.h
 │   │   ├── c_file.cpp
 │   │   ├── c_file.h
+│   │   ├── char_util.h
 │   │   ├── charmap.cpp
 │   │   ├── charmap.h
-│   │   ├── char_util.h
 │   │   ├── io.cpp
 │   │   ├── io.h
-│   │   ├── LICENSE
-│   │   ├── Makefile
 │   │   ├── preproc
 │   │   ├── preproc.cpp
 │   │   ├── preproc.h
@@ -24013,47 +22222,47 @@
 │   │   ├── utf8.cpp
 │   │   └── utf8.h
 │   ├── ramscrgen
+│   │   ├── LICENSE
+│   │   ├── Makefile
 │   │   ├── char_util.h
 │   │   ├── elf.cpp
 │   │   ├── elf.h
-│   │   ├── LICENSE
 │   │   ├── main.cpp
-│   │   ├── Makefile
 │   │   ├── ramscrgen
 │   │   ├── ramscrgen.h
 │   │   ├── sym_file.cpp
 │   │   └── sym_file.h
 │   ├── rsfont
+│   │   ├── LICENSE
+│   │   ├── Makefile
 │   │   ├── convert_png.c
 │   │   ├── convert_png.h
 │   │   ├── font.c
 │   │   ├── font.h
 │   │   ├── gfx.h
 │   │   ├── global.h
-│   │   ├── LICENSE
 │   │   ├── main.c
-│   │   ├── Makefile
 │   │   ├── rsfont
 │   │   ├── util.c
 │   │   └── util.h
 │   ├── scaninc
+│   │   ├── LICENSE
+│   │   ├── Makefile
 │   │   ├── asm_file.cpp
 │   │   ├── asm_file.h
 │   │   ├── c_file.cpp
 │   │   ├── c_file.h
-│   │   ├── LICENSE
-│   │   ├── Makefile
 │   │   ├── scaninc
 │   │   ├── scaninc.cpp
 │   │   ├── scaninc.h
 │   │   ├── source_file.cpp
 │   │   └── source_file.h
 │   └── wav2agb
-│       ├── converter.cpp
-│       ├── converter.h
 │       ├── LICENSE
 │       ├── Makefile
 │       ├── README.md
+│       ├── converter.cpp
+│       ├── converter.h
 │       ├── test_fast_compress.sh
 │       ├── wav2agb
 │       ├── wav2agb.cpp
@@ -24061,4 +22270,4 @@
 │       └── wav_file.h
 └── tree.txt
 
-1601 directories, 22461 files
+1586 directories, 20685 files
